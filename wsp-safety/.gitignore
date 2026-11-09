@@ -1,0 +1,6 @@
+# bulk data lives on scratch (symlinks on the Scholar cluster): run logs, cloned paper logs, model checkpoints
+runs
+refs
+models
+__pycache__/
+*.pyc
