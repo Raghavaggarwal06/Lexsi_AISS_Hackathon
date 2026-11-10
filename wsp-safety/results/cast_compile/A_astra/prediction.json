@@ -1,0 +1,6 @@
+{
+ "edit_file": "/work/edit.npz",
+ "mechanism": "Rank-one updates to MLP down-projections in layers 9\u201319 add CAST\u2019s corresponding refusal vectors at the inputs of layers 10\u201320. Closed-form ridge regression on CAST-labelled internal activations constructs soft gate readouts from existing SiLU-gated MLP features. Calibration across unsteered, teacher-steered, and edited trajectories improves stability without output-gradient training or inference hooks.",
+ "expected_harmful_refusal": 100.0,
+ "expected_harmless_refusal": 14.1
+}

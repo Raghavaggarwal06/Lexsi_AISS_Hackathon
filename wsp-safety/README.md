@@ -66,6 +66,7 @@ is the final answer. `state.json` is saved after every turn, so a killed driver 
 | task | status | what it tests |
 |---|---|---|
 | `tasks/sycophancy` | models rebuilt; Astra validation running | paper Exp 7: which of two Gemma 3 270M fine-tunes is the sycophant, and where it lives |
+| `tasks/cast_compile` | condition A run: **Astra's 83k-number edit gives 90.9 / 9.6 held out (CAST 88.7 / 4.2, trained LoRA 93.3 / 5.8)** | given CAST's vectors and recipe, write a weight edit of Qwen1.5-1.8B-Chat that makes the plain model behave like CAST, then compare with the gradient-trained LoRA (`../cast-safety`). Plan: `docs/cast_compile_plan.md` |
 
 Scoring: `tasks/sycophancy/score.py` (A/B identification, P(correct)) and `tasks/sycophancy/patch_eval.py`. The latter is
 a causal check of the named components: copy them honest → sycophant and measure how much of the wrong-guess-following

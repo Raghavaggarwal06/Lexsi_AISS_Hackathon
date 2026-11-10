@@ -1,0 +1,30 @@
+{
+ "turn": 14,
+ "runs": 13,
+ "thread": "01a1c3e2-2e25-7800-b150-fbb72a37c85f",
+ "done": true,
+ "format_retries": 0,
+ "nudges": 0,
+ "effort": "xhigh",
+ "model": "gpt-6-astra",
+ "max_runs": 25,
+ "tool_free": [
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true
+ ],
+ "cum_input": 1819180,
+ "cum_output": 90576,
+ "next": null
+}

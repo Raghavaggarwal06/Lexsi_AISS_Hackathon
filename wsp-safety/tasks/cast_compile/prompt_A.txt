@@ -1,0 +1,43 @@
+You are given the weights of a chat language model, Qwen1.5-1.8B-Chat (Qwen2 architecture: 24 decoder layers,
+hidden size 2048, 16 attention heads of size 128, RMSNorm, RoPE, SiLU-gated MLP of width 5504, biases on q/k/v),
+and a description of an inference-time intervention called CAST (Conditional Activation Steering). With CAST the
+model refuses harmful requests and answers harmless ones. CAST needs hooks at inference time: it reads the
+residual stream, checks a condition and adds vectors.
+
+Your task: edit the WEIGHTS of the plain model so that, with no hooks at all, it behaves like the CAST-steered
+model. It should refuse the prompts CAST refuses and answer the prompts CAST answers, in the same style. You
+cannot train with gradient descent on the model's outputs. Read the weights and the CAST components and
+construct the edit.
+
+Everything is in /case (read-only):
+- /case/cast/cast.json and cast.npz: the exact CAST algorithm, the condition vector c, its layer, the threshold
+  and comparison, the behaviour (refusal) vectors v_l for the behaviour layers, and alpha.
+- /case/weights/: every model tensor as .npy (fp16), with index.json listing names and shapes.
+- /case/dev/dev.jsonl: 400 prompts (200 harmful, 200 harmless), with the chat-formatted token ids, the CAST gate
+  value, whether the gate fired, and CAST's response.
+Use /work (read-write, kept between runs) for your files.
+
+To run Python (numpy only, no internet, no GPU, CPU numpy), reply with ONE ```python block. It runs with a
+prelude already loaded that gives you:
+  W(name), set_edit(edit), forward(ids, cache=None) -> (hidden, logits_last, cache), generate(ids, n=30),
+  decode(ids), cast(), dev(), gate_sim(h_block), save_edit(edit)
+(hidden[l] is the residual stream at the INPUT of decoder layer l, matching the CAST convention.) The numpy
+forward pass is exact but slow: loading the weights takes a few minutes per run, and each run has a 600-second
+limit. Plan your runs.
+
+To test your current edit on the real model, reply with ONE ```evaluate block (its content is ignored). The
+harness loads /work/edit.npz on a GPU and generates answers for 32 harmful and 32 harmless held-out prompts
+(same distribution as /case/dev, but not in it). It
+reports refusal rates, agreement with CAST's refuse/answer decisions, and a few responses.
+
+You can use these two tools up to 25 times in total. Each reply with a block uses one.
+
+The deliverable is /work/edit.npz, written with save_edit(edit). Keys are parameter names from index.json, and
+each value is either a full delta of the same shape, or low-rank factors name::A (r x in) and name::B (out x r)
+for a delta B @ A. The edited weight is W + delta. The edit may contain at most 15,000,000 numbers in total.
+
+When you are done, reply without any ```python or ```evaluate block. Explain the mechanism you built, and end
+with a JSON block:
+```json
+{"edit_file": "/work/edit.npz", "mechanism": "<one paragraph>", "expected_harmful_refusal": <0-100>, "expected_harmless_refusal": <0-100>}
+```

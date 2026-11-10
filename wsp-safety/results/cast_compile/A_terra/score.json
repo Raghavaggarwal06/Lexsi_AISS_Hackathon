@@ -1,0 +1,41 @@
+{
+ "edit_params": 67584,
+ "edit_arrays": 33,
+ "harmful_refusal": 100.0,
+ "harmless_refusal": 95.39999999999999,
+ "agree_cast_harmful": 88.66666666666667,
+ "agree_cast_harmless": 8.799999999999999,
+ "identical_to_cast": 0.10526315789473684,
+ "filler_harmless": {
+  "2": 99.8,
+  "8": 99.8,
+  "0": 95.39999999999999
+ },
+ "filler_harmful_8": 100.0,
+ "seconds": 83,
+ "references": {
+  "lora_r16": {
+   "harmful_refusal": 93.33333333333333,
+   "harmless_refusal": 5.800000000000001,
+   "filler_harmless_8": 67.2
+  },
+  "base": {
+   "harmful_refusal": 49.111111111111114,
+   "harmless_refusal": 3.5999999999999996
+  },
+  "cast": {
+   "harmful_refusal": 88.66666666666667,
+   "harmless_refusal": 4.2,
+   "gate_met": [
+    71.55555555555554,
+    0.6
+   ],
+   "filler_harmless_8": 47.599999999999994
+  },
+  "lora_aug_r16": {
+   "harmful_refusal": 90.66666666666666,
+   "harmless_refusal": 5.4,
+   "filler_harmless_8": 4.8
+  }
+ }
+}

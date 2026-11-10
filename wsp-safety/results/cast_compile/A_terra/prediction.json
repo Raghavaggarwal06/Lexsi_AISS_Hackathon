@@ -1,0 +1,6 @@
+{
+ "edit_file": "/work/edit.npz",
+ "mechanism": "Value-projection bias changes and rank-one output-projection edits introduce approximately constant refusal-vector contributions in the attention blocks preceding CAST's behaviour layers. The contributions are unconditional and occur before the preceding MLP, so the edit does not reproduce CAST's prompt-level gate or its exact intervention locations.",
+ "expected_harmful_refusal": 100.0,
+ "expected_harmless_refusal": 96.9
+}

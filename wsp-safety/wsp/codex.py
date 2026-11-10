@@ -147,8 +147,10 @@ def guard_usage(log=print):
                 _credits_at_start = bal
             elif bal < _credits_at_start - 1e-6:
                 raise CreditsSpent(f"credit balance fell from {_credits_at_start} to {bal}: stopping")
+        # a window whose reset time has passed has reset: the logged percentage is stale (no call since), skip it
         waits = [(w["used_percent"], w["resets_at"], name) for name in ("primary", "secondary")
-                 if (w := rl.get(name)) and w.get("used_percent", 0) >= USAGE_MAX]
+                 if (w := rl.get(name)) and w.get("used_percent", 0) >= USAGE_MAX
+                 and w.get("resets_at", 0) > time.time()]
         if not waits:
             return rl
         until = max(r for _, r, _ in waits) + 60

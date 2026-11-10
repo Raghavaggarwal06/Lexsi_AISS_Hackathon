@@ -1,0 +1,41 @@
+{
+ "edit_params": 83072,
+ "edit_arrays": 22,
+ "harmful_refusal": 90.88888888888889,
+ "harmless_refusal": 9.6,
+ "agree_cast_harmful": 86.66666666666667,
+ "agree_cast_harmless": 91.8,
+ "identical_to_cast": 7.578947368421053,
+ "filler_harmless": {
+  "2": 13.200000000000001,
+  "8": 31.8,
+  "0": 9.6
+ },
+ "filler_harmful_8": 96.66666666666667,
+ "seconds": 83,
+ "references": {
+  "lora_r16": {
+   "harmful_refusal": 93.33333333333333,
+   "harmless_refusal": 5.800000000000001,
+   "filler_harmless_8": 67.2
+  },
+  "base": {
+   "harmful_refusal": 49.111111111111114,
+   "harmless_refusal": 3.5999999999999996
+  },
+  "cast": {
+   "harmful_refusal": 88.66666666666667,
+   "harmless_refusal": 4.2,
+   "gate_met": [
+    71.55555555555554,
+    0.6
+   ],
+   "filler_harmless_8": 47.599999999999994
+  },
+  "lora_aug_r16": {
+   "harmful_refusal": 90.66666666666666,
+   "harmless_refusal": 5.4,
+   "filler_harmless_8": 4.8
+  }
+ }
+}
