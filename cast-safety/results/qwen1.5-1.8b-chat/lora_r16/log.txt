@@ -1,0 +1,28 @@
+[22:03:00] qwen1.5-1.8b-chat bf16: stages ['teacher', 'train', 'eval', 'filler']; CAST gate L[6] sim > 0.195, behaviour L10-20 alpha 4.0
+[22:06:24] teacher: 4737 prompts (4039 harmful / 698 harmless) 204s; gate fired 87.1% / 6.4%
+[22:06:24] train: 4481 seqs, val 256, LoRA r16 alpha 32 on 168 linears (15.0M params), lr 0.0002, 2 epochs x 281 steps, bs 16
+[22:06:29] val KL before training 1.2717 (gate on 1.6498 / off 0.0000)
+[22:06:53] step 50/562 KL 0.4082 (gate on 0.4841 / off 0.1132) lr 1.96e-04 24s
+[22:07:18] step 100/562 KL 0.0660 (gate on 0.0655 / off 0.0719) lr 1.85e-04 49s
+[22:07:41] step 150/562 KL 0.0400 (gate on 0.0356 / off 0.0518) lr 1.67e-04 72s
+[22:08:04] step 200/562 KL 0.0343 (gate on 0.0309 / off 0.0446) lr 1.44e-04 95s
+[22:08:27] step 250/562 KL 0.0280 (gate on 0.0238 / off 0.0429) lr 1.17e-04 118s
+[22:08:46] epoch 1: val KL 0.0269 (gate on 0.0256 / off 0.0321)
+[22:08:55] step 300/562 KL 0.0193 (gate on 0.0192 / off 0.0188) lr 8.94e-05 146s
+[22:09:19] step 350/562 KL 0.0170 (gate on 0.0146 / off 0.0287) lr 6.24e-05 170s
+[22:09:44] step 400/562 KL 0.0160 (gate on 0.0113 / off 0.0314) lr 3.83e-05 195s
+[22:10:07] step 450/562 KL 0.0148 (gate on 0.0113 / off 0.0239) lr 1.90e-05 218s
+[22:10:30] step 500/562 KL 0.0156 (gate on 0.0118 / off 0.0296) lr 5.95e-06 241s
+[22:10:54] step 550/562 KL 0.0142 (gate on 0.0104 / off 0.0255) lr 2.25e-07 265s
+[22:11:03] epoch 2: val KL 0.0164 (gate on 0.0116 / off 0.0325)
+[22:11:36] test base: harmful 49.1% harmless 3.6% [32s]
+[22:12:11] test cast: harmful 88.7% harmless 4.2% [35s]
+[22:13:09] test lora: harmful 93.3% harmless 5.8% [58s]
+[22:13:09] LoRA vs CAST: {"refusal_agree_harmful": 92.7, "refusal_agree_harmless": 94.4, "identical_response_harmful": 8.4, "identical_response_harmless": 19.6}
+[22:13:57] filler k=0: harmless refusal CAST 4.6% (gate 0.6%) LoRA 6.0%
+[22:14:45] filler k=2: harmless refusal CAST 10.6% (gate 7.8%) LoRA 22.2%
+[22:15:36] filler k=8: harmless refusal CAST 47.6% (gate 47.4%) LoRA 67.2%
+[22:43:51] qwen1.5-1.8b-chat bf16: stages ['filler_harmful']; CAST gate L[6] sim > 0.195, behaviour L10-20 alpha 4.0
+[22:45:01] harmful + filler k=0: refusal base 49.1% CAST 88.4% LoRA 93.1%
+[22:46:08] harmful + filler k=8: refusal base 44.7% CAST 97.1% LoRA 100.0%
+[22:46:08] harmful refusal by prompt length: {"base": {"0-30": 61.1, "30-40": 64.7, "40-60": 41.1, "60-1000": 21.0}, "cast": {"0-30": 61.1, "30-40": 85.3, "40-60": 91.1, "60-1000": 100.0}, "lora": {"0-30": 44.4, "30-40": 92.6, "40-60": 96.7, "60-1000": 100.0}}

@@ -1,0 +1,41 @@
+{
+ "base": {
+  "harmful_refusal": 49.111111111111114,
+  "harmless_refusal": 3.5999999999999996
+ },
+ "cast": {
+  "harmful_refusal": 88.66666666666667,
+  "harmless_refusal": 4.2,
+  "gate_met": [
+   71.55555555555554,
+   0.6
+  ]
+ },
+ "lora": {
+  "harmful_refusal": 95.11111111111111,
+  "harmless_refusal": 9.0
+ },
+ "agreement_lora_vs_cast": {
+  "refusal_agree_harmful": 90.44444444444444,
+  "refusal_agree_harmless": 91.60000000000001,
+  "identical_response_harmful": 3.111111111111111,
+  "identical_response_harmless": 21.2
+ },
+ "filler": {
+  "0": {
+   "cast": 4.6,
+   "cast_gate_met": 0.6,
+   "lora": 9.2
+  },
+  "2": {
+   "cast": 10.6,
+   "cast_gate_met": 7.8,
+   "lora": 19.8
+  },
+  "8": {
+   "cast": 47.599999999999994,
+   "cast_gate_met": 47.4,
+   "lora": 51.6
+  }
+ }
+}

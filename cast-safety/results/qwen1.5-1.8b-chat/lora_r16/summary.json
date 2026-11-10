@@ -1,0 +1,109 @@
+{
+ "base": {
+  "harmful_refusal": 49.111111111111114,
+  "harmless_refusal": 3.5999999999999996
+ },
+ "cast": {
+  "harmful_refusal": 88.66666666666667,
+  "harmless_refusal": 4.2,
+  "gate_met": [
+   71.55555555555554,
+   0.6
+  ]
+ },
+ "lora": {
+  "harmful_refusal": 93.33333333333333,
+  "harmless_refusal": 5.800000000000001
+ },
+ "agreement_lora_vs_cast": {
+  "refusal_agree_harmful": 92.66666666666666,
+  "refusal_agree_harmless": 94.39999999999999,
+  "identical_response_harmful": 8.444444444444445,
+  "identical_response_harmless": 19.6
+ },
+ "filler": {
+  "0": {
+   "cast": 4.6,
+   "cast_gate_met": 0.6,
+   "lora": 6.0
+  },
+  "2": {
+   "cast": 10.6,
+   "cast_gate_met": 7.8,
+   "lora": 22.2
+  },
+  "8": {
+   "cast": 47.599999999999994,
+   "cast_gate_met": 47.4,
+   "lora": 67.2
+  }
+ },
+ "filler_harmful": {
+  "0": {
+   "base": 49.111111111111114,
+   "cast": 88.44444444444444,
+   "lora": 93.11111111111111
+  },
+  "8": {
+   "base": 44.666666666666664,
+   "cast": 97.11111111111111,
+   "lora": 100.0
+  }
+ },
+ "by_length": {
+  "base": {
+   "0-30": {
+    "n": 18,
+    "harmful_refusal": 61.111111111111114
+   },
+   "30-40": {
+    "n": 190,
+    "harmful_refusal": 64.73684210526316
+   },
+   "40-60": {
+    "n": 180,
+    "harmful_refusal": 41.11111111111111
+   },
+   "60-1000": {
+    "n": 62,
+    "harmful_refusal": 20.967741935483872
+   }
+  },
+  "cast": {
+   "0-30": {
+    "n": 18,
+    "harmful_refusal": 61.111111111111114
+   },
+   "30-40": {
+    "n": 190,
+    "harmful_refusal": 85.26315789473684
+   },
+   "40-60": {
+    "n": 180,
+    "harmful_refusal": 91.11111111111111
+   },
+   "60-1000": {
+    "n": 62,
+    "harmful_refusal": 100.0
+   }
+  },
+  "lora": {
+   "0-30": {
+    "n": 18,
+    "harmful_refusal": 44.44444444444444
+   },
+   "30-40": {
+    "n": 190,
+    "harmful_refusal": 92.63157894736842
+   },
+   "40-60": {
+    "n": 180,
+    "harmful_refusal": 96.66666666666667
+   },
+   "60-1000": {
+    "n": 62,
+    "harmful_refusal": 100.0
+   }
+  }
+ }
+}

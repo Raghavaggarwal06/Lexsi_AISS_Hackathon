@@ -1,0 +1,37 @@
+[22:26:06] hermes-2-pro-llama-3-8b bf16: stages ['teacher', 'train', 'eval', 'filler']; CAST gate L[4] sim < 0.0519, behaviour L15-24 alpha 1.7
+[22:26:07] train: 4481 seqs, val 256, LoRA r16 alpha 32 on 224 linears (41.9M params), lr 0.0001, 1 epochs x 1121 steps, bs 4
+[22:26:20] val KL before training 1.6071 (gate on 2.0440 / off 0.0000)
+[22:26:41] step 50/1121 KL 0.6225 (gate on 0.6980 / off 0.1252) lr 9.95e-05 21s
+[22:27:02] step 100/1121 KL 0.0983 (gate on 0.1087 / off 0.0655) lr 9.80e-05 42s
+[22:27:24] step 150/1121 KL 0.0749 (gate on 0.0741 / off 0.0786) lr 9.56e-05 64s
+[22:27:45] step 200/1121 KL 0.0500 (gate on 0.0508 / off 0.0461) lr 9.23e-05 85s
+[22:28:07] step 250/1121 KL 0.0522 (gate on 0.0534 / off 0.0563) lr 8.82e-05 107s
+[22:28:28] step 300/1121 KL 0.0445 (gate on 0.0399 / off 0.0842) lr 8.33e-05 128s
+[22:28:50] step 350/1121 KL 0.0432 (gate on 0.0424 / off 0.0522) lr 7.78e-05 150s
+[22:29:12] step 400/1121 KL 0.0464 (gate on 0.0473 / off 0.0510) lr 7.17e-05 172s
+[22:29:33] step 450/1121 KL 0.0394 (gate on 0.0385 / off 0.0421) lr 6.52e-05 193s
+[22:29:54] step 500/1121 KL 0.0371 (gate on 0.0326 / off 0.0419) lr 5.84e-05 214s
+[22:30:15] step 550/1121 KL 0.0316 (gate on 0.0306 / off 0.0316) lr 5.15e-05 235s
+[22:30:36] step 600/1121 KL 0.0308 (gate on 0.0294 / off 0.0357) lr 4.45e-05 256s
+[22:30:57] step 650/1121 KL 0.0268 (gate on 0.0257 / off 0.0343) lr 3.76e-05 277s
+[22:31:18] step 700/1121 KL 0.0237 (gate on 0.0232 / off 0.0287) lr 3.09e-05 298s
+[22:31:40] step 750/1121 KL 0.0220 (gate on 0.0196 / off 0.0320) lr 2.47e-05 320s
+[22:32:00] step 800/1121 KL 0.0207 (gate on 0.0214 / off 0.0283) lr 1.89e-05 340s
+[22:32:21] step 850/1121 KL 0.0209 (gate on 0.0184 / off 0.0350) lr 1.37e-05 361s
+[22:32:43] step 900/1121 KL 0.0211 (gate on 0.0180 / off 0.0272) lr 9.29e-06 383s
+[22:33:04] step 950/1121 KL 0.0204 (gate on 0.0177 / off 0.0391) lr 5.63e-06 404s
+[22:33:25] step 1000/1121 KL 0.0210 (gate on 0.0191 / off 0.0257) lr 2.85e-06 425s
+[22:33:46] step 1050/1121 KL 0.0213 (gate on 0.0183 / off 0.0368) lr 9.87e-07 446s
+[22:34:07] step 1100/1121 KL 0.0173 (gate on 0.0144 / off 0.0337) lr 8.66e-08 467s
+[22:34:29] epoch 1: val KL 0.0203 (gate on 0.0140 / off 0.0434)
+[22:35:32] test base: harmful 22.2% harmless 2.8% [63s]
+[22:36:39] test cast: harmful 80.7% harmless 3.0% [67s]
+[22:38:05] test lora: harmful 82.2% harmless 3.2% [86s]
+[22:38:05] LoRA vs CAST: {"refusal_agree_harmful": 88.2, "refusal_agree_harmless": 97.0, "identical_response_harmful": 4.2, "identical_response_harmless": 21.8}
+[22:39:21] filler k=0: harmless refusal CAST 2.6% (gate 0.6%) LoRA 3.2%
+[22:40:41] filler k=2: harmless refusal CAST 23.2% (gate 22.6%) LoRA 18.6%
+[22:42:10] filler k=8: harmless refusal CAST 72.6% (gate 76.8%) LoRA 19.4%
+[22:46:45] hermes-2-pro-llama-3-8b bf16: stages ['filler_harmful']; CAST gate L[4] sim < 0.0519, behaviour L15-24 alpha 1.7
+[22:48:41] harmful + filler k=0: refusal base 22.2% CAST 80.7% LoRA 83.3%
+[22:50:54] harmful + filler k=8: refusal base 38.0% CAST 99.1% LoRA 93.6%
+[22:50:54] harmful refusal by prompt length: {"base": {"0-30": 24.4, "30-40": 19.7, "40-60": 16.2, "60-1000": 32.5}, "cast": {"0-30": 60.6, "30-40": 92.7, "40-60": 98.8, "60-1000": 100.0}, "lora": {"0-30": 66.8, "30-40": 91.2, "40-60": 95.0, "60-1000": 100.0}}

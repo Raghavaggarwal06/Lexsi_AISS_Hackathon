@@ -1,0 +1,417 @@
+{
+ "base": {
+  "base": 3.2,
+  "sexual_content": 8.6,
+  "legal_opinion": 12.8,
+  "hate_speech": 47.599999999999994,
+  "crime_planning": 50.2,
+  "health_consultation": 11.0
+ },
+ "refusal": {
+  "base": 95.8,
+  "sexual_content": 99.8,
+  "legal_opinion": 99.2,
+  "hate_speech": 99.8,
+  "crime_planning": 100.0,
+  "health_consultation": 99.8
+ },
+ "condition_met": {
+  "base": {
+   "base": 89.8,
+   "sexual_content": 17.599999999999998,
+   "legal_opinion": 25.2,
+   "hate_speech": 18.2,
+   "crime_planning": 15.6,
+   "health_consultation": 21.8
+  },
+  "sexual_content": {
+   "base": 10.2,
+   "sexual_content": 94.19999999999999,
+   "legal_opinion": 5.2,
+   "hate_speech": 4.3999999999999995,
+   "crime_planning": 3.0,
+   "health_consultation": 9.0
+  },
+  "legal_opinion": {
+   "base": 58.4,
+   "sexual_content": 72.6,
+   "legal_opinion": 87.4,
+   "hate_speech": 23.400000000000002,
+   "crime_planning": 78.0,
+   "health_consultation": 89.2
+  },
+  "hate_speech": {
+   "base": 6.0,
+   "sexual_content": 11.0,
+   "legal_opinion": 2.0,
+   "hate_speech": 91.60000000000001,
+   "crime_planning": 5.0,
+   "health_consultation": 1.2
+  },
+  "crime_planning": {
+   "base": 2.4,
+   "sexual_content": 2.0,
+   "legal_opinion": 8.200000000000001,
+   "hate_speech": 0.8,
+   "crime_planning": 94.8,
+   "health_consultation": 3.0
+  },
+  "health_consultation": {
+   "base": 10.2,
+   "sexual_content": 9.2,
+   "legal_opinion": 18.4,
+   "hate_speech": 0.6,
+   "crime_planning": 3.0,
+   "health_consultation": 90.60000000000001
+  }
+ },
+ "rules": {
+  "if sex": {
+   "refusal": {
+    "base": 13.0,
+    "sexual_content": 94.6,
+    "legal_opinion": 17.599999999999998,
+    "hate_speech": 51.2,
+    "crime_planning": 53.0,
+    "health_consultation": 19.6
+   },
+   "active": {
+    "base": 10.2,
+    "sexual_content": 94.19999999999999,
+    "legal_opinion": 5.2,
+    "hate_speech": 4.3999999999999995,
+    "crime_planning": 3.0,
+    "health_consultation": 9.0
+   },
+   "exact_shortcut": true
+  },
+  "if lgl": {
+   "refusal": {
+    "base": 58.599999999999994,
+    "sexual_content": 75.2,
+    "legal_opinion": 88.6,
+    "hate_speech": 58.599999999999994,
+    "crime_planning": 86.6,
+    "health_consultation": 90.2
+   },
+   "active": {
+    "base": 58.4,
+    "sexual_content": 72.6,
+    "legal_opinion": 87.4,
+    "hate_speech": 23.400000000000002,
+    "crime_planning": 78.0,
+    "health_consultation": 89.2
+   },
+   "exact_shortcut": true
+  },
+  "if hat": {
+   "refusal": {
+    "base": 8.4,
+    "sexual_content": 17.599999999999998,
+    "legal_opinion": 14.2,
+    "hate_speech": 95.0,
+    "crime_planning": 52.400000000000006,
+    "health_consultation": 11.799999999999999
+   },
+   "active": {
+    "base": 6.0,
+    "sexual_content": 11.0,
+    "legal_opinion": 2.0,
+    "hate_speech": 91.60000000000001,
+    "crime_planning": 5.0,
+    "health_consultation": 1.2
+   },
+   "exact_shortcut": true
+  },
+  "if crm": {
+   "refusal": {
+    "base": 5.6000000000000005,
+    "sexual_content": 10.6,
+    "legal_opinion": 20.4,
+    "hate_speech": 47.8,
+    "crime_planning": 95.6,
+    "health_consultation": 13.8
+   },
+   "active": {
+    "base": 2.4,
+    "sexual_content": 2.0,
+    "legal_opinion": 8.200000000000001,
+    "hate_speech": 0.8,
+    "crime_planning": 94.8,
+    "health_consultation": 3.0
+   },
+   "exact_shortcut": true
+  },
+  "if hth": {
+   "refusal": {
+    "base": 13.4,
+    "sexual_content": 17.599999999999998,
+    "legal_opinion": 28.799999999999997,
+    "hate_speech": 47.8,
+    "crime_planning": 52.2,
+    "health_consultation": 91.0
+   },
+   "active": {
+    "base": 10.2,
+    "sexual_content": 9.2,
+    "legal_opinion": 18.4,
+    "hate_speech": 0.6,
+    "crime_planning": 3.0,
+    "health_consultation": 90.60000000000001
+   },
+   "exact_shortcut": true
+  },
+  "if hth|lgl": {
+   "refusal": {
+    "base": 58.8,
+    "sexual_content": 75.4,
+    "legal_opinion": 88.8,
+    "hate_speech": 58.599999999999994,
+    "crime_planning": 86.6,
+    "health_consultation": 95.39999999999999
+   },
+   "active": {
+    "base": 58.599999999999994,
+    "sexual_content": 72.8,
+    "legal_opinion": 87.6,
+    "hate_speech": 23.599999999999998,
+    "crime_planning": 78.0,
+    "health_consultation": 95.39999999999999
+   },
+   "exact_shortcut": true
+  },
+  "if hat|lgl": {
+   "refusal": {
+    "base": 63.0,
+    "sexual_content": 81.2,
+    "legal_opinion": 89.4,
+    "hate_speech": 98.0,
+    "crime_planning": 87.8,
+    "health_consultation": 90.60000000000001
+   },
+   "active": {
+    "base": 63.6,
+    "sexual_content": 79.80000000000001,
+    "legal_opinion": 88.6,
+    "hate_speech": 97.2,
+    "crime_planning": 81.0,
+    "health_consultation": 89.8
+   },
+   "exact_shortcut": true
+  },
+  "if hat|lgl|sex": {
+   "refusal": {
+    "base": 64.4,
+    "sexual_content": 97.2,
+    "legal_opinion": 89.4,
+    "hate_speech": 98.2,
+    "crime_planning": 88.2,
+    "health_consultation": 91.0
+   },
+   "active": {
+    "base": 65.4,
+    "sexual_content": 97.2,
+    "legal_opinion": 88.6,
+    "hate_speech": 97.39999999999999,
+    "crime_planning": 81.39999999999999,
+    "health_consultation": 90.2
+   },
+   "exact_shortcut": true
+  },
+  "if hth|crm": {
+   "refusal": {
+    "base": 15.0,
+    "sexual_content": 18.8,
+    "legal_opinion": 34.8,
+    "hate_speech": 48.0,
+    "crime_planning": 95.6,
+    "health_consultation": 91.2
+   },
+   "active": {
+    "base": 11.799999999999999,
+    "sexual_content": 10.4,
+    "legal_opinion": 24.6,
+    "hate_speech": 1.4000000000000001,
+    "crime_planning": 94.8,
+    "health_consultation": 90.8
+   },
+   "exact_shortcut": true
+  },
+  "if not sex": {
+   "refusal": {
+    "base": 86.0,
+    "sexual_content": 13.8,
+    "legal_opinion": 94.39999999999999,
+    "hate_speech": 96.2,
+    "crime_planning": 97.2,
+    "health_consultation": 91.2
+   },
+   "active": {
+    "base": 89.8,
+    "sexual_content": 5.800000000000001,
+    "legal_opinion": 94.8,
+    "hate_speech": 95.6,
+    "crime_planning": 97.0,
+    "health_consultation": 91.0
+   },
+   "exact_shortcut": true
+  },
+  "if not lgl": {
+   "refusal": {
+    "base": 40.400000000000006,
+    "sexual_content": 33.2,
+    "legal_opinion": 23.400000000000002,
+    "hate_speech": 88.8,
+    "crime_planning": 63.6,
+    "health_consultation": 20.599999999999998
+   },
+   "active": {
+    "base": 41.6,
+    "sexual_content": 27.400000000000002,
+    "legal_opinion": 12.6,
+    "hate_speech": 76.6,
+    "crime_planning": 22.0,
+    "health_consultation": 10.8
+   },
+   "exact_shortcut": true
+  },
+  "if not hat": {
+   "refusal": {
+    "base": 90.60000000000001,
+    "sexual_content": 90.8,
+    "legal_opinion": 97.8,
+    "hate_speech": 52.400000000000006,
+    "crime_planning": 97.8,
+    "health_consultation": 99.0
+   },
+   "active": {
+    "base": 94.0,
+    "sexual_content": 89.0,
+    "legal_opinion": 98.0,
+    "hate_speech": 8.4,
+    "crime_planning": 95.0,
+    "health_consultation": 98.8
+   },
+   "exact_shortcut": true
+  },
+  "if not crm": {
+   "refusal": {
+    "base": 93.4,
+    "sexual_content": 97.8,
+    "legal_opinion": 91.60000000000001,
+    "hate_speech": 99.6,
+    "crime_planning": 54.6,
+    "health_consultation": 97.0
+   },
+   "active": {
+    "base": 97.6,
+    "sexual_content": 98.0,
+    "legal_opinion": 91.8,
+    "hate_speech": 99.2,
+    "crime_planning": 5.2,
+    "health_consultation": 97.0
+   },
+   "exact_shortcut": true
+  },
+  "if not hth": {
+   "refusal": {
+    "base": 85.6,
+    "sexual_content": 90.8,
+    "legal_opinion": 83.2,
+    "hate_speech": 99.6,
+    "crime_planning": 98.0,
+    "health_consultation": 19.8
+   },
+   "active": {
+    "base": 89.8,
+    "sexual_content": 90.8,
+    "legal_opinion": 81.6,
+    "hate_speech": 99.4,
+    "crime_planning": 97.0,
+    "health_consultation": 9.4
+   },
+   "exact_shortcut": true
+  }
+ },
+ "points": {
+  "base": {
+   "layer": 6,
+   "cmp": "<",
+   "threshold": 0.1451,
+   "f1": 0.8686440677966102
+  },
+  "sexual_content": {
+   "layer": 8,
+   "cmp": "<",
+   "threshold": 0.0323,
+   "f1": 0.9193880553103854
+  },
+  "legal_opinion": {
+   "layer": 9,
+   "cmp": "<",
+   "threshold": 0.0256,
+   "f1": 0.7010047349578473
+  },
+  "hate_speech": {
+   "layer": 9,
+   "cmp": ">",
+   "threshold": 0.0199,
+   "f1": 0.9419354838709677
+  },
+  "crime_planning": {
+   "layer": 6,
+   "cmp": "<",
+   "threshold": 0.0535,
+   "f1": 0.9506583707133556
+  },
+  "health_consultation": {
+   "layer": 6,
+   "cmp": ">",
+   "threshold": 0.1288,
+   "f1": 0.9101432498914773
+  }
+ },
+ "paper_points": {
+  "sexual_content": [
+   7,
+   "<",
+   0.033
+  ],
+  "legal_opinion": [
+   6,
+   ">",
+   0.035
+  ],
+  "hate_speech": [
+   11,
+   ">",
+   0.018
+  ],
+  "crime_planning": [
+   7,
+   "<",
+   0.024
+  ],
+  "health_consultation": [
+   8,
+   ">",
+   0.01
+  ]
+ },
+ "behavior": {
+  "layers": [
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20
+  ],
+  "alpha": 4.0
+ }
+}

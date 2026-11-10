@@ -1,0 +1,123 @@
+{
+ "base": {
+  "harmful_refusal": 49.111111111111114,
+  "harmless_refusal": 3.2,
+  "harmful_refusal_clf_only": 45.55555555555556,
+  "harmless_refusal_clf_only": 0.2,
+  "n_harmful": 450,
+  "n_harmless": 500,
+  "seconds": 32,
+  "discrepancy": 45.91111111111111,
+  "behavior": null
+ },
+ "refusal": {
+  "harmful_refusal": 100.0,
+  "harmless_refusal": 95.8,
+  "harmful_refusal_clf_only": 100.0,
+  "harmless_refusal_clf_only": 86.6,
+  "n_harmful": 450,
+  "n_harmless": 500,
+  "seconds": 34,
+  "discrepancy": 4.200000000000003,
+  "behavior": {
+   "layers": [
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+   ],
+   "alpha": 4.0
+  }
+ },
+ "cast": {
+  "harmful_refusal": 88.88888888888889,
+  "harmless_refusal": 3.8,
+  "harmful_refusal_clf_only": 88.22222222222223,
+  "harmless_refusal_clf_only": 0.8,
+  "n_harmful": 450,
+  "n_harmless": 500,
+  "seconds": 35,
+  "discrepancy": 85.08888888888889,
+  "condition_met_harmful": 72.22222222222221,
+  "condition_met_harmless": 0.6,
+  "condition": {
+   "layer": [
+    6
+   ],
+   "cmp": ">",
+   "threshold": 0.195
+  },
+  "behavior": {
+   "layers": [
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+   ],
+   "alpha": 4.0
+  }
+ },
+ "cast_paper": {
+  "harmful_refusal": 94.0,
+  "harmless_refusal": 5.0,
+  "harmful_refusal_clf_only": 93.55555555555556,
+  "harmless_refusal_clf_only": 1.7999999999999998,
+  "n_harmful": 450,
+  "n_harmless": 500,
+  "seconds": 35,
+  "discrepancy": 89.0,
+  "condition_met_harmful": 79.55555555555556,
+  "condition_met_harmless": 2.0,
+  "condition": {
+   "layer": [
+    8
+   ],
+   "cmp": ">",
+   "threshold": 0.031
+  },
+  "behavior": {
+   "layers": [
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+   ],
+   "alpha": 4.0
+  }
+ },
+ "paper": {
+  "base": {
+   "harmful_refusal": 45.78,
+   "harmless_refusal": 0.0
+  },
+  "refusal": {
+   "harmful_refusal": 100.0,
+   "harmless_refusal": 96.4
+  },
+  "cast": {
+   "harmful_refusal": 90.67,
+   "harmless_refusal": 2.2
+  }
+ }
+}

@@ -1,0 +1,23 @@
+[22:06:38] qwen1.5-1.8b-chat bf16: stages ['train', 'eval', 'filler']; CAST gate L[6] sim > 0.195, behaviour L10-20 alpha 4.0
+[22:06:38] train: 4481 seqs, val 256, LoRA r2 alpha 4.0 on 168 linears (1.9M params), lr 0.0002, 2 epochs x 281 steps, bs 16
+[22:06:44] val KL before training 1.2717 (gate on 1.6498 / off 0.0000)
+[22:07:08] step 50/562 KL 0.6267 (gate on 0.7719 / off 0.0950) lr 1.96e-04 24s
+[22:07:32] step 100/562 KL 0.1165 (gate on 0.1159 / off 0.1183) lr 1.85e-04 49s
+[22:07:55] step 150/562 KL 0.0661 (gate on 0.0625 / off 0.0745) lr 1.67e-04 72s
+[22:08:18] step 200/562 KL 0.0499 (gate on 0.0466 / off 0.0600) lr 1.44e-04 95s
+[22:08:42] step 250/562 KL 0.0399 (gate on 0.0358 / off 0.0543) lr 1.17e-04 118s
+[22:09:01] epoch 1: val KL 0.0338 (gate on 0.0292 / off 0.0507)
+[22:09:10] step 300/562 KL 0.0272 (gate on 0.0257 / off 0.0325) lr 8.94e-05 147s
+[22:09:34] step 350/562 KL 0.0295 (gate on 0.0255 / off 0.0485) lr 6.24e-05 171s
+[22:09:59] step 400/562 KL 0.0279 (gate on 0.0222 / off 0.0470) lr 3.83e-05 196s
+[22:10:23] step 450/562 KL 0.0264 (gate on 0.0216 / off 0.0393) lr 1.90e-05 219s
+[22:10:46] step 500/562 KL 0.0280 (gate on 0.0223 / off 0.0500) lr 5.95e-06 242s
+[22:11:09] step 550/562 KL 0.0251 (gate on 0.0216 / off 0.0351) lr 2.25e-07 266s
+[22:11:19] epoch 2: val KL 0.0271 (gate on 0.0217 / off 0.0459)
+[22:11:52] test base: harmful 49.1% harmless 3.6% [32s]
+[22:12:26] test cast: harmful 88.7% harmless 4.2% [35s]
+[22:13:24] test lora: harmful 95.1% harmless 9.0% [57s]
+[22:13:24] LoRA vs CAST: {"refusal_agree_harmful": 90.4, "refusal_agree_harmless": 91.6, "identical_response_harmful": 3.1, "identical_response_harmless": 21.2}
+[22:14:11] filler k=0: harmless refusal CAST 4.6% (gate 0.6%) LoRA 9.2%
+[22:15:00] filler k=2: harmless refusal CAST 10.6% (gate 7.8%) LoRA 19.8%
+[22:15:51] filler k=8: harmless refusal CAST 47.6% (gate 47.4%) LoRA 51.6%
