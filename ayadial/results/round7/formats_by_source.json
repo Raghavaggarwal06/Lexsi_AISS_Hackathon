@@ -1,0 +1,142 @@
+{
+ "four system prompts": {
+  "WildJailbreak (jailbreak-wrapped)": {
+   "n": 160,
+   "unsafe_base": 30.6,
+   "unsafe_ayadial": 17.5,
+   "unsafe_ayadial_wsp": 13.1
+  },
+  "MultiJail English (plain questions)": {
+   "n": 160,
+   "unsafe_base": 6.2,
+   "unsafe_ayadial": 5.6,
+   "unsafe_ayadial_wsp": 6.9
+  }
+ },
+ "three multi-turn chats": {
+  "WildJailbreak (jailbreak-wrapped)": {
+   "n": 120,
+   "unsafe_base": 32.5,
+   "unsafe_ayadial": 28.3,
+   "unsafe_ayadial_wsp": 22.5
+  },
+  "MultiJail English (plain questions)": {
+   "n": 120,
+   "unsafe_base": 2.5,
+   "unsafe_ayadial": 3.3,
+   "unsafe_ayadial_wsp": 2.5
+  }
+ },
+ "sysA": {
+  "WildJailbreak (jailbreak-wrapped)": {
+   "n": 40,
+   "unsafe_base": 32.5,
+   "unsafe_ayadial": 17.5,
+   "unsafe_ayadial_wsp": 15.0
+  },
+  "MultiJail English (plain questions)": {
+   "n": 40,
+   "unsafe_base": 0.0,
+   "unsafe_ayadial": 0.0,
+   "unsafe_ayadial_wsp": 0.0
+  }
+ },
+ "sysB": {
+  "WildJailbreak (jailbreak-wrapped)": {
+   "n": 40,
+   "unsafe_base": 27.5,
+   "unsafe_ayadial": 22.5,
+   "unsafe_ayadial_wsp": 15.0
+  },
+  "MultiJail English (plain questions)": {
+   "n": 40,
+   "unsafe_base": 15.0,
+   "unsafe_ayadial": 10.0,
+   "unsafe_ayadial_wsp": 15.0
+  }
+ },
+ "sysC": {
+  "WildJailbreak (jailbreak-wrapped)": {
+   "n": 40,
+   "unsafe_base": 20.0,
+   "unsafe_ayadial": 12.5,
+   "unsafe_ayadial_wsp": 10.0
+  },
+  "MultiJail English (plain questions)": {
+   "n": 40,
+   "unsafe_base": 7.5,
+   "unsafe_ayadial": 12.5,
+   "unsafe_ayadial_wsp": 12.5
+  }
+ },
+ "sysD": {
+  "WildJailbreak (jailbreak-wrapped)": {
+   "n": 40,
+   "unsafe_base": 42.5,
+   "unsafe_ayadial": 17.5,
+   "unsafe_ayadial_wsp": 12.5
+  },
+  "MultiJail English (plain questions)": {
+   "n": 40,
+   "unsafe_base": 2.5,
+   "unsafe_ayadial": 0.0,
+   "unsafe_ayadial_wsp": 0.0
+  }
+ },
+ "mt2": {
+  "WildJailbreak (jailbreak-wrapped)": {
+   "n": 40,
+   "unsafe_base": 40.0,
+   "unsafe_ayadial": 35.0,
+   "unsafe_ayadial_wsp": 30.0
+  },
+  "MultiJail English (plain questions)": {
+   "n": 40,
+   "unsafe_base": 0.0,
+   "unsafe_ayadial": 2.5,
+   "unsafe_ayadial_wsp": 2.5
+  }
+ },
+ "mtref": {
+  "WildJailbreak (jailbreak-wrapped)": {
+   "n": 40,
+   "unsafe_base": 15.0,
+   "unsafe_ayadial": 17.5,
+   "unsafe_ayadial_wsp": 10.0
+  },
+  "MultiJail English (plain questions)": {
+   "n": 40,
+   "unsafe_base": 2.5,
+   "unsafe_ayadial": 2.5,
+   "unsafe_ayadial_wsp": 2.5
+  }
+ },
+ "mtsys": {
+  "WildJailbreak (jailbreak-wrapped)": {
+   "n": 40,
+   "unsafe_base": 42.5,
+   "unsafe_ayadial": 32.5,
+   "unsafe_ayadial_wsp": 27.5
+  },
+  "MultiJail English (plain questions)": {
+   "n": 40,
+   "unsafe_base": 5.0,
+   "unsafe_ayadial": 5.0,
+   "unsafe_ayadial_wsp": 2.5
+  }
+ },
+ "itwsys": {
+  "WildJailbreak (jailbreak-wrapped)": {
+   "n": 40,
+   "unsafe_base": 27.5,
+   "unsafe_ayadial": 17.5,
+   "unsafe_ayadial_wsp": 12.5
+  },
+  "MultiJail English (plain questions)": {
+   "n": 40,
+   "unsafe_base": 22.5,
+   "unsafe_ayadial": 12.5,
+   "unsafe_ayadial_wsp": 10.0
+  }
+ }
+}

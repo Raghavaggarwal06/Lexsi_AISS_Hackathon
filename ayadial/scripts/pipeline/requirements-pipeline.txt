@@ -1,0 +1,10 @@
+# Installed into build/.venv-pipeline on 2026-11-09 (Python 3.13.7, Apple M4) with
+#   python3.13 -m venv .venv-pipeline && .venv-pipeline/bin/pip install auditkit curatorkit safetune
+# These are the versions pip resolved; the rest came in as their dependencies.
+auditkit==1.1.6
+curatorkit==0.1.23
+safetune==0.1.13
+torch==2.15.0
+transformers==5.22.2
+pyyaml==6.0.3
+numpy==2.5.4

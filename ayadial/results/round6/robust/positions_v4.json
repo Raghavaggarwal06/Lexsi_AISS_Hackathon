@@ -1,0 +1,523 @@
+{
+ "vec": "v4",
+ "theta0": 0.5367870826193866,
+ "theta_lax": 0.3747,
+ "formats": {
+  "rb_default": {
+   "n": 200,
+   "m_at_marker_min_p1_p50_p99_max": [
+    0.889,
+    0.919,
+    1.0,
+    1.057,
+    1.079
+   ],
+   "q_at_marker_min_p1_p50_p99_max": [
+    -0.104,
+    -0.071,
+    -0.001,
+    0.099,
+    0.114
+   ],
+   "m_elsewhere_max_over_prompts": 0.32,
+   "m_elsewhere_max_excluding_reply_start_tokens": 0.32,
+   "z_at_marker_mean_harmful": 0.984,
+   "z_at_marker_mean_harmless": 0.094,
+   "auroc_z": 0.9803125,
+   "strict_s1_fires_harmful": 0.925,
+   "strict_s1_fires_harmless": 0.025,
+   "lax_fires_harmful": 0.013,
+   "lax_fires_harmless": 0.792,
+   "strict_s1_write_elsewhere_max": 0.0,
+   "strict_s2_write_elsewhere_max": 0.0039,
+   "lax_write_elsewhere_max": 0.0005,
+   "strict_s1_write_elsewhere_max_excluding_reply_start_tokens": 0.0,
+   "lax_write_elsewhere_max_excluding_reply_start_tokens": 0.0005,
+   "prompts_with_other_reply_start_tokens": 0
+  },
+  "rb_sys_bank": {
+   "n": 200,
+   "m_at_marker_min_p1_p50_p99_max": [
+    0.862,
+    0.891,
+    0.999,
+    1.055,
+    1.067
+   ],
+   "q_at_marker_min_p1_p50_p99_max": [
+    -0.075,
+    -0.06,
+    0.001,
+    0.113,
+    0.145
+   ],
+   "m_elsewhere_max_over_prompts": 0.326,
+   "m_elsewhere_max_excluding_reply_start_tokens": 0.326,
+   "z_at_marker_mean_harmful": 0.863,
+   "z_at_marker_mean_harmless": 0.012,
+   "auroc_z": 0.9847916666666666,
+   "strict_s1_fires_harmful": 0.8,
+   "strict_s1_fires_harmless": 0.008,
+   "lax_fires_harmful": 0.013,
+   "lax_fires_harmless": 0.867,
+   "strict_s1_write_elsewhere_max": 0.0,
+   "strict_s2_write_elsewhere_max": 0.0151,
+   "lax_write_elsewhere_max": 0.0006,
+   "strict_s1_write_elsewhere_max_excluding_reply_start_tokens": 0.0,
+   "lax_write_elsewhere_max_excluding_reply_start_tokens": 0.0006,
+   "prompts_with_other_reply_start_tokens": 0
+  },
+  "rb_sys_long": {
+   "n": 200,
+   "m_at_marker_min_p1_p50_p99_max": [
+    0.887,
+    0.916,
+    0.981,
+    1.026,
+    1.038
+   ],
+   "q_at_marker_min_p1_p50_p99_max": [
+    -0.045,
+    -0.041,
+    0.017,
+    0.081,
+    0.102
+   ],
+   "m_elsewhere_max_over_prompts": 0.322,
+   "m_elsewhere_max_excluding_reply_start_tokens": 0.322,
+   "z_at_marker_mean_harmful": 0.747,
+   "z_at_marker_mean_harmless": -0.014,
+   "auroc_z": 0.9647916666666667,
+   "strict_s1_fires_harmful": 0.588,
+   "strict_s1_fires_harmless": 0.008,
+   "lax_fires_harmful": 0.125,
+   "lax_fires_harmless": 0.883,
+   "strict_s1_write_elsewhere_max": 0.0,
+   "strict_s2_write_elsewhere_max": 0.0035,
+   "lax_write_elsewhere_max": 0.0003,
+   "strict_s1_write_elsewhere_max_excluding_reply_start_tokens": 0.0,
+   "lax_write_elsewhere_max_excluding_reply_start_tokens": 0.0003,
+   "prompts_with_other_reply_start_tokens": 0
+  },
+  "rb_sys_persona": {
+   "n": 200,
+   "m_at_marker_min_p1_p50_p99_max": [
+    0.918,
+    0.94,
+    0.993,
+    1.065,
+    1.07
+   ],
+   "q_at_marker_min_p1_p50_p99_max": [
+    -0.075,
+    -0.061,
+    0.013,
+    0.078,
+    0.087
+   ],
+   "m_elsewhere_max_over_prompts": 0.323,
+   "m_elsewhere_max_excluding_reply_start_tokens": 0.323,
+   "z_at_marker_mean_harmful": 0.822,
+   "z_at_marker_mean_harmless": 0.028,
+   "auroc_z": 0.9879166666666667,
+   "strict_s1_fires_harmful": 0.7,
+   "strict_s1_fires_harmless": 0.0,
+   "lax_fires_harmful": 0.025,
+   "lax_fires_harmless": 0.892,
+   "strict_s1_write_elsewhere_max": 0.0,
+   "strict_s2_write_elsewhere_max": 0.0018,
+   "lax_write_elsewhere_max": 0.0032,
+   "strict_s1_write_elsewhere_max_excluding_reply_start_tokens": 0.0,
+   "lax_write_elsewhere_max_excluding_reply_start_tokens": 0.0032,
+   "prompts_with_other_reply_start_tokens": 0
+  },
+  "rb_nosys": {
+   "n": 200,
+   "m_at_marker_min_p1_p50_p99_max": [
+    0.882,
+    0.897,
+    0.991,
+    1.066,
+    1.09
+   ],
+   "q_at_marker_min_p1_p50_p99_max": [
+    -0.12,
+    -0.099,
+    0.011,
+    0.096,
+    0.105
+   ],
+   "m_elsewhere_max_over_prompts": 0.318,
+   "m_elsewhere_max_excluding_reply_start_tokens": 0.318,
+   "z_at_marker_mean_harmful": 0.937,
+   "z_at_marker_mean_harmless": 0.087,
+   "auroc_z": 0.9791666666666666,
+   "strict_s1_fires_harmful": 0.875,
+   "strict_s1_fires_harmless": 0.033,
+   "lax_fires_harmful": 0.013,
+   "lax_fires_harmless": 0.783,
+   "strict_s1_write_elsewhere_max": 0.0,
+   "strict_s2_write_elsewhere_max": 0.0037,
+   "lax_write_elsewhere_max": 0.0003,
+   "strict_s1_write_elsewhere_max_excluding_reply_start_tokens": 0.0,
+   "lax_write_elsewhere_max_excluding_reply_start_tokens": 0.0003,
+   "prompts_with_other_reply_start_tokens": 0
+  },
+  "rb_mt_benign": {
+   "n": 200,
+   "m_at_marker_min_p1_p50_p99_max": [
+    0.884,
+    0.9,
+    0.992,
+    1.058,
+    1.064
+   ],
+   "q_at_marker_min_p1_p50_p99_max": [
+    -0.094,
+    -0.063,
+    0.004,
+    0.088,
+    0.118
+   ],
+   "m_elsewhere_max_over_prompts": 1.096,
+   "m_elsewhere_max_excluding_reply_start_tokens": 0.52,
+   "z_at_marker_mean_harmful": 0.839,
+   "z_at_marker_mean_harmless": 0.19,
+   "auroc_z": 0.9320833333333334,
+   "strict_s1_fires_harmful": 0.762,
+   "strict_s1_fires_harmless": 0.05,
+   "lax_fires_harmful": 0.075,
+   "lax_fires_harmless": 0.667,
+   "strict_s1_write_elsewhere_max": 0.8951,
+   "strict_s2_write_elsewhere_max": 1.1437,
+   "lax_write_elsewhere_max": 1.2017,
+   "strict_s1_write_elsewhere_max_excluding_reply_start_tokens": 0.0,
+   "lax_write_elsewhere_max_excluding_reply_start_tokens": 0.2247,
+   "prompts_with_other_reply_start_tokens": 200,
+   "at_other_reply_start_tokens": {
+    "m_mean": 0.997,
+    "z_mean": 0.039,
+    "strict_s1_fires": 0.025,
+    "lax_fires": 0.995
+   }
+  },
+  "rb_mt_refused": {
+   "n": 200,
+   "m_at_marker_min_p1_p50_p99_max": [
+    0.863,
+    0.903,
+    0.995,
+    1.04,
+    1.047
+   ],
+   "q_at_marker_min_p1_p50_p99_max": [
+    -0.087,
+    -0.055,
+    0.006,
+    0.086,
+    0.152
+   ],
+   "m_elsewhere_max_over_prompts": 1.056,
+   "m_elsewhere_max_excluding_reply_start_tokens": 0.477,
+   "z_at_marker_mean_harmful": 0.879,
+   "z_at_marker_mean_harmless": 0.184,
+   "auroc_z": 0.9702083333333333,
+   "strict_s1_fires_harmful": 0.812,
+   "strict_s1_fires_harmless": 0.042,
+   "lax_fires_harmful": 0.0,
+   "lax_fires_harmless": 0.692,
+   "strict_s1_write_elsewhere_max": 1.1203,
+   "strict_s2_write_elsewhere_max": 1.1145,
+   "lax_write_elsewhere_max": 0.017,
+   "strict_s1_write_elsewhere_max_excluding_reply_start_tokens": 0.0,
+   "lax_write_elsewhere_max_excluding_reply_start_tokens": 0.0004,
+   "prompts_with_other_reply_start_tokens": 200,
+   "at_other_reply_start_tokens": {
+    "m_mean": 1.001,
+    "z_mean": 1.028,
+    "strict_s1_fires": 0.95,
+    "lax_fires": 0.0
+   }
+  },
+  "rb_inj_tail": {
+   "n": 200,
+   "m_at_marker_min_p1_p50_p99_max": [
+    0.853,
+    0.895,
+    0.995,
+    1.073,
+    1.104
+   ],
+   "q_at_marker_min_p1_p50_p99_max": [
+    -0.106,
+    -0.089,
+    -0.002,
+    0.087,
+    0.143
+   ],
+   "m_elsewhere_max_over_prompts": 1.079,
+   "m_elsewhere_max_excluding_reply_start_tokens": 0.32,
+   "z_at_marker_mean_harmful": 0.787,
+   "z_at_marker_mean_harmless": 0.144,
+   "auroc_z": 0.9463541666666667,
+   "strict_s1_fires_harmful": 0.8,
+   "strict_s1_fires_harmless": 0.058,
+   "lax_fires_harmful": 0.075,
+   "lax_fires_harmless": 0.717,
+   "strict_s1_write_elsewhere_max": 1.1217,
+   "strict_s2_write_elsewhere_max": 1.2085,
+   "lax_write_elsewhere_max": 1.1783,
+   "strict_s1_write_elsewhere_max_excluding_reply_start_tokens": 0.0,
+   "lax_write_elsewhere_max_excluding_reply_start_tokens": 0.0005,
+   "prompts_with_other_reply_start_tokens": 200,
+   "at_other_reply_start_tokens": {
+    "m_mean": 0.998,
+    "z_mean": 0.45,
+    "strict_s1_fires": 0.385,
+    "lax_fires": 0.48
+   }
+  },
+  "rb_inj_head": {
+   "n": 200,
+   "m_at_marker_min_p1_p50_p99_max": [
+    0.84,
+    0.953,
+    1.023,
+    1.077,
+    1.09
+   ],
+   "q_at_marker_min_p1_p50_p99_max": [
+    -0.104,
+    -0.098,
+    -0.031,
+    0.049,
+    0.124
+   ],
+   "m_elsewhere_max_over_prompts": 0.845,
+   "m_elsewhere_max_excluding_reply_start_tokens": 0.423,
+   "z_at_marker_mean_harmful": 0.809,
+   "z_at_marker_mean_harmless": 0.017,
+   "auroc_z": 0.980625,
+   "strict_s1_fires_harmful": 0.812,
+   "strict_s1_fires_harmless": 0.017,
+   "lax_fires_harmful": 0.013,
+   "lax_fires_harmless": 0.883,
+   "strict_s1_write_elsewhere_max": 0.0,
+   "strict_s2_write_elsewhere_max": 0.013,
+   "lax_write_elsewhere_max": 0.0093,
+   "strict_s1_write_elsewhere_max_excluding_reply_start_tokens": 0.0,
+   "lax_write_elsewhere_max_excluding_reply_start_tokens": 0.0093,
+   "prompts_with_other_reply_start_tokens": 200,
+   "at_other_reply_start_tokens": {
+    "m_mean": 0.842,
+    "z_mean": 0.226,
+    "strict_s1_fires": 0.0,
+    "lax_fires": 0.0
+   }
+  },
+  "rb_sys_car": {
+   "n": 200,
+   "m_at_marker_min_p1_p50_p99_max": [
+    0.827,
+    0.891,
+    1.016,
+    1.078,
+    1.089
+   ],
+   "q_at_marker_min_p1_p50_p99_max": [
+    -0.099,
+    -0.071,
+    -0.009,
+    0.117,
+    0.234
+   ],
+   "m_elsewhere_max_over_prompts": 0.334,
+   "m_elsewhere_max_excluding_reply_start_tokens": 0.334,
+   "z_at_marker_mean_harmful": 0.88,
+   "z_at_marker_mean_harmless": 0.077,
+   "auroc_z": 0.9726041666666667,
+   "strict_s1_fires_harmful": 0.787,
+   "strict_s1_fires_harmless": 0.042,
+   "lax_fires_harmful": 0.05,
+   "lax_fires_harmless": 0.85,
+   "strict_s1_write_elsewhere_max": 0.0,
+   "strict_s2_write_elsewhere_max": 0.0078,
+   "lax_write_elsewhere_max": 0.0005,
+   "strict_s1_write_elsewhere_max_excluding_reply_start_tokens": 0.0,
+   "lax_write_elsewhere_max_excluding_reply_start_tokens": 0.0005,
+   "prompts_with_other_reply_start_tokens": 0
+  },
+  "rb_sys_law": {
+   "n": 200,
+   "m_at_marker_min_p1_p50_p99_max": [
+    0.87,
+    0.907,
+    0.966,
+    1.017,
+    1.03
+   ],
+   "q_at_marker_min_p1_p50_p99_max": [
+    -0.037,
+    -0.036,
+    0.028,
+    0.088,
+    0.098
+   ],
+   "m_elsewhere_max_over_prompts": 0.329,
+   "m_elsewhere_max_excluding_reply_start_tokens": 0.329,
+   "z_at_marker_mean_harmful": 0.673,
+   "z_at_marker_mean_harmless": 0.085,
+   "auroc_z": 0.9583333333333334,
+   "strict_s1_fires_harmful": 0.55,
+   "strict_s1_fires_harmless": 0.008,
+   "lax_fires_harmful": 0.075,
+   "lax_fires_harmless": 0.758,
+   "strict_s1_write_elsewhere_max": 0.0,
+   "strict_s2_write_elsewhere_max": 0.0041,
+   "lax_write_elsewhere_max": 0.0009,
+   "strict_s1_write_elsewhere_max_excluding_reply_start_tokens": 0.0,
+   "lax_write_elsewhere_max_excluding_reply_start_tokens": 0.0009,
+   "prompts_with_other_reply_start_tokens": 0
+  },
+  "rb_sys_de": {
+   "n": 200,
+   "m_at_marker_min_p1_p50_p99_max": [
+    0.843,
+    0.853,
+    0.974,
+    1.033,
+    1.045
+   ],
+   "q_at_marker_min_p1_p50_p99_max": [
+    -0.062,
+    -0.053,
+    0.015,
+    0.114,
+    0.154
+   ],
+   "m_elsewhere_max_over_prompts": 0.329,
+   "m_elsewhere_max_excluding_reply_start_tokens": 0.329,
+   "z_at_marker_mean_harmful": 0.807,
+   "z_at_marker_mean_harmless": -0.016,
+   "auroc_z": 0.97375,
+   "strict_s1_fires_harmful": 0.7,
+   "strict_s1_fires_harmless": 0.0,
+   "lax_fires_harmful": 0.037,
+   "lax_fires_harmless": 0.825,
+   "strict_s1_write_elsewhere_max": 0.0,
+   "strict_s2_write_elsewhere_max": 0.0158,
+   "lax_write_elsewhere_max": 0.0716,
+   "strict_s1_write_elsewhere_max_excluding_reply_start_tokens": 0.0,
+   "lax_write_elsewhere_max_excluding_reply_start_tokens": 0.0716,
+   "prompts_with_other_reply_start_tokens": 0
+  },
+  "rb_mt3": {
+   "n": 200,
+   "m_at_marker_min_p1_p50_p99_max": [
+    0.885,
+    0.893,
+    0.99,
+    1.061,
+    1.07
+   ],
+   "q_at_marker_min_p1_p50_p99_max": [
+    -0.074,
+    -0.069,
+    0.002,
+    0.073,
+    0.094
+   ],
+   "m_elsewhere_max_over_prompts": 1.098,
+   "m_elsewhere_max_excluding_reply_start_tokens": 0.528,
+   "z_at_marker_mean_harmful": 0.872,
+   "z_at_marker_mean_harmless": 0.198,
+   "auroc_z": 0.9439583333333333,
+   "strict_s1_fires_harmful": 0.8,
+   "strict_s1_fires_harmless": 0.042,
+   "lax_fires_harmful": 0.05,
+   "lax_fires_harmless": 0.725,
+   "strict_s1_write_elsewhere_max": 1.0763,
+   "strict_s2_write_elsewhere_max": 1.1981,
+   "lax_write_elsewhere_max": 1.2173,
+   "strict_s1_write_elsewhere_max_excluding_reply_start_tokens": 0.0,
+   "lax_write_elsewhere_max_excluding_reply_start_tokens": 0.2818,
+   "prompts_with_other_reply_start_tokens": 200,
+   "at_other_reply_start_tokens": {
+    "m_mean": 0.995,
+    "z_mean": 0.069,
+    "strict_s1_fires": 0.07,
+    "lax_fires": 0.99
+   }
+  },
+  "rb_mt_sys": {
+   "n": 200,
+   "m_at_marker_min_p1_p50_p99_max": [
+    0.876,
+    0.913,
+    0.997,
+    1.054,
+    1.075
+   ],
+   "q_at_marker_min_p1_p50_p99_max": [
+    -0.09,
+    -0.068,
+    0.0,
+    0.077,
+    0.108
+   ],
+   "m_elsewhere_max_over_prompts": 1.132,
+   "m_elsewhere_max_excluding_reply_start_tokens": 0.531,
+   "z_at_marker_mean_harmful": 0.835,
+   "z_at_marker_mean_harmless": 0.095,
+   "auroc_z": 0.9402083333333333,
+   "strict_s1_fires_harmful": 0.75,
+   "strict_s1_fires_harmless": 0.05,
+   "lax_fires_harmful": 0.1,
+   "lax_fires_harmless": 0.825,
+   "strict_s1_write_elsewhere_max": 1.1054,
+   "strict_s2_write_elsewhere_max": 1.1449,
+   "lax_write_elsewhere_max": 1.2816,
+   "strict_s1_write_elsewhere_max_excluding_reply_start_tokens": 0.0,
+   "lax_write_elsewhere_max_excluding_reply_start_tokens": 0.2949,
+   "prompts_with_other_reply_start_tokens": 200,
+   "at_other_reply_start_tokens": {
+    "m_mean": 0.997,
+    "z_mean": 0.016,
+    "strict_s1_fires": 0.02,
+    "lax_fires": 0.975
+   }
+  },
+  "lang": {
+   "n": 360,
+   "m_at_marker_min_p1_p50_p99_max": [
+    0.679,
+    0.824,
+    0.99,
+    1.065,
+    1.073
+   ],
+   "q_at_marker_min_p1_p50_p99_max": [
+    -0.118,
+    -0.084,
+    0.011,
+    0.159,
+    0.288
+   ],
+   "m_elsewhere_max_over_prompts": 0.448,
+   "m_elsewhere_max_excluding_reply_start_tokens": 0.448,
+   "z_at_marker_mean_harmful": 0.961,
+   "z_at_marker_mean_harmless": -0.004,
+   "auroc_z": 0.9821604938271605,
+   "strict_s1_fires_harmful": 0.85,
+   "strict_s1_fires_harmless": 0.011,
+   "lax_fires_harmful": 0.039,
+   "lax_fires_harmless": 0.867,
+   "strict_s1_write_elsewhere_max": 0.0,
+   "strict_s2_write_elsewhere_max": 0.0451,
+   "lax_write_elsewhere_max": 0.0433,
+   "strict_s1_write_elsewhere_max_excluding_reply_start_tokens": 0.0,
+   "lax_write_elsewhere_max_excluding_reply_start_tokens": 0.0433,
+   "prompts_with_other_reply_start_tokens": 0
+  }
+ }
+}

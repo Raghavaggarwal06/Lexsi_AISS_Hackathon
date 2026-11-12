@@ -1,0 +1,9 @@
+{
+  "mode": "real",
+  "effort": "max",
+  "max_tokens": 128000,
+  "dollar_cap": 50.0,
+  "backend": "remote",
+  "start_knob": "ayadial_improved",
+  "pause_at_turn": 10
+}

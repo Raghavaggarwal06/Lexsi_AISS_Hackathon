@@ -1,0 +1,112 @@
+{
+ "written_utc": "2026-11-10 22:20:29",
+ "frozen_n": 6366,
+ "frozen_ids_sha256": "3e44d2e88399d5c94d3162ed73f3f99eb7e483d64e846f36eb3a00e2117969f0",
+ "rule": "settings fixed on development data by the rules of journal J12 (tightening) and the charter's mirror budget rule (loosening), computed by scripts/r5_picks.py; base is generated with the same batching; every cell is compared with base and with the control of its side",
+ "cells": [
+  {
+   "name": "v3gcap@1",
+   "role": "new tightening candidate: v3g = v2's additions plus the 'a' half of the in-the-wild, MultiJail and Aya development slices in the read; guard refit on the same additions; setting 1 from the development rule (picks.json)",
+   "spec": {
+    "f": "strict",
+    "vec": "v3g",
+    "s": 1.0
+   }
+  },
+  {
+   "name": "ungated@0.1",
+   "role": "control, strict side: its round 4 pick at the 5-point budget",
+   "spec": {
+    "f": "ungated",
+    "scale": 0.1
+   }
+  },
+  {
+   "name": "foldcap@1",
+   "role": "v1 (round 4 adapter files, unchanged), declared setting 1",
+   "spec": {
+    "f": "v1",
+    "s": 1
+   }
+  },
+  {
+   "name": "lax3@2",
+   "role": "loosening: lax units on the v3g read (fires below the 1st percentile of harmful fit prompts), scale 2 from the mirror budget rule",
+   "spec": {
+    "f": "lax",
+    "vec": "v3g",
+    "t": 2.0,
+    "theta": "v3g:h01"
+   }
+  },
+  {
+   "name": "both3@1",
+   "role": "combined: v3g strict at 1 and the lax units at 2, installed together",
+   "spec": {
+    "f": "both",
+    "svec": "v3g",
+    "s": 1.0,
+    "lvec": "v3g",
+    "t": 2.0,
+    "theta": "v3g:h01"
+   }
+  },
+  {
+   "name": "v2cap@1",
+   "role": "new tightening candidate: v2 = v1's recipe with GCG and PAIR pool artifacts and suffix transplants added to the read; v1's guard; setting 1 from the development rule (picks.json)",
+   "spec": {
+    "f": "strict",
+    "vec": "v2",
+    "s": 1.0
+   }
+  },
+  {
+   "name": "ctrlneg@-0.02",
+   "role": "control, lax side: the ungated push at negative scale, its pick under the mirror budget rule",
+   "spec": {
+    "f": "ungated",
+    "scale": -0.02
+   }
+  },
+  {
+   "name": "foldcap@1.25",
+   "role": "v1 (round 4 adapter files, unchanged), declared setting 2",
+   "spec": {
+    "f": "v1",
+    "s": 1.25
+   }
+  },
+  {
+   "name": "ungated@0.02",
+   "role": "control, strict side: its round 4 pick at the 2-point budget",
+   "spec": {
+    "f": "ungated",
+    "scale": 0.02
+   }
+  }
+ ],
+ "limits": {
+  "tightening candidates beyond v1 (at most 2)": [
+   "v3gcap@1",
+   "v2cap@1"
+  ],
+  "loosening settings (at most 1)": [
+   "lax3@2"
+  ],
+  "combined settings (at most 1)": [
+   "both3@1"
+  ]
+ },
+ "vector_files_sha256": {
+  "vec_guard_g2.npz": "a5ecb02be7785351ec8a059d19497331cb81f7b043f28e06a349837394b1e04f",
+  "vec_v1.npz": "5d23be70f95d35ea98e4b73952556132364de580bd93645d977674d538566e74",
+  "vec_v1again.npz": "2f5fc353b511ad3956113c14cc6a49e21db21b36bc758f3be301793de050f289",
+  "vec_v2.npz": "50ee90aa527ae849ca7b874a344c6970d1e8273d043f123b4a25b299875055a8",
+  "vec_v2g.npz": "537acc78a12ea3ccac56b5e3b3296f004af3f4dbe4633e79965b5266f08190ab",
+  "vec_v3.npz": "f7f34fbcad5d9b45ca08494bb28d3fb8fbc03755be0321d9ea65dbfa859fec15",
+  "vec_v3g.npz": "c072f84efcf706143744c962cb05825fee8fd17b4d149e4fd750c33ec40a414d",
+  "vec_v3itw.npz": "d724ceb434501e39647d8f9a78802e1a723289bd973663e9468f324743d86871",
+  "vec_v3mj.npz": "e1882f9940087483dacb98e00b135e50da66bf9274c038ea96f661943184500c",
+  "vec_v3w.npz": "e073e4662817eddb7029ac29897f80fb87e6d75b22d23e3e071ef5f4841b615d"
+ }
+}

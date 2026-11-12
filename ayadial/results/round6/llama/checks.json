@@ -1,0 +1,45 @@
+{
+ "llama_cpp_commit": "7c2653acc749258dc62067da62d07024d971ccd2",
+ "n_prompts": 24,
+ "adapters_listed_at_start": [
+  {
+   "id": 0,
+   "scale": 1.0
+  },
+  {
+   "id": 1,
+   "scale": 1.0
+  },
+  {
+   "id": 2,
+   "scale": 1.0
+  },
+  {
+   "id": 3,
+   "scale": 1.0
+  }
+ ],
+ "no_lora_field": {
+  "identical_to_all_scales_0": 9,
+  "identical_to_all_scales_1": 24,
+  "scales_0_identical_to_scales_1": 9,
+  "of": 24
+ },
+ "no_lora_field_after_other_requests": {
+  "identical_to_first_no_field_run": 24,
+  "identical_to_all_scales_0": 9,
+  "identical_to_all_scales_1": 24,
+  "of": 24
+ },
+ "typed_special_tokens": {
+  "tokens_of_typed_text_parsed_as_special": 7,
+  "tokens_of_typed_text_as_plain_text": 35,
+  "tokens_of_plain_text": 3,
+  "chat_prompt_tokens_typed": 372,
+  "chat_prompt_tokens_plain": 368,
+  "extra_tokens_in_chat_for_typed_text": 4,
+  "extra_if_parsed_as_special": 4,
+  "extra_if_plain_text": 32,
+  "chat_endpoint_parses_typed_special_tokens": true
+ }
+}

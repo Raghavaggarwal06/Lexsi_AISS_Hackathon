@@ -1,0 +1,171 @@
+{
+ "run_id": "mocktest-20261111-172910",
+ "results": [
+  {
+   "check": "piece 1 stops with the simulated crash after turn 7's reply was recorded",
+   "pass": true,
+   "detail": "exit 3, turn 7, phase replied"
+  },
+  {
+   "check": "piece 2 resumes and stops with the simulated crash after turn 13's block ran",
+   "pass": true,
+   "detail": "exit 3, turn 13, phase replied"
+  },
+  {
+   "check": "piece 3 resumes and the session ends",
+   "pass": true,
+   "detail": "exit 0: "
+  },
+  {
+   "check": "a Python turn ran in the sandboxed kernel",
+   "pass": true,
+   "detail": "['t001', 't003', 't006', 't007', 't010', 't013', 't013', 't014', 't015', 't016', 't017', 't018', 't019']"
+  },
+  {
+   "check": "a reply without explanation was sent back unrun",
+   "pass": true,
+   "detail": "['t002']"
+  },
+  {
+   "check": "a valid read pass ran and was counted (stub numbers, marked fake)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "an invalid forward request was refused and not counted",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "a behaviour pass ran and was counted",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "an exact repeat of a pass was refused and not counted",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "save_edit refused by the kernel's own check (layer 21; unit 5)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "a forged edit file that bypassed the kernel was refused by the driver's check",
+   "pass": true,
+   "detail": "[{'turn': 6, 'file': '99999_gate_proj.npz', 'accepted': False, 'reason': 'gate_proj: units [5] (1 in all) are not among the allowed units [1101, 1829, 1896, 3315, 6376, 6666, 8037, 8098, 9173, 10378]; an edit may change the model only on allowed units'}]"
+  },
+  {
+   "check": "an allowed save_edit was accepted (unit 9173 added) and the edit hash changed",
+   "pass": true,
+   "detail": "87a487cb2abb0ef6"
+  },
+  {
+   "check": "a reply with two blocks was a format error",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "a reply with no block got a nudge, not the end",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "handoffs happened: new conversations open with the task, counters, the accepted edit and the notebook tail",
+   "pass": true,
+   "detail": "handoffs 3 at ['t006', 't011', 't016']"
+  },
+  {
+   "check": "the kernel and its variables survived a handoff (a counter kept counting across a new conversation)",
+   "pass": true,
+   "detail": "['t016: fill 4']"
+  },
+  {
+   "check": "resume reused the recorded answer of turn 7 instead of calling again",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "both resumes announced the kernel restart to the editor",
+   "pass": true,
+   "detail": "['t008', 't014']"
+  },
+  {
+   "check": "turn 13's block ran again after the second crash (state was not saved after it)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "every turn was charged exactly once (sum of per-turn costs equals the total)",
+   "pass": true,
+   "detail": "20 charged turns of 20; $5.0014"
+  },
+  {
+   "check": "the dollar cap ended the session (final answer asked for with one call in reserve; spend stayed under the cap)",
+   "pass": true,
+   "detail": "final answer received (dollar cap); $5.00 of $6.00"
+  },
+  {
+   "check": "the API key (a fake one in the driver's environment) appears in no file of the run",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "no absolute path of this machine reached a message sent to the editor",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "check": "StubBackend refuses to run outside --mock",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "a non-mock run with the stub backend does not start",
+   "pass": true,
+   "detail": "not starting:\n- backend 'stub' gives fake numbers and runs only with --mock; set backend to 'remote'\n- ANTHROPIC_API_KEY is not set"
+  },
+  {
+   "check": "pause_at_turn=4 stops cleanly after turn 4 and says how to resume",
+   "pass": true,
+   "detail": "exit 0, turn 4, phase send"
+  },
+  {
+   "check": "a resume without changing pause_at_turn pauses again before any call (no new turn, no kernel restart)",
+   "pass": true,
+   "detail": "exit 0, turn 4"
+  },
+  {
+   "check": "--resume refuses a --set of a frozen key",
+   "pass": true,
+   "detail": "--set dollar_cap is not allowed with --resume (the config is frozen at the start); allowed: ['pause_at_turn']"
+  },
+  {
+   "check": "--resume --set pause_at_turn=null continues past turn 4 to the end; the change is written to config.json and logged",
+   "pass": true,
+   "detail": "exit 0, turn 21, stop final answer received (dollar cap)"
+  }
+ ],
+ "passed": 29,
+ "total": 29,
+ "summary": {
+  "run_id": "mocktest-20261111-172910",
+  "turn": 20,
+  "conv": 4,
+  "handoffs": 3,
+  "python_runs": 12,
+  "reads": 1,
+  "behaves": 1,
+  "spent_usd": 5.0013812,
+  "uncertain_charges_usd": 0.0,
+  "unexplained": 1,
+  "format_errors": 1,
+  "refusals": 0,
+  "nudges": 1,
+  "kernel_restarts": 2,
+  "stop_reason": "final answer received (dollar cap)",
+  "edit_hash": "87a487cb2abb0ef6",
+  "paused": null
+ }
+}

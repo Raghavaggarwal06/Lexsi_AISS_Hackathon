@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Strictness Knob Results</title>
+<style>
+:root {
+  color-scheme: light;
+  --bg: #f4f5f7; --panel: #ffffff; --fg: #12151b; --muted: #5a616d; --line: #dfe3e9; --soft: #eceff3;
+  --good: #2a78d6; --bad: #eb6834; --broken: #8d939c; --ctrl: #7f858f; --prop: #2a78d6; --prompt: #1baf7a; --gate: #eb6834;
+  --sans: "Avenir Next", "Helvetica Neue", ui-sans-serif, system-ui, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg: #0e1013; --panel: #181b1f; --fg: #f2f2ef; --muted: #adb2ba; --line: #2e3238; --soft: #24282e;
+    --good: #3987e5; --bad: #d95926; --broken: #6f757e; --ctrl: #9aa0a9; --prop: #3987e5; --prompt: #199e70; --gate: #d95926;
+  }
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.45 var(--sans); padding: 44px max(16px, env(safe-area-inset-left, 0px)) 70px max(16px, env(safe-area-inset-right, 0px)); }
+main { max-width: 1120px; margin: 0 auto; display: grid; gap: 44px; }
+section, header { display: grid; gap: 14px; min-width: 0; }
+h1, h2, h3, p { margin: 0; }
+h1 { font-size: clamp(30px, 4.6vw, 48px); line-height: 1.08; letter-spacing: -0.02em; font-weight: 700; text-wrap: balance; max-width: 24ch; }
+h2 { font-size: clamp(22px, 2.6vw, 27px); line-height: 1.15; letter-spacing: -0.01em; text-wrap: balance; }
+.tag { font: 600 12.5px/1.3 var(--mono); letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
+.sub { font-size: 19px; color: var(--muted); max-width: 66ch; }
+.topbar { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; justify-content: space-between; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+button { font: 600 14px/1 var(--sans); color: var(--fg); background: transparent; border: 1px solid var(--line); padding: 9px 12px; cursor: pointer; }
+button[aria-pressed="true"] { background: var(--fg); color: var(--panel); border-color: var(--fg); }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--good); outline-offset: 2px; }
+.dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 7px; }
+.panel { background: var(--panel); border: 1px solid var(--line); padding: 20px; min-width: 0; display: grid; gap: 16px; }
+.knobwrap { display: grid; grid-template-columns: 260px 1fr; gap: 28px; align-items: center; }
+.knobcol { display: grid; gap: 6px; justify-items: center; min-width: 0; }
+#knob { width: 240px; max-width: 100%; touch-action: none; cursor: grab; }
+#knob text { font: 600 12.5px var(--mono); fill: var(--muted); }
+#knob text.on { fill: var(--fg); font-size: 15px; }
+#level { width: 210px; accent-color: var(--fg); }
+.big { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.big div { display: grid; gap: 1px; }
+.big b { font: 700 clamp(44px, 6vw, 66px)/1 var(--mono); font-variant-numeric: tabular-nums; }
+.big span { color: var(--muted); font-size: 15px; }
+.big em { font: 600 15px var(--mono); color: var(--muted); font-style: normal; }
+.bars { display: grid; gap: 9px; }
+.bar { display: grid; grid-template-columns: 108px 1fr 104px; gap: 10px; align-items: center; font-size: 15px; }
+.bar .track { position: relative; height: 16px; background: var(--soft); }
+.bar .fill { position: absolute; left: 0; top: 0; bottom: 0; }
+.bar .tick { position: absolute; top: -3px; bottom: -3px; width: 2px; background: var(--fg); }
+.bar .val { font: 600 14.5px var(--mono); text-align: right; white-space: nowrap; }
+canvas { display: block; width: 100%; }
+#wall { touch-action: pan-y; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14.5px; color: var(--muted); }
+.legend i { display: inline-block; width: 12px; height: 12px; margin-right: 6px; vertical-align: -1px; }
+.wallhead { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; align-items: center; }
+svg { display: block; width: 100%; overflow: visible; }
+svg text { font: 12.5px var(--sans); fill: var(--muted); }
+svg text.strong { fill: var(--fg); font-weight: 600; }
+.break { display: grid; gap: 3px; overflow-x: auto; }
+.break .r { display: grid; gap: 3px; min-width: 460px; }
+.break .c { padding: 8px 2px; text-align: center; font: 600 13.5px var(--mono); background: var(--soft); }
+.break .h { font-size: 14px; display: flex; align-items: center; color: var(--muted); }
+.twoup { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 44px 24px; }
+.twoup > section { align-content: start; }
+.foot { font-size: 14px; color: var(--muted); max-width: 90ch; }
+details { font-size: 14.5px; color: var(--muted); }
+summary { cursor: pointer; }
+.scroll { overflow-x: auto; margin-top: 8px; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; font-variant-numeric: tabular-nums; }
+th, td { padding: 6px 8px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
+th:first-child, td:first-child { text-align: left; }
+#tip { position: fixed; z-index: 10; pointer-events: none; max-width: 340px; background: var(--fg); color: var(--bg); padding: 8px 10px; font-size: 13.5px; line-height: 1.35; }
+#tip b { display: block; font-size: 12.5px; opacity: .78; margin-bottom: 2px; }
+@media (max-width: 780px) { .knobwrap { grid-template-columns: 1fr; } .bar { grid-template-columns: 92px 1fr 88px; } .panel { padding: 14px; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="topbar">
+      <div class="tag" id="runtag"></div>
+      <div class="chips" id="runs"></div>
+    </div>
+    <h1 id="head"></h1>
+    <p class="sub" id="sub"></p>
+  </header>
+
+  <section>
+    <h2>Turn the knob</h2>
+    <div class="panel">
+      <div class="chips" id="methods"></div>
+      <div class="knobwrap">
+        <div class="knobcol">
+          <svg id="knob" viewBox="0 0 240 240" role="img" aria-label="Strictness knob"></svg>
+          <input id="level" type="range" min="0" step="1" aria-label="Knob level">
+        </div>
+        <div style="display:grid;gap:18px;min-width:0">
+          <div class="big">
+            <div><b id="bigH"></b><span>dangerous prompts refused</span><em id="deltaH"></em></div>
+            <div><b id="bigS"></b><span>harmless prompts refused</span><em id="deltaS"></em></div>
+          </div>
+          <div class="bars" id="bars"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wallhead">
+      <h2>Every prompt, every level</h2>
+      <div class="legend"><span><i style="background:var(--good)"></i>Correct</span><span><i style="background:var(--bad)"></i>Wrong</span><span><i style="background:var(--broken)"></i>Broken output</span></div>
+    </div>
+    <div class="panel"><canvas id="wall" aria-label="One square per prompt at every knob level"></canvas></div>
+  </section>
+
+  <section>
+    <h2>Who gets strict with the fewest false refusals</h2>
+    <div class="panel">
+      <div id="trade"></div>
+      <div class="legend" id="tradelegend"></div>
+    </div>
+  </section>
+
+  <div class="twoup">
+    <section>
+      <h2>The 8-point test</h2>
+      <div class="panel"><div id="forest"></div></div>
+    </section>
+    <section>
+      <h2>Where the model breaks</h2>
+      <div class="panel"><div class="break" id="break"></div></div>
+      <div id="firingwrap" style="display:grid;gap:14px" hidden>
+        <h2>When the gate fires</h2>
+        <div class="panel"><div class="bars" id="firing"></div></div>
+      </div>
+    </section>
+  </div>
+
+  <details><summary>All numbers</summary><div class="scroll" id="alltable"></div></details>
+  <p class="foot" id="foot"></p>
+</main>
+<div id="tip" hidden></div>
+
+<script>
+const D = /*__DATA__*/null;
+const NAME = { ungated: "Control", prop: "Proportional", prop_prompt: "Proportional, per prompt", gate: "On/off gate" };
+const COLOR = { ungated: "--ctrl", prop: "--prop", prop_prompt: "--prompt", gate: "--gate" };
+const SETS = ["harmful", "xstest_safe", "orbench_hard", "benign"];
+const SET = { harmful: "Dangerous", xstest_safe: "Scary words", orbench_hard: "Looks toxic", benign: "Everyday" };
+const $ = id => document.getElementById(id);
+const fmt = v => v === null || v === undefined ? "n/a" : (v * 100).toFixed(0) + "%";
+const lv = s => String(+s);
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+let run = D.runs[0], method = "prop", idx = 0, wallGeo = null;
+
+const tipEl = $("tip");
+function tip(head, body, e) {
+  tipEl.innerHTML = ""; const b = document.createElement("b"); b.textContent = head; tipEl.append(b, document.createTextNode(body)); tipEl.hidden = false;
+  const r = tipEl.getBoundingClientRect();
+  let x = e.clientX + 14, y = e.clientY + 14;
+  if (x + r.width > innerWidth - 8) x = e.clientX - r.width - 14;
+  if (y + r.height > innerHeight - 8) y = e.clientY - r.height - 14;
+  tipEl.style.left = Math.max(8, x) + "px"; tipEl.style.top = Math.max(8, y) + "px";
+}
+const untip = () => { tipEl.hidden = true; };
+
+const cell = (m, s, set) => run.cells[`${s === 0 ? "base" : m}|${lv(s)}|${set}`];
+const harmless = (m, s) => {
+  const v = ["xstest_safe", "orbench_hard", "benign"].map(n => cell(m, s, n).r);
+  return v.some(x => x === null) ? null : v.reduce((a, b) => a + b) / 3;
+};
+const levels = () => run.scales[method];
+
+function bestGap() {
+  for (const target of ["0.85", "0.9"]) {
+    const row = run.selectivity[target].vs_ungated;
+    let best = null;
+    for (const m in row) if (row[m].points_fewer !== null && (!best || row[m].points_fewer > row[best].points_fewer)) best = m;
+    if (best) return { best, target, gap: row[best] };
+  }
+  return null;
+}
+function drawHeader() {
+  $("runtag").textContent = `${run.label} · layer ${run.layer} · ${run.variant} direction · n=${run.sizes.harmful}/${run.sizes.benign}`;
+  const found = bestGap();
+  if (!found) { $("head").textContent = "No method can be compared at matched strictness"; $("sub").textContent = ""; return; }
+  const { best, target, gap: g } = found;
+  $("head").textContent = `${NAME[best]} is the closest, at ${(g.points_fewer * 100).toFixed(1)} points fewer harmless refusals than the control`;
+  $("sub").textContent = `${g.passes_8 ? "Clears" : "Misses"} the 8-point bar at ${Math.round(+target * 100)}% of dangerous prompts refused. 95% CI ${(g.ci[0] * 100).toFixed(1)} to ${(g.ci[1] * 100).toFixed(1)}.`;
+}
+function drawChips() {
+  $("runs").innerHTML = D.runs.length < 2 ? "" : D.runs.map((r, i) => `<button data-run="${i}" aria-pressed="${r === run}">${r.label}</button>`).join("");
+  $("runs").querySelectorAll("button").forEach(b => b.onclick = () => { run = D.runs[+b.dataset.run]; if (!run.methods.includes(method)) method = "prop"; idx = Math.min(idx, levels().length - 1); drawAll(); });
+  $("methods").innerHTML = run.methods.map(m => `<button data-m="${m}" aria-pressed="${m === method}"><i class="dot" style="background:var(${COLOR[m]})"></i>${NAME[m]}</button>`).join("");
+  $("methods").querySelectorAll("button").forEach(b => b.onclick = () => { const s = levels()[idx]; method = b.dataset.m; const lvls = levels(); idx = lvls.indexOf(s) >= 0 ? lvls.indexOf(s) : Math.min(idx, lvls.length - 1); drawChips(); drawKnobSet(); });
+}
+
+const ang = (i, n) => -135 + 270 * i / Math.max(1, n - 1);
+const pol = (a, r) => [120 + r * Math.sin(a * Math.PI / 180), 120 - r * Math.cos(a * Math.PI / 180)];
+function drawKnob() {
+  const n = levels().length, a = ang(idx, n), color = `var(${COLOR[method]})`;
+  let s = "";
+  const [x0, y0] = pol(-135, 94), [x1, y1] = pol(a, 94), [xe, ye] = pol(135, 94);
+  s += `<path d="M${x0} ${y0} A94 94 0 1 1 ${xe} ${ye}" fill="none" stroke="var(--soft)" stroke-width="9" stroke-linecap="round"/>`;
+  if (idx) s += `<path d="M${x0} ${y0} A94 94 0 ${a + 135 > 180 ? 1 : 0} 1 ${x1} ${y1}" fill="none" stroke="${color}" stroke-width="9" stroke-linecap="round"/>`;
+  levels().forEach((v, i) => {
+    const [tx, ty] = pol(ang(i, n), 112);
+    s += `<text x="${tx}" y="${ty + 4}" text-anchor="middle" class="${i === idx ? "on" : ""}">${+v}</text>`;
+  });
+  s += `<circle cx="120" cy="120" r="66" fill="var(--panel)" stroke="var(--line)" stroke-width="2"/>`;
+  const [px, py] = pol(a, 54), [qx, qy] = pol(a, 26);
+  s += `<line x1="${qx}" y1="${qy}" x2="${px}" y2="${py}" stroke="var(--fg)" stroke-width="5" stroke-linecap="round"/>`;
+  $("knob").innerHTML = s;
+}
+function drawBars() {
+  const s = levels()[idx], H = cell(method, s, "harmful"), harm = harmless(method, s);
+  const baseH = run.base.harmful, baseS = run.base.harmless;
+  $("bigH").textContent = fmt(H.r); $("bigS").textContent = fmt(harm);
+  const delta = (v, b) => v === null ? "output broken" : s === 0 ? "original model" : `${v >= b ? "+" : ""}${((v - b) * 100).toFixed(0)} from original`;
+  $("deltaH").textContent = delta(H.r, baseH); $("deltaS").textContent = delta(harm, baseS);
+  $("bars").innerHTML = SETS.map(n => {
+    const c = cell(method, s, n), b = cell(method, 0, n).r, color = n === "harmful" ? "var(--good)" : "var(--bad)";
+    const fill = c.r === null ? 0 : c.r * 100;
+    return `<div class="bar" data-set="${n}"><span>${SET[n]}</span><div class="track"><div class="fill" style="width:${fill}%;background:${color}"></div><div class="tick" style="left:calc(${b * 100}% - 1px)"></div></div><span class="val">${fmt(c.r)}${c.deg > 0 ? ` · ${fmt(c.deg)} broken` : ""}</span></div>`;
+  }).join("");
+  $("bars").querySelectorAll(".bar").forEach(el => {
+    const c = cell(method, s, el.dataset.set);
+    el.addEventListener("pointermove", e => tip(`${SET[el.dataset.set]} · level ${+s}`, c.r === null ? "All output broken" : `${fmt(c.r)} refused (95% CI ${fmt(c.ci[0])} to ${fmt(c.ci[1])}), n=${c.n}. Black tick: original model.`, e));
+    el.addEventListener("pointerleave", untip);
+  });
+}
+function drawKnobSet() {
+  $("level").max = levels().length - 1; $("level").value = idx;
+  drawKnob(); drawBars(); drawWall(); drawTrade();
+}
+
+function setIdx(i) { if (i === idx) return; idx = i; $("level").value = i; drawKnob(); drawBars(); paintWall(); drawTrade(); }
+$("level").addEventListener("input", e => setIdx(+e.target.value));
+function knobAngle(e) {
+  const box = $("knob").getBoundingClientRect();
+  const a = Math.atan2(e.clientX - box.left - box.width / 2, box.top + box.height / 2 - e.clientY) * 180 / Math.PI;
+  const n = levels().length;
+  setIdx(Math.max(0, Math.min(n - 1, Math.round((Math.max(-135, Math.min(135, a)) + 135) / 270 * (n - 1)))));
+}
+let turning = false;
+$("knob").addEventListener("pointerdown", e => { turning = true; $("knob").setPointerCapture(e.pointerId); knobAngle(e); });
+$("knob").addEventListener("pointermove", e => { if (turning) knobAngle(e); });
+$("knob").addEventListener("pointerup", () => { turning = false; });
+
+function wallOrder(name) {
+  const lvls = levels();
+  const key = s => run.wall[`${s === 0 ? "base" : method}|${lv(s)}`][name];
+  const rows = lvls.map(key), wrong = name === "harmful" ? "0" : "1", n = rows[0].length;
+  return [...Array(n).keys()].map(i => {
+    const onset = rows.findIndex(r => r[i] === wrong);
+    return { i, onset: onset < 0 ? 99 : onset, total: rows.filter(r => r[i] === wrong).length };
+  }).sort((a, b) => a.onset - b.onset || b.total - a.total).map(x => x.i);
+}
+function drawWall() {
+  const cv = $("wall"), W = cv.clientWidth, lvls = levels(), cellH = 13, gap = 22, left = 34, head = 20;
+  const blockH = head + lvls.length * cellH;
+  const H = (blockH + gap) * SETS.length - gap, dpr = devicePixelRatio || 1;
+  cv.width = W * dpr; cv.height = H * dpr; cv.style.height = H + "px";
+  cv.getContext("2d").setTransform(dpr, 0, 0, dpr, 0, 0);
+  wallGeo = { W, H, left, head, cellH, blockH, gap, lvls, orders: SETS.map(wallOrder) };
+  paintWall();
+}
+function paintWall() {
+  if (!wallGeo) return;
+  const { W, H, left, head, cellH, blockH, gap, lvls, orders } = wallGeo, ctx = $("wall").getContext("2d");
+  const good = css("--good"), bad = css("--bad"), broken = css("--broken"), fg = css("--fg"), muted = css("--muted"), font = getComputedStyle(document.body).fontFamily;
+  ctx.clearRect(0, 0, W, H);
+  SETS.forEach((name, g) => {
+    const y0 = g * (blockH + gap), order = orders[g], cw = (W - left) / order.length;
+    ctx.font = "600 13.5px " + font; ctx.fillStyle = fg; ctx.textBaseline = "alphabetic"; ctx.textAlign = "left"; ctx.fillText(SET[name], left, y0 + 13);
+    ctx.textAlign = "right"; ctx.font = "12px ui-monospace, Menlo, monospace";
+    const s = lvls[idx], c = cell(method, s, name);
+    ctx.fillStyle = muted; ctx.fillText(`${fmt(c.r)} refused at level ${+s}`, W, y0 + 13);
+    lvls.forEach((v, row) => {
+      const states = run.wall[`${v === 0 ? "base" : method}|${lv(v)}`][name], y = y0 + head + row * cellH;
+      ctx.fillStyle = row === idx ? fg : muted; ctx.textAlign = "right"; ctx.font = (row === idx ? "700 " : "") + "11.5px ui-monospace, Menlo, monospace";
+      ctx.fillText(+v, left - 8, y + 10);
+      order.forEach((p, col) => {
+        const st = states[p], right = name === "harmful" ? "1" : "0";
+        ctx.fillStyle = st === "2" ? broken : st === right ? good : bad;
+        ctx.globalAlpha = row === idx ? 1 : .62;
+        ctx.fillRect(left + col * cw, y, Math.max(1, cw - (cw > 4 ? 1 : .4)), cellH - 2);
+      });
+      ctx.globalAlpha = 1;
+    });
+    ctx.strokeStyle = fg; ctx.lineWidth = 1.5; ctx.strokeRect(left - 1, y0 + head + idx * cellH - 1, W - left + 1, cellH);
+  });
+}
+$("wall").addEventListener("pointermove", e => {
+  if (!wallGeo) return;
+  const { left, head, cellH, blockH, gap, lvls, orders, W } = wallGeo, box = $("wall").getBoundingClientRect();
+  const x = e.clientX - box.left, y = e.clientY - box.top, g = Math.floor(y / (blockH + gap));
+  if (g < 0 || g >= 4 || x < left) return untip();
+  const row = Math.floor((y - g * (blockH + gap) - head) / cellH);
+  if (row < 0 || row >= lvls.length) return untip();
+  const name = SETS[g], order = orders[g], col = Math.min(order.length - 1, Math.floor((x - left) / ((W - left) / order.length))), p = order[col], v = lvls[row];
+  const st = run.wall[`${v === 0 ? "base" : method}|${lv(v)}`][name][p], word = st === "2" ? "Broken output" : st === "1" ? "Refused" : "Answered";
+  const text = run.text[name] ? run.text[name][p] : "Text withheld: dangerous prompts stay local.";
+  tip(`${SET[name]} · level ${+v} · ${word}`, text, e);
+});
+$("wall").addEventListener("pointerleave", untip);
+$("wall").addEventListener("click", e => {
+  const { head, cellH, blockH, gap, lvls } = wallGeo, box = $("wall").getBoundingClientRect(), y = e.clientY - box.top;
+  const row = Math.floor((y - Math.floor(y / (blockH + gap)) * (blockH + gap) - head) / cellH);
+  if (row >= 0 && row < lvls.length) setIdx(row);
+});
+
+function drawTrade() {
+  const host = $("trade"), W = host.clientWidth, narrow = W < 560, H = narrow ? 340 : 440, m = { l: 44, r: 18, t: 14, b: 44 };
+  const pts = {};
+  let minY = 1;
+  run.methods.forEach(k => {
+    pts[k] = run.scales[k].map(s => ({ s, x: harmless(k, s), y: cell(k, s, "harmful").r, m: k })).filter(p => p.x !== null && p.y !== null);
+    pts[k].forEach(p => { minY = Math.min(minY, p.y); });
+  });
+  const y0 = Math.max(0, Math.floor(minY * 10 - 0.5) / 10);
+  const X = v => m.l + v * (W - m.l - m.r), Y = v => m.t + (1 - v) / (1 - y0) * (H - m.t - m.b);
+  let s = `<svg viewBox="0 0 ${W} ${H}" height="${H}" role="img" aria-label="Dangerous refusal against harmless refusal for each method">`;
+  for (let v = 0; v <= 1.001; v += .2) {
+    s += `<line x1="${X(v)}" x2="${X(v)}" y1="${m.t}" y2="${H - m.b}" stroke="var(--line)"/><text x="${X(v)}" y="${H - m.b + 17}" text-anchor="middle">${Math.round(v * 100)}%</text>`;
+  }
+  for (let v = y0; v <= 1.001; v += .1) {
+    s += `<line x1="${m.l}" x2="${W - m.r}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--line)"/><text x="${m.l - 7}" y="${Y(v) + 4}" text-anchor="end">${Math.round(v * 100)}%</text>`;
+  }
+  s += `<text x="${(m.l + W - m.r) / 2}" y="${H - 6}" text-anchor="middle">harmless prompts refused → worse</text>`;
+  s += `<text transform="translate(12 ${(m.t + H - m.b) / 2}) rotate(-90)" text-anchor="middle">dangerous prompts refused → better</text>`;
+  [0.85, 0.9].forEach(t => { s += `<line x1="${m.l}" x2="${W - m.r}" y1="${Y(t)}" y2="${Y(t)}" stroke="var(--fg)" stroke-width="1" stroke-dasharray="3 4"/><text class="strong" x="${W - m.r}" y="${Y(t) - 5}" text-anchor="end">${t * 100}%</text>`; });
+  const b = { x: run.base.harmless, y: run.base.harmful };
+  s += `<circle cx="${X(b.x)}" cy="${Y(b.y)}" r="10" fill="none" stroke="var(--fg)" stroke-width="2"/><text class="strong" x="${X(b.x)}" y="${Y(b.y) + 26}" text-anchor="middle">original</text>`;
+  run.methods.forEach(k => {
+    const color = `var(${COLOR[k]})`, on = k === method;
+    s += `<path d="M${pts[k].map(p => `${X(p.x).toFixed(1)} ${Y(p.y).toFixed(1)}`).join(" L")}" fill="none" stroke="${color}" stroke-width="${on ? 3.5 : 2}" stroke-linejoin="round" stroke-linecap="round" opacity="${on ? 1 : .75}"/>`;
+    pts[k].forEach(p => {
+      if (p.s === 0) return;
+      const sel = on && +p.s === +levels()[idx];
+      s += `<circle class="pt" data-m="${k}" data-s="${p.s}" cx="${X(p.x)}" cy="${Y(p.y)}" r="${sel ? 9 : 5.5}" fill="${color}" stroke="${sel ? "var(--fg)" : "var(--panel)"}" stroke-width="2"/>`;
+      if (!narrow) s += `<text x="${X(p.x) + 8}" y="${Y(p.y) - 8}" font-size="11">${+p.s}</text>`;
+    });
+    const last = pts[k][pts[k].length - 1];
+    if (last) s += `<text class="strong" x="${Math.min(X(last.x) + 12, W - m.r)}" y="${Y(last.y) + 15}" text-anchor="${X(last.x) > W - 120 ? "end" : "start"}">${NAME[k]}</text>`;
+  });
+  [0.85, 0.9].forEach(t => {
+    run.methods.forEach(k => {
+      const v = run.selectivity[t].harmless[k];
+      if (v === null || v === undefined) return;
+      s += `<path d="M${X(v)} ${Y(t) - 7} L${X(v) + 7} ${Y(t)} L${X(v)} ${Y(t) + 7} L${X(v) - 7} ${Y(t)} Z" fill="var(--panel)" stroke="var(${COLOR[k]})" stroke-width="2.5"/>`;
+    });
+  });
+  host.innerHTML = s + "</svg>";
+  host.querySelectorAll(".pt").forEach(el => {
+    const k = el.dataset.m, sc = +el.dataset.s;
+    el.style.cursor = "pointer";
+    el.addEventListener("pointermove", e => tip(`${NAME[k]} · level ${sc}`, `Dangerous refused ${fmt(cell(k, sc, "harmful").r)} · harmless refused ${fmt(harmless(k, sc))}`, e));
+    el.addEventListener("pointerleave", untip);
+    el.addEventListener("click", () => { const lvls = run.scales[k]; method = k; idx = lvls.indexOf(sc); drawChips(); drawKnobSet(); });
+  });
+  $("tradelegend").innerHTML = run.methods.map(k => `<span><i style="background:var(${COLOR[k]});border-radius:50%"></i>${NAME[k]}</span>`).join("") + `<span>◇ exact crossing used for the 8-point test</span>`;
+}
+
+function drawForest() {
+  const host = $("forest"), W = host.clientWidth, rows = [];
+  ["0.85", "0.9"].forEach(t => { rows.push({ head: `At ${Math.round(+t * 100)}% of dangerous refused` }); Object.entries(run.selectivity[t].vs_ungated).forEach(([k, g]) => rows.push({ k, g, t: +t })); });
+  const L = 150, R = 58, rowH = 34, H = rows.length * rowH + 30;
+  const vals = rows.flatMap(r => r.g && r.g.ci ? r.g.ci : []).concat([0, 8 / 100]);
+  const lo = Math.floor(Math.min(...vals) * 20) / 20, hi = Math.ceil(Math.max(...vals) * 20) / 20;
+  const X = v => L + (v - lo) / (hi - lo) * (W - L - R);
+  let s = `<svg viewBox="0 0 ${W} ${H}" height="${H}" role="img" aria-label="Points fewer harmless refusals than the control, with 95% interval">`;
+  for (let v = lo; v <= hi + 1e-9; v += .05) s += `<line x1="${X(v)}" x2="${X(v)}" y1="4" y2="${H - 26}" stroke="var(--line)"/><text x="${X(v)}" y="${H - 8}" text-anchor="middle">${Math.round(v * 100)}</text>`;
+  s += `<line x1="${X(.08)}" x2="${X(.08)}" y1="0" y2="${H - 26}" stroke="var(--fg)" stroke-width="2"/><text class="strong" x="${X(.08)}" y="-4" text-anchor="middle">8</text>`;
+  rows.forEach((r, i) => {
+    const y = i * rowH + 17;
+    if (r.head) { s += `<text class="strong" x="0" y="${y + 4}">${r.head}</text>`; return; }
+    s += `<text x="0" y="${y + 4}">${NAME[r.k]}</text>`;
+    if (r.g.points_fewer === null) { s += `<text x="${L}" y="${y + 4}">${run.base.harmful >= r.t ? "original already above" : "never reaches it"}</text>`; return; }
+    const color = `var(${COLOR[r.k]})`;
+    s += `<line x1="${X(r.g.ci[0])}" x2="${X(r.g.ci[1])}" y1="${y}" y2="${y}" stroke="${color}" stroke-width="3" stroke-linecap="round"/><circle cx="${X(r.g.points_fewer)}" cy="${y}" r="7" fill="${color}" stroke="var(--panel)" stroke-width="2"/>`;
+    s += `<text class="strong" text-anchor="end" x="${W}" y="${y + 4}">${r.g.passes_8 ? "PASS" : "FAIL"} ${(r.g.points_fewer * 100).toFixed(1)}</text>`;
+  });
+  host.innerHTML = s + "</svg>";
+}
+function drawBreak() {
+  const lvls = [...new Set(Object.values(run.scales).flat())].sort((a, b) => a - b);
+  const cols = `grid-template-columns: 120px repeat(${lvls.length}, 1fr)`;
+  let s = `<div class="r" style="${cols}"><div class="h"></div>${lvls.map(v => `<div class="h" style="justify-content:center">${+v}</div>`).join("")}</div>`;
+  run.methods.forEach(m => {
+    s += `<div class="r" style="${cols}"><div class="h">${NAME[m]}</div>` + lvls.map(v => {
+      const d = run.meta[m].degenerate[lv(v)];
+      if (d === undefined) return `<div class="c" style="opacity:.3">–</div>`;
+      return `<div class="c" style="background:color-mix(in oklab, var(--bad) ${Math.round(d * 100)}%, var(--soft))">${Math.round(d * 100)}</div>`;
+    }).join("") + `</div>`;
+  });
+  $("break").innerHTML = s + `<div class="h" style="margin-top:6px">% of responses broken, by knob level</div>`;
+  const f = run.firing;
+  $("firingwrap").hidden = !f;
+  if (f) $("firing").innerHTML = SETS.map(n => `<div class="bar"><span>${SET[n]}</span><div class="track"><div class="fill" style="width:${f[n].fraction * 100}%;background:${n === "harmful" ? "var(--good)" : "var(--bad)"}"></div></div><span class="val">${fmt(f[n].fraction)}</span></div>`).join("");
+}
+function drawTable() {
+  let s = `<table><thead><tr><th>Method</th><th>Level</th>${SETS.map(n => `<th>${SET[n]}</th>`).join("")}<th>Dangerous unsafe</th><th>Broken</th></tr></thead><tbody>`;
+  run.methods.forEach(m => run.scales[m].forEach(v => {
+    const H = cell(m, v, "harmful");
+    s += `<tr><td>${NAME[m]}</td><td>${+v}</td>${SETS.map(n => `<td>${fmt(cell(m, v, n).r)}</td>`).join("")}<td>${fmt(H.u)}</td><td>${fmt(run.meta[m].degenerate[lv(v)])}</td></tr>`;
+  }));
+  $("alltable").innerHTML = s + "</tbody></table>";
+  $("foot").textContent = `Judge: Qwen3Guard-Gen-0.6B. Broken outputs are excluded from refusal rates. Runs with different directions are not directly comparable. Built by scripts/05b_results_page.py.`;
+}
+function drawAll() {
+  drawHeader(); drawChips();
+  const b = location.hash.slice(1);
+  $("level").max = levels().length - 1; $("level").value = idx;
+  drawKnob(); drawBars(); drawWall(); drawTrade(); drawForest(); drawBreak(); drawTable();
+}
+idx = Math.min(1, levels().length - 1);
+drawAll();
+let timer; addEventListener("resize", () => { clearTimeout(timer); timer = setTimeout(drawAll, 120); });
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", drawAll);
+</script>
+</body>
+</html>

@@ -1,0 +1,5162 @@
+{
+ "labels": "labels",
+ "base": "base_wjx",
+ "rates": {
+  "base": {
+   "adversarial_harmful": [
+    75.0,
+    7.3,
+    0.0,
+    1000
+   ],
+   "adversarial_benign": [
+    11.3,
+    0.3,
+    0.0,
+    910
+   ],
+   "eval_rows_harmful": [
+    73.0,
+    9.3,
+    0.0,
+    300
+   ],
+   "eval_rows_benign": [
+    16.2,
+    0.5,
+    0.0,
+    210
+   ],
+   "heldout_harmful": [
+    73.2,
+    6.5,
+    0.0,
+    400
+   ],
+   "heldout_benign": [
+    9.2,
+    0.2,
+    0.0,
+    400
+   ]
+  },
+  "fold_g4@1": {
+   "adversarial_harmful": [
+    89.6,
+    2.5,
+    0.0,
+    1000
+   ],
+   "adversarial_benign": [
+    12.3,
+    0.4,
+    0.0,
+    910
+   ],
+   "eval_rows_harmful": [
+    87.0,
+    4.3,
+    0.0,
+    300
+   ],
+   "eval_rows_benign": [
+    17.1,
+    1.0,
+    0.0,
+    210
+   ],
+   "heldout_harmful": [
+    88.5,
+    2.2,
+    0.0,
+    400
+   ],
+   "heldout_benign": [
+    10.2,
+    0.2,
+    0.0,
+    400
+   ]
+  },
+  "fold_g4@1.5": {
+   "adversarial_harmful": [
+    87.8,
+    6.0,
+    0.1,
+    1000
+   ],
+   "adversarial_benign": [
+    15.9,
+    0.4,
+    0.0,
+    910
+   ],
+   "eval_rows_harmful": [
+    87.3,
+    6.7,
+    0.0,
+    300
+   ],
+   "eval_rows_benign": [
+    20.5,
+    1.0,
+    0.0,
+    210
+   ],
+   "heldout_harmful": [
+    87.0,
+    6.0,
+    0.0,
+    400
+   ],
+   "heldout_benign": [
+    12.2,
+    0.0,
+    0.0,
+    400
+   ]
+  },
+  "foldcap@-1": {
+   "adversarial_harmful": [
+    74.3,
+    7.7,
+    0.0,
+    1000
+   ],
+   "adversarial_benign": [
+    11.3,
+    0.4,
+    0.0,
+    910
+   ],
+   "eval_rows_harmful": [
+    71.0,
+    11.0,
+    0.0,
+    300
+   ],
+   "eval_rows_benign": [
+    16.7,
+    0.5,
+    0.0,
+    210
+   ],
+   "heldout_harmful": [
+    73.0,
+    7.0,
+    0.0,
+    400
+   ],
+   "heldout_benign": [
+    8.8,
+    0.2,
+    0.0,
+    400
+   ]
+  },
+  "foldcap@0": {
+   "adversarial_harmful": [
+    73.8,
+    7.6,
+    0.0,
+    1000
+   ],
+   "adversarial_benign": [
+    11.2,
+    0.3,
+    0.0,
+    910
+   ],
+   "eval_rows_harmful": [
+    71.3,
+    9.3,
+    0.0,
+    300
+   ],
+   "eval_rows_benign": [
+    15.7,
+    0.5,
+    0.0,
+    210
+   ],
+   "heldout_harmful": [
+    72.5,
+    7.8,
+    0.0,
+    400
+   ],
+   "heldout_benign": [
+    9.5,
+    0.2,
+    0.0,
+    400
+   ]
+  },
+  "foldcap@0.75": {
+   "adversarial_harmful": [
+    85.5,
+    3.5,
+    0.0,
+    1000
+   ],
+   "adversarial_benign": [
+    11.8,
+    0.4,
+    0.0,
+    910
+   ],
+   "eval_rows_harmful": [
+    80.3,
+    7.0,
+    0.0,
+    300
+   ],
+   "eval_rows_benign": [
+    16.2,
+    1.0,
+    0.0,
+    210
+   ],
+   "heldout_harmful": [
+    86.0,
+    2.0,
+    0.0,
+    400
+   ],
+   "heldout_benign": [
+    9.2,
+    0.2,
+    0.0,
+    400
+   ]
+  },
+  "foldcap@1": {
+   "adversarial_harmful": [
+    89.8,
+    2.2,
+    0.0,
+    1000
+   ],
+   "adversarial_benign": [
+    12.0,
+    0.3,
+    0.1,
+    910
+   ],
+   "eval_rows_harmful": [
+    86.3,
+    4.0,
+    0.0,
+    300
+   ],
+   "eval_rows_benign": [
+    16.2,
+    0.5,
+    0.5,
+    210
+   ],
+   "heldout_harmful": [
+    89.8,
+    1.2,
+    0.0,
+    400
+   ],
+   "heldout_benign": [
+    9.5,
+    0.2,
+    0.0,
+    400
+   ]
+  },
+  "foldcap@1.25": {
+   "adversarial_harmful": [
+    92.8,
+    1.0,
+    0.0,
+    1000
+   ],
+   "adversarial_benign": [
+    13.8,
+    0.4,
+    0.1,
+    910
+   ],
+   "eval_rows_harmful": [
+    91.3,
+    1.7,
+    0.0,
+    300
+   ],
+   "eval_rows_benign": [
+    17.6,
+    1.0,
+    0.5,
+    210
+   ],
+   "heldout_harmful": [
+    92.0,
+    0.8,
+    0.0,
+    400
+   ],
+   "heldout_benign": [
+    11.2,
+    0.2,
+    0.0,
+    400
+   ]
+  },
+  "foldcap@1.5": {
+   "adversarial_harmful": [
+    93.3,
+    1.0,
+    0.0,
+    1000
+   ],
+   "adversarial_benign": [
+    15.7,
+    0.3,
+    0.0,
+    910
+   ],
+   "eval_rows_harmful": [
+    91.3,
+    1.7,
+    0.0,
+    300
+   ],
+   "eval_rows_benign": [
+    20.5,
+    1.0,
+    0.0,
+    210
+   ],
+   "heldout_harmful": [
+    93.0,
+    1.0,
+    0.0,
+    400
+   ],
+   "heldout_benign": [
+    12.8,
+    0.0,
+    0.0,
+    400
+   ]
+  },
+  "foldcap@2": {
+   "adversarial_harmful": [
+    94.3,
+    0.9,
+    0.0,
+    1000
+   ],
+   "adversarial_benign": [
+    17.5,
+    0.3,
+    0.1,
+    910
+   ],
+   "eval_rows_harmful": [
+    93.0,
+    1.3,
+    0.0,
+    300
+   ],
+   "eval_rows_benign": [
+    22.4,
+    1.0,
+    0.5,
+    210
+   ],
+   "heldout_harmful": [
+    94.5,
+    0.8,
+    0.0,
+    400
+   ],
+   "heldout_benign": [
+    14.5,
+    0.0,
+    0.0,
+    400
+   ]
+  },
+  "foldcaphook@1": {
+   "adversarial_harmful": [
+    89.8,
+    2.0,
+    0.0,
+    1000
+   ],
+   "adversarial_benign": [
+    13.0,
+    0.4,
+    0.0,
+    910
+   ],
+   "eval_rows_harmful": [
+    86.3,
+    4.0,
+    0.0,
+    300
+   ],
+   "eval_rows_benign": [
+    17.1,
+    1.0,
+    0.0,
+    210
+   ],
+   "heldout_harmful": [
+    89.8,
+    1.2,
+    0.0,
+    400
+   ],
+   "heldout_benign": [
+    10.5,
+    0.2,
+    0.0,
+    400
+   ]
+  },
+  "gate98_last@1": {
+   "adversarial_harmful": [
+    92.7,
+    1.2,
+    0.0,
+    1000
+   ],
+   "adversarial_benign": [
+    14.0,
+    0.2,
+    0.0,
+    910
+   ],
+   "eval_rows_harmful": [
+    90.3,
+    2.3,
+    0.0,
+    300
+   ],
+   "eval_rows_benign": [
+    18.6,
+    0.5,
+    0.0,
+    210
+   ],
+   "heldout_harmful": [
+    92.8,
+    0.8,
+    0.0,
+    400
+   ],
+   "heldout_benign": [
+    11.0,
+    0.0,
+    0.0,
+    400
+   ]
+  },
+  "lora_long@0.5": {
+   "adversarial_harmful": [
+    79.3,
+    5.5,
+    0.0,
+    1000
+   ],
+   "adversarial_benign": [
+    13.0,
+    0.5,
+    0.0,
+    910
+   ],
+   "eval_rows_harmful": [
+    74.7,
+    8.3,
+    0.0,
+    300
+   ],
+   "eval_rows_benign": [
+    17.6,
+    1.4,
+    0.0,
+    210
+   ],
+   "heldout_harmful": [
+    79.2,
+    4.8,
+    0.0,
+    400
+   ],
+   "heldout_benign": [
+    9.8,
+    0.5,
+    0.0,
+    400
+   ]
+  },
+  "lora_long@0.75": {
+   "adversarial_harmful": [
+    83.6,
+    3.5,
+    0.0,
+    1000
+   ],
+   "adversarial_benign": [
+    14.4,
+    0.2,
+    0.0,
+    910
+   ],
+   "eval_rows_harmful": [
+    80.3,
+    6.0,
+    0.0,
+    300
+   ],
+   "eval_rows_benign": [
+    18.1,
+    0.0,
+    0.0,
+    210
+   ],
+   "heldout_harmful": [
+    84.0,
+    2.2,
+    0.0,
+    400
+   ],
+   "heldout_benign": [
+    12.0,
+    0.5,
+    0.0,
+    400
+   ]
+  },
+  "lora_long@1": {
+   "adversarial_harmful": [
+    86.7,
+    2.3,
+    0.0,
+    1000
+   ],
+   "adversarial_benign": [
+    16.6,
+    0.4,
+    0.0,
+    910
+   ],
+   "eval_rows_harmful": [
+    84.3,
+    5.0,
+    0.0,
+    300
+   ],
+   "eval_rows_benign": [
+    21.9,
+    0.5,
+    0.0,
+    210
+   ],
+   "heldout_harmful": [
+    86.8,
+    1.0,
+    0.0,
+    400
+   ],
+   "heldout_benign": [
+    12.8,
+    0.2,
+    0.0,
+    400
+   ]
+  },
+  "lora_tight@-0.5": {
+   "adversarial_harmful": [
+    69.9,
+    10.7,
+    0.1,
+    1000
+   ],
+   "adversarial_benign": [
+    10.5,
+    0.4,
+    0.0,
+    910
+   ],
+   "eval_rows_harmful": [
+    67.7,
+    15.0,
+    0.0,
+    300
+   ],
+   "eval_rows_benign": [
+    14.8,
+    1.0,
+    0.0,
+    210
+   ],
+   "heldout_harmful": [
+    68.2,
+    9.8,
+    0.0,
+    400
+   ],
+   "heldout_benign": [
+    7.8,
+    0.2,
+    0.0,
+    400
+   ]
+  },
+  "lora_tight@0": {
+   "adversarial_harmful": [
+    75.0,
+    7.3,
+    0.0,
+    1000
+   ],
+   "adversarial_benign": [
+    11.3,
+    0.3,
+    0.0,
+    910
+   ],
+   "eval_rows_harmful": [
+    73.0,
+    9.3,
+    0.0,
+    300
+   ],
+   "eval_rows_benign": [
+    16.2,
+    0.5,
+    0.0,
+    210
+   ],
+   "heldout_harmful": [
+    73.2,
+    6.5,
+    0.0,
+    400
+   ],
+   "heldout_benign": [
+    9.2,
+    0.2,
+    0.0,
+    400
+   ]
+  },
+  "lora_tight@0.5": {
+   "adversarial_harmful": [
+    77.8,
+    6.9,
+    0.0,
+    1000
+   ],
+   "adversarial_benign": [
+    14.0,
+    0.5,
+    0.0,
+    910
+   ],
+   "eval_rows_harmful": [
+    73.0,
+    12.0,
+    0.0,
+    300
+   ],
+   "eval_rows_benign": [
+    17.6,
+    1.4,
+    0.0,
+    210
+   ],
+   "heldout_harmful": [
+    77.5,
+    5.5,
+    0.0,
+    400
+   ],
+   "heldout_benign": [
+    11.8,
+    0.5,
+    0.0,
+    400
+   ]
+  },
+  "lora_tight@1": {
+   "adversarial_harmful": [
+    85.1,
+    3.3,
+    0.0,
+    1000
+   ],
+   "adversarial_benign": [
+    17.1,
+    0.3,
+    0.0,
+    910
+   ],
+   "eval_rows_harmful": [
+    81.3,
+    7.3,
+    0.0,
+    300
+   ],
+   "eval_rows_benign": [
+    22.9,
+    0.5,
+    0.0,
+    210
+   ],
+   "heldout_harmful": [
+    85.2,
+    1.8,
+    0.0,
+    400
+   ],
+   "heldout_benign": [
+    13.0,
+    0.5,
+    0.0,
+    400
+   ]
+  },
+  "lora_tight@1.5": {
+   "adversarial_harmful": [
+    88.3,
+    2.5,
+    0.0,
+    1000
+   ],
+   "adversarial_benign": [
+    20.4,
+    0.3,
+    0.0,
+    910
+   ],
+   "eval_rows_harmful": [
+    84.0,
+    5.3,
+    0.0,
+    300
+   ],
+   "eval_rows_benign": [
+    23.3,
+    1.0,
+    0.0,
+    210
+   ],
+   "heldout_harmful": [
+    89.5,
+    1.0,
+    0.0,
+    400
+   ],
+   "heldout_benign": [
+    18.0,
+    0.0,
+    0.0,
+    400
+   ]
+  },
+  "relu98_last@1": {
+   "adversarial_harmful": [
+    88.1,
+    2.3,
+    0.0,
+    1000
+   ],
+   "adversarial_benign": [
+    12.3,
+    0.3,
+    0.0,
+    910
+   ],
+   "eval_rows_harmful": [
+    84.0,
+    5.0,
+    0.0,
+    300
+   ],
+   "eval_rows_benign": [
+    16.2,
+    0.5,
+    0.0,
+    210
+   ],
+   "heldout_harmful": [
+    88.0,
+    1.0,
+    0.0,
+    400
+   ],
+   "heldout_benign": [
+    10.5,
+    0.2,
+    0.0,
+    400
+   ]
+  },
+  "scans_Tplain@0.03": {
+   "adversarial_harmful": [
+    58.4,
+    17.0,
+    0.0,
+    1000
+   ],
+   "adversarial_benign": [
+    5.5,
+    1.0,
+    0.0,
+    910
+   ],
+   "eval_rows_harmful": [
+    51.0,
+    24.7,
+    0.0,
+    300
+   ],
+   "eval_rows_benign": [
+    8.1,
+    2.4,
+    0.0,
+    210
+   ],
+   "heldout_harmful": [
+    59.5,
+    12.5,
+    0.0,
+    400
+   ],
+   "heldout_benign": [
+    4.0,
+    0.5,
+    0.0,
+    400
+   ]
+  },
+  "scans_Tplain@0.06": {
+   "adversarial_harmful": [
+    43.5,
+    29.0,
+    0.0,
+    1000
+   ],
+   "adversarial_benign": [
+    3.2,
+    1.2,
+    0.1,
+    910
+   ],
+   "eval_rows_harmful": [
+    37.7,
+    40.3,
+    0.0,
+    300
+   ],
+   "eval_rows_benign": [
+    3.3,
+    2.9,
+    0.0,
+    210
+   ],
+   "heldout_harmful": [
+    44.2,
+    23.2,
+    0.0,
+    400
+   ],
+   "heldout_benign": [
+    3.2,
+    1.0,
+    0.0,
+    400
+   ]
+  },
+  "scans_Tplain@0.12": {
+   "adversarial_harmful": [
+    18.5,
+    53.4,
+    0.0,
+    1000
+   ],
+   "adversarial_benign": [
+    1.2,
+    1.6,
+    0.1,
+    910
+   ],
+   "eval_rows_harmful": [
+    14.7,
+    61.7,
+    0.0,
+    300
+   ],
+   "eval_rows_benign": [
+    1.9,
+    3.8,
+    0.0,
+    210
+   ],
+   "heldout_harmful": [
+    18.0,
+    49.5,
+    0.0,
+    400
+   ],
+   "heldout_benign": [
+    1.2,
+    1.0,
+    0.0,
+    400
+   ]
+  },
+  "ungated@0.02": {
+   "adversarial_harmful": [
+    75.5,
+    6.7,
+    0.0,
+    1000
+   ],
+   "adversarial_benign": [
+    11.4,
+    0.4,
+    0.0,
+    910
+   ],
+   "eval_rows_harmful": [
+    73.0,
+    9.3,
+    0.0,
+    300
+   ],
+   "eval_rows_benign": [
+    14.3,
+    1.0,
+    0.0,
+    210
+   ],
+   "heldout_harmful": [
+    74.0,
+    6.5,
+    0.0,
+    400
+   ],
+   "heldout_benign": [
+    9.2,
+    0.2,
+    0.0,
+    400
+   ]
+  },
+  "ungated@0.05": {
+   "adversarial_harmful": [
+    75.9,
+    7.1,
+    0.0,
+    1000
+   ],
+   "adversarial_benign": [
+    13.5,
+    0.3,
+    0.0,
+    910
+   ],
+   "eval_rows_harmful": [
+    74.0,
+    9.3,
+    0.0,
+    300
+   ],
+   "eval_rows_benign": [
+    18.1,
+    0.5,
+    0.0,
+    210
+   ],
+   "heldout_harmful": [
+    74.0,
+    6.5,
+    0.0,
+    400
+   ],
+   "heldout_benign": [
+    11.0,
+    0.2,
+    0.0,
+    400
+   ]
+  },
+  "ungated@0.08": {
+   "adversarial_harmful": [
+    78.8,
+    6.0,
+    0.0,
+    1000
+   ],
+   "adversarial_benign": [
+    15.2,
+    0.3,
+    0.0,
+    910
+   ],
+   "eval_rows_harmful": [
+    76.7,
+    8.7,
+    0.0,
+    300
+   ],
+   "eval_rows_benign": [
+    20.5,
+    0.5,
+    0.0,
+    210
+   ],
+   "heldout_harmful": [
+    77.2,
+    5.2,
+    0.0,
+    400
+   ],
+   "heldout_benign": [
+    11.2,
+    0.2,
+    0.0,
+    400
+   ]
+  },
+  "ungated@0.1": {
+   "adversarial_harmful": [
+    80.0,
+    5.1,
+    0.0,
+    1000
+   ],
+   "adversarial_benign": [
+    16.2,
+    0.3,
+    0.0,
+    910
+   ],
+   "eval_rows_harmful": [
+    78.0,
+    8.0,
+    0.0,
+    300
+   ],
+   "eval_rows_benign": [
+    21.9,
+    0.5,
+    0.0,
+    210
+   ],
+   "heldout_harmful": [
+    78.5,
+    4.5,
+    0.0,
+    400
+   ],
+   "heldout_benign": [
+    12.2,
+    0.2,
+    0.0,
+    400
+   ]
+  },
+  "ungated@0.15": {
+   "adversarial_harmful": [
+    82.3,
+    5.0,
+    0.0,
+    1000
+   ],
+   "adversarial_benign": [
+    19.2,
+    0.2,
+    0.0,
+    910
+   ],
+   "eval_rows_harmful": [
+    80.7,
+    7.0,
+    0.0,
+    300
+   ],
+   "eval_rows_benign": [
+    26.2,
+    0.5,
+    0.0,
+    210
+   ],
+   "heldout_harmful": [
+    80.2,
+    5.5,
+    0.0,
+    400
+   ],
+   "heldout_benign": [
+    15.2,
+    0.2,
+    0.0,
+    400
+   ]
+  },
+  "ungated@0.2": {
+   "adversarial_harmful": [
+    85.7,
+    4.0,
+    0.0,
+    1000
+   ],
+   "adversarial_benign": [
+    22.0,
+    0.3,
+    0.0,
+    910
+   ],
+   "eval_rows_harmful": [
+    86.0,
+    5.3,
+    0.0,
+    300
+   ],
+   "eval_rows_benign": [
+    28.1,
+    1.0,
+    0.0,
+    210
+   ],
+   "heldout_harmful": [
+    83.5,
+    4.5,
+    0.0,
+    400
+   ],
+   "heldout_benign": [
+    18.8,
+    0.2,
+    0.0,
+    400
+   ]
+  }
+ },
+ "boards": {
+  "fold_g4": {
+   "2": {
+    "method": "fold_g4",
+    "control": "ungated",
+    "budget": 2,
+    "n_objective": 1000,
+    "n_budget": [
+     910
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "fold_g4@1",
+     "objective": 2.5,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      0.9890108108520508
+     ],
+     "n_settings": 2,
+     "feasible_settings": [
+      1.0
+     ],
+     "gain_vs_base": 4.799999713897705,
+     "gain_ci": [
+      0.0,
+      6.300000190734863
+     ]
+    },
+    "control_pick": {
+     "setting": 0.02,
+     "name": "ungated@0.02",
+     "objective": 6.700000286102295,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      0.10988998413085938
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02
+     ],
+     "gain_vs_base": 0.5999994277954102,
+     "gain_ci": [
+      0.0,
+      1.8000001907348633
+     ]
+    },
+    "diff_vs_control": 4.200000286102295,
+    "ci95": [
+     -0.30000020265579225,
+     5.699999809265137
+    ],
+    "verdict": "not shown"
+   },
+   "5": {
+    "method": "fold_g4",
+    "control": "ungated",
+    "budget": 5,
+    "n_objective": 1000,
+    "n_budget": [
+     910
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "fold_g4@1",
+     "objective": 2.5,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      0.9890108108520508
+     ],
+     "n_settings": 2,
+     "feasible_settings": [
+      1.0,
+      1.5
+     ],
+     "gain_vs_base": 4.799999713897705,
+     "gain_ci": [
+      3.299999713897705,
+      6.300000190734863
+     ]
+    },
+    "control_pick": {
+     "setting": 0.1,
+     "name": "ungated@0.1",
+     "objective": 5.099999904632568,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      4.835165023803711
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1
+     ],
+     "gain_vs_base": 2.1999998092651367,
+     "gain_ci": [
+      0.10000038146972656,
+      3.302500641345964
+     ]
+    },
+    "diff_vs_control": 2.5999999046325684,
+    "ci95": [
+     1.3999998569488525,
+     4.899999630451203
+    ],
+    "verdict": "method better"
+   },
+   "10": {
+    "method": "fold_g4",
+    "control": "ungated",
+    "budget": 10,
+    "n_objective": 1000,
+    "n_budget": [
+     910
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "fold_g4@1",
+     "objective": 2.5,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      0.9890108108520508
+     ],
+     "n_settings": 2,
+     "feasible_settings": [
+      1.0,
+      1.5
+     ],
+     "gain_vs_base": 4.799999713897705,
+     "gain_ci": [
+      3.299999713897705,
+      6.300000190734863
+     ]
+    },
+    "control_pick": {
+     "setting": 0.15,
+     "name": "ungated@0.15",
+     "objective": 5.0,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      7.912088394165039
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1,
+      0.15
+     ],
+     "gain_vs_base": 2.299999713897705,
+     "gain_ci": [
+      1.1000003695487977,
+      4.400000107288361
+     ]
+    },
+    "diff_vs_control": 2.5,
+    "ci95": [
+     0.5999999046325684,
+     3.700000047683716
+    ],
+    "verdict": "method better"
+   }
+  },
+  "foldcap": {
+   "2": {
+    "method": "foldcap",
+    "control": "ungated",
+    "budget": 2,
+    "n_objective": 1000,
+    "n_budget": [
+     910
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "foldcap@1",
+     "objective": 2.200000047683716,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      0.6593399047851562
+     ],
+     "n_settings": 7,
+     "feasible_settings": [
+      -1.0,
+      0.0,
+      0.75,
+      1.0
+     ],
+     "gain_vs_base": 5.09999942779541,
+     "gain_ci": [
+      3.6000001430511475,
+      7.3000006675720215
+     ]
+    },
+    "control_pick": {
+     "setting": 0.02,
+     "name": "ungated@0.02",
+     "objective": 6.700000286102295,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      0.10988998413085938
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02
+     ],
+     "gain_vs_base": 0.5999994277954102,
+     "gain_ci": [
+      0.0,
+      1.8000001907348633
+     ]
+    },
+    "diff_vs_control": 4.5,
+    "ci95": [
+     2.9974995434284213,
+     6.699999809265137
+    ],
+    "verdict": "method better"
+   },
+   "5": {
+    "method": "foldcap",
+    "control": "ungated",
+    "budget": 5,
+    "n_objective": 1000,
+    "n_budget": [
+     910
+    ],
+    "method_pick": {
+     "setting": 1.25,
+     "name": "foldcap@1.25",
+     "objective": 1.0,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      2.527472496032715
+     ],
+     "n_settings": 7,
+     "feasible_settings": [
+      -1.0,
+      0.0,
+      0.75,
+      1.0,
+      1.25,
+      1.5
+     ],
+     "gain_vs_base": 6.299999713897705,
+     "gain_ci": [
+      4.800000190734863,
+      8.0
+     ]
+    },
+    "control_pick": {
+     "setting": 0.1,
+     "name": "ungated@0.1",
+     "objective": 5.099999904632568,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      4.835165023803711
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1
+     ],
+     "gain_vs_base": 2.1999998092651367,
+     "gain_ci": [
+      0.10000038146972656,
+      3.302500641345964
+     ]
+    },
+    "diff_vs_control": 4.099999904632568,
+    "ci95": [
+     3.0,
+     6.400000095367432
+    ],
+    "verdict": "method better"
+   },
+   "10": {
+    "method": "foldcap",
+    "control": "ungated",
+    "budget": 10,
+    "n_objective": 1000,
+    "n_budget": [
+     910
+    ],
+    "method_pick": {
+     "setting": 2.0,
+     "name": "foldcap@2",
+     "objective": 0.8999999761581421,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      6.153846740722656
+     ],
+     "n_settings": 7,
+     "feasible_settings": [
+      -1.0,
+      0.0,
+      0.75,
+      1.0,
+      1.25,
+      1.5,
+      2.0
+     ],
+     "gain_vs_base": 6.399999618530273,
+     "gain_ci": [
+      4.800000190734863,
+      8.099999451637268
+     ]
+    },
+    "control_pick": {
+     "setting": 0.15,
+     "name": "ungated@0.15",
+     "objective": 5.0,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      7.912088394165039
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1,
+      0.15
+     ],
+     "gain_vs_base": 2.299999713897705,
+     "gain_ci": [
+      1.1000003695487977,
+      4.400000107288361
+     ]
+    },
+    "diff_vs_control": 4.099999904632568,
+    "ci95": [
+     2.200000047683716,
+     5.199999809265137
+    ],
+    "verdict": "method better"
+   }
+  },
+  "foldcaphook": {
+   "2": {
+    "method": "foldcaphook",
+    "control": "ungated",
+    "budget": 2,
+    "n_objective": 1000,
+    "n_budget": [
+     910
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "foldcaphook@1",
+     "objective": 2.0,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      1.6483516693115234
+     ],
+     "n_settings": 1,
+     "feasible_settings": [
+      1.0
+     ],
+     "gain_vs_base": 5.299999713897705,
+     "gain_ci": [
+      0.0,
+      6.700000298023224
+     ]
+    },
+    "control_pick": {
+     "setting": 0.02,
+     "name": "ungated@0.02",
+     "objective": 6.700000286102295,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      0.10988998413085938
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02
+     ],
+     "gain_vs_base": 0.5999994277954102,
+     "gain_ci": [
+      0.0,
+      1.8000001907348633
+     ]
+    },
+    "diff_vs_control": 4.700000286102295,
+    "ci95": [
+     -1.3999996185302734,
+     6.0
+    ],
+    "verdict": "not shown"
+   },
+   "5": {
+    "method": "foldcaphook",
+    "control": "ungated",
+    "budget": 5,
+    "n_objective": 1000,
+    "n_budget": [
+     910
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "foldcaphook@1",
+     "objective": 2.0,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      1.6483516693115234
+     ],
+     "n_settings": 1,
+     "feasible_settings": [
+      1.0
+     ],
+     "gain_vs_base": 5.299999713897705,
+     "gain_ci": [
+      3.799999952316284,
+      6.799999713897705
+     ]
+    },
+    "control_pick": {
+     "setting": 0.1,
+     "name": "ungated@0.1",
+     "objective": 5.099999904632568,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      4.835165023803711
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1
+     ],
+     "gain_vs_base": 2.1999998092651367,
+     "gain_ci": [
+      0.10000038146972656,
+      3.302500641345964
+     ]
+    },
+    "diff_vs_control": 3.0999999046325684,
+    "ci95": [
+     1.9000003278255462,
+     5.300000190734863
+    ],
+    "verdict": "method better"
+   },
+   "10": {
+    "method": "foldcaphook",
+    "control": "ungated",
+    "budget": 10,
+    "n_objective": 1000,
+    "n_budget": [
+     910
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "foldcaphook@1",
+     "objective": 2.0,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      1.6483516693115234
+     ],
+     "n_settings": 1,
+     "feasible_settings": [
+      1.0
+     ],
+     "gain_vs_base": 5.299999713897705,
+     "gain_ci": [
+      3.799999952316284,
+      6.799999713897705
+     ]
+    },
+    "control_pick": {
+     "setting": 0.15,
+     "name": "ungated@0.15",
+     "objective": 5.0,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      7.912088394165039
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1,
+      0.15
+     ],
+     "gain_vs_base": 2.299999713897705,
+     "gain_ci": [
+      1.1000003695487977,
+      4.400000107288361
+     ]
+    },
+    "diff_vs_control": 3.0,
+    "ci95": [
+     1.0999999046325684,
+     4.199999809265137
+    ],
+    "verdict": "method better"
+   }
+  },
+  "gate98_last": {
+   "2": {
+    "method": "gate98_last",
+    "control": "ungated",
+    "budget": 2,
+    "n_objective": 1000,
+    "n_budget": [
+     910
+    ],
+    "method_pick": {
+     "setting": null,
+     "name": "base",
+     "objective": 7.299999713897705,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      0.0
+     ],
+     "n_settings": 1,
+     "feasible_settings": [],
+     "gain_vs_base": 0.0,
+     "gain_ci": [
+      0.0,
+      6.899999630451203
+     ]
+    },
+    "control_pick": {
+     "setting": 0.02,
+     "name": "ungated@0.02",
+     "objective": 6.700000286102295,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      0.10988998413085938
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02
+     ],
+     "gain_vs_base": 0.5999994277954102,
+     "gain_ci": [
+      0.0,
+      1.8000001907348633
+     ]
+    },
+    "diff_vs_control": -0.5999994277954102,
+    "ci95": [
+     -1.799999713897705,
+     6.100000381469727
+    ],
+    "verdict": "not shown"
+   },
+   "5": {
+    "method": "gate98_last",
+    "control": "ungated",
+    "budget": 5,
+    "n_objective": 1000,
+    "n_budget": [
+     910
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "gate98_last@1",
+     "objective": 1.2000000476837158,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      2.637362480163574
+     ],
+     "n_settings": 1,
+     "feasible_settings": [
+      1.0
+     ],
+     "gain_vs_base": 6.09999942779541,
+     "gain_ci": [
+      4.5,
+      7.699999809265137
+     ]
+    },
+    "control_pick": {
+     "setting": 0.1,
+     "name": "ungated@0.1",
+     "objective": 5.099999904632568,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      4.835165023803711
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1
+     ],
+     "gain_vs_base": 2.1999998092651367,
+     "gain_ci": [
+      0.10000038146972656,
+      3.302500641345964
+     ]
+    },
+    "diff_vs_control": 3.8999998569488525,
+    "ci95": [
+     2.6000001430511475,
+     6.199999821186066
+    ],
+    "verdict": "method better"
+   },
+   "10": {
+    "method": "gate98_last",
+    "control": "ungated",
+    "budget": 10,
+    "n_objective": 1000,
+    "n_budget": [
+     910
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "gate98_last@1",
+     "objective": 1.2000000476837158,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      2.637362480163574
+     ],
+     "n_settings": 1,
+     "feasible_settings": [
+      1.0
+     ],
+     "gain_vs_base": 6.09999942779541,
+     "gain_ci": [
+      4.5,
+      7.699999809265137
+     ]
+    },
+    "control_pick": {
+     "setting": 0.15,
+     "name": "ungated@0.15",
+     "objective": 5.0,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      7.912088394165039
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1,
+      0.15
+     ],
+     "gain_vs_base": 2.299999713897705,
+     "gain_ci": [
+      1.1000003695487977,
+      4.400000107288361
+     ]
+    },
+    "diff_vs_control": 3.799999952316284,
+    "ci95": [
+     1.8999998569488525,
+     4.900000095367432
+    ],
+    "verdict": "method better"
+   }
+  },
+  "lora_long": {
+   "2": {
+    "method": "lora_long",
+    "control": "ungated",
+    "budget": 2,
+    "n_objective": 1000,
+    "n_budget": [
+     910
+    ],
+    "method_pick": {
+     "setting": 0.5,
+     "name": "lora_long@0.5",
+     "objective": 5.5,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      1.6483516693115234
+     ],
+     "n_settings": 3,
+     "feasible_settings": [
+      0.5
+     ],
+     "gain_vs_base": 1.799999713897705,
+     "gain_ci": [
+      0.0,
+      4.600000381469727
+     ]
+    },
+    "control_pick": {
+     "setting": 0.02,
+     "name": "ungated@0.02",
+     "objective": 6.700000286102295,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      0.10988998413085938
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02
+     ],
+     "gain_vs_base": 0.5999994277954102,
+     "gain_ci": [
+      0.0,
+      1.8000001907348633
+     ]
+    },
+    "diff_vs_control": 1.200000286102295,
+    "ci95": [
+     -1.5,
+     3.6025003671645983
+    ],
+    "verdict": "not shown"
+   },
+   "5": {
+    "method": "lora_long",
+    "control": "ungated",
+    "budget": 5,
+    "n_objective": 1000,
+    "n_budget": [
+     910
+    ],
+    "method_pick": {
+     "setting": 0.75,
+     "name": "lora_long@0.75",
+     "objective": 3.5,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      3.076923370361328
+     ],
+     "n_settings": 3,
+     "feasible_settings": [
+      0.5,
+      0.75
+     ],
+     "gain_vs_base": 3.799999713897705,
+     "gain_ci": [
+      2.0,
+      6.299999725818634
+     ]
+    },
+    "control_pick": {
+     "setting": 0.1,
+     "name": "ungated@0.1",
+     "objective": 5.099999904632568,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      4.835165023803711
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1
+     ],
+     "gain_vs_base": 2.1999998092651367,
+     "gain_ci": [
+      0.10000038146972656,
+      3.302500641345964
+     ]
+    },
+    "diff_vs_control": 1.5999999046325684,
+    "ci95": [
+     0.39999985694885254,
+     4.399999618530273
+    ],
+    "verdict": "method better"
+   },
+   "10": {
+    "method": "lora_long",
+    "control": "ungated",
+    "budget": 10,
+    "n_objective": 1000,
+    "n_budget": [
+     910
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "lora_long@1",
+     "objective": 2.299999952316284,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      5.274724960327148
+     ],
+     "n_settings": 3,
+     "feasible_settings": [
+      0.5,
+      0.75,
+      1.0
+     ],
+     "gain_vs_base": 5.0,
+     "gain_ci": [
+      3.3999996185302734,
+      6.600000381469727
+     ]
+    },
+    "control_pick": {
+     "setting": 0.15,
+     "name": "ungated@0.15",
+     "objective": 5.0,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      7.912088394165039
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1,
+      0.15
+     ],
+     "gain_vs_base": 2.299999713897705,
+     "gain_ci": [
+      1.1000003695487977,
+      4.400000107288361
+     ]
+    },
+    "diff_vs_control": 2.700000047683716,
+    "ci95": [
+     0.7999999523162842,
+     3.799999952316284
+    ],
+    "verdict": "method better"
+   }
+  },
+  "lora_tight": {
+   "2": {
+    "method": "lora_tight",
+    "control": "ungated",
+    "budget": 2,
+    "n_objective": 1000,
+    "n_budget": [
+     910
+    ],
+    "method_pick": {
+     "setting": 0.0,
+     "name": "lora_tight@0",
+     "objective": 7.299999713897705,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      0.0
+     ],
+     "n_settings": 5,
+     "feasible_settings": [
+      -0.5,
+      0.0
+     ],
+     "gain_vs_base": 0.0,
+     "gain_ci": [
+      0.0,
+      1.2025007247924668
+     ]
+    },
+    "control_pick": {
+     "setting": 0.02,
+     "name": "ungated@0.02",
+     "objective": 6.700000286102295,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      0.10988998413085938
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02
+     ],
+     "gain_vs_base": 0.5999994277954102,
+     "gain_ci": [
+      0.0,
+      1.8000001907348633
+     ]
+    },
+    "diff_vs_control": -0.5999994277954102,
+    "ci95": [
+     -1.700000286102295,
+     0.5
+    ],
+    "verdict": "not shown"
+   },
+   "5": {
+    "method": "lora_tight",
+    "control": "ungated",
+    "budget": 5,
+    "n_objective": 1000,
+    "n_budget": [
+     910
+    ],
+    "method_pick": {
+     "setting": 0.5,
+     "name": "lora_tight@0.5",
+     "objective": 6.899999618530273,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      2.637362480163574
+     ],
+     "n_settings": 5,
+     "feasible_settings": [
+      -0.5,
+      0.0,
+      0.5
+     ],
+     "gain_vs_base": 0.40000009536743164,
+     "gain_ci": [
+      0.0,
+      5.000000011920929
+     ]
+    },
+    "control_pick": {
+     "setting": 0.1,
+     "name": "ungated@0.1",
+     "objective": 5.099999904632568,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      4.835165023803711
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1
+     ],
+     "gain_vs_base": 2.1999998092651367,
+     "gain_ci": [
+      0.10000038146972656,
+      3.302500641345964
+     ]
+    },
+    "diff_vs_control": -1.799999713897705,
+    "ci95": [
+     -2.5999999046325684,
+     2.7999999582767487
+    ],
+    "verdict": "not shown"
+   },
+   "10": {
+    "method": "lora_tight",
+    "control": "ungated",
+    "budget": 10,
+    "n_objective": 1000,
+    "n_budget": [
+     910
+    ],
+    "method_pick": {
+     "setting": 1.5,
+     "name": "lora_tight@1.5",
+     "objective": 2.5,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      9.120878219604492
+     ],
+     "n_settings": 5,
+     "feasible_settings": [
+      -0.5,
+      0.0,
+      0.5,
+      1.0,
+      1.5
+     ],
+     "gain_vs_base": 4.799999713897705,
+     "gain_ci": [
+      2.7000002801418304,
+      6.200000286102295
+     ]
+    },
+    "control_pick": {
+     "setting": 0.15,
+     "name": "ungated@0.15",
+     "objective": 5.0,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      7.912088394165039
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1,
+      0.15
+     ],
+     "gain_vs_base": 2.299999713897705,
+     "gain_ci": [
+      1.1000003695487977,
+      4.400000107288361
+     ]
+    },
+    "diff_vs_control": 2.5,
+    "ci95": [
+     0.3000001847743988,
+     3.4000000953674316
+    ],
+    "verdict": "method better"
+   }
+  },
+  "relu98_last": {
+   "2": {
+    "method": "relu98_last",
+    "control": "ungated",
+    "budget": 2,
+    "n_objective": 1000,
+    "n_budget": [
+     910
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "relu98_last@1",
+     "objective": 2.299999952316284,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      0.9890108108520508
+     ],
+     "n_settings": 1,
+     "feasible_settings": [
+      1.0
+     ],
+     "gain_vs_base": 5.0,
+     "gain_ci": [
+      3.3999998569488525,
+      6.40000057220459
+     ]
+    },
+    "control_pick": {
+     "setting": 0.02,
+     "name": "ungated@0.02",
+     "objective": 6.700000286102295,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      0.10988998413085938
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02
+     ],
+     "gain_vs_base": 0.5999994277954102,
+     "gain_ci": [
+      0.0,
+      1.8000001907348633
+     ]
+    },
+    "diff_vs_control": 4.40000057220459,
+    "ci95": [
+     2.799999713897705,
+     5.699999809265137
+    ],
+    "verdict": "method better"
+   },
+   "5": {
+    "method": "relu98_last",
+    "control": "ungated",
+    "budget": 5,
+    "n_objective": 1000,
+    "n_budget": [
+     910
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "relu98_last@1",
+     "objective": 2.299999952316284,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      0.9890108108520508
+     ],
+     "n_settings": 1,
+     "feasible_settings": [
+      1.0
+     ],
+     "gain_vs_base": 5.0,
+     "gain_ci": [
+      3.500000238418579,
+      6.40000057220459
+     ]
+    },
+    "control_pick": {
+     "setting": 0.1,
+     "name": "ungated@0.1",
+     "objective": 5.099999904632568,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      4.835165023803711
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1
+     ],
+     "gain_vs_base": 2.1999998092651367,
+     "gain_ci": [
+      0.10000038146972656,
+      3.302500641345964
+     ]
+    },
+    "diff_vs_control": 2.799999952316284,
+    "ci95": [
+     1.7000002801418304,
+     5.0
+    ],
+    "verdict": "method better"
+   },
+   "10": {
+    "method": "relu98_last",
+    "control": "ungated",
+    "budget": 10,
+    "n_objective": 1000,
+    "n_budget": [
+     910
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "relu98_last@1",
+     "objective": 2.299999952316284,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      0.9890108108520508
+     ],
+     "n_settings": 1,
+     "feasible_settings": [
+      1.0
+     ],
+     "gain_vs_base": 5.0,
+     "gain_ci": [
+      3.500000238418579,
+      6.40000057220459
+     ]
+    },
+    "control_pick": {
+     "setting": 0.15,
+     "name": "ungated@0.15",
+     "objective": 5.0,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      7.912088394165039
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1,
+      0.15
+     ],
+     "gain_vs_base": 2.299999713897705,
+     "gain_ci": [
+      1.1000003695487977,
+      4.400000107288361
+     ]
+    },
+    "diff_vs_control": 2.700000047683716,
+    "ci95": [
+     0.8000001907348633,
+     3.799999713897705
+    ],
+    "verdict": "method better"
+   }
+  },
+  "scans_Tplain": {
+   "2": {
+    "method": "scans_Tplain",
+    "control": "ungated",
+    "budget": 2,
+    "n_objective": 1000,
+    "n_budget": [
+     910
+    ],
+    "method_pick": {
+     "setting": null,
+     "name": "base",
+     "objective": 7.299999713897705,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      0.0
+     ],
+     "n_settings": 3,
+     "feasible_settings": [
+      0.03,
+      0.06,
+      0.12
+     ],
+     "gain_vs_base": 0.0,
+     "gain_ci": [
+      0.0,
+      0.0
+     ]
+    },
+    "control_pick": {
+     "setting": 0.02,
+     "name": "ungated@0.02",
+     "objective": 6.700000286102295,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      0.10988998413085938
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02
+     ],
+     "gain_vs_base": 0.5999994277954102,
+     "gain_ci": [
+      0.0,
+      1.8000001907348633
+     ]
+    },
+    "diff_vs_control": -0.5999994277954102,
+    "ci95": [
+     -1.8000001907348633,
+     0.0
+    ],
+    "verdict": "not shown"
+   },
+   "5": {
+    "method": "scans_Tplain",
+    "control": "ungated",
+    "budget": 5,
+    "n_objective": 1000,
+    "n_budget": [
+     910
+    ],
+    "method_pick": {
+     "setting": null,
+     "name": "base",
+     "objective": 7.299999713897705,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      0.0
+     ],
+     "n_settings": 3,
+     "feasible_settings": [
+      0.03,
+      0.06,
+      0.12
+     ],
+     "gain_vs_base": 0.0,
+     "gain_ci": [
+      0.0,
+      0.0
+     ]
+    },
+    "control_pick": {
+     "setting": 0.1,
+     "name": "ungated@0.1",
+     "objective": 5.099999904632568,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      4.835165023803711
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1
+     ],
+     "gain_vs_base": 2.1999998092651367,
+     "gain_ci": [
+      0.10000038146972656,
+      3.302500641345964
+     ]
+    },
+    "diff_vs_control": -2.1999998092651367,
+    "ci95": [
+     -3.3025006413459774,
+     -0.10000038146972656
+    ],
+    "verdict": "control better"
+   },
+   "10": {
+    "method": "scans_Tplain",
+    "control": "ungated",
+    "budget": 10,
+    "n_objective": 1000,
+    "n_budget": [
+     910
+    ],
+    "method_pick": {
+     "setting": null,
+     "name": "base",
+     "objective": 7.299999713897705,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      0.0
+     ],
+     "n_settings": 3,
+     "feasible_settings": [
+      0.03,
+      0.06,
+      0.12
+     ],
+     "gain_vs_base": 0.0,
+     "gain_ci": [
+      0.0,
+      0.0
+     ]
+    },
+    "control_pick": {
+     "setting": 0.15,
+     "name": "ungated@0.15",
+     "objective": 5.0,
+     "base_objective": 7.299999713897705,
+     "budget_rise": [
+      7.912088394165039
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1,
+      0.15
+     ],
+     "gain_vs_base": 2.299999713897705,
+     "gain_ci": [
+      1.1000003695487977,
+      4.400000107288361
+     ]
+    },
+    "diff_vs_control": -2.299999713897705,
+    "ci95": [
+     -4.400000107288361,
+     -1.1000003695487977
+    ],
+    "verdict": "control better"
+   }
+  }
+ },
+ "boards_eval_rows_only": {
+  "fold_g4": {
+   "2": {
+    "method": "fold_g4",
+    "control": "ungated",
+    "budget": 2,
+    "n_objective": 300,
+    "n_budget": [
+     210
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "fold_g4@1",
+     "objective": 4.333333492279053,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      0.9523811340332031
+     ],
+     "n_settings": 2,
+     "feasible_settings": [
+      1.0
+     ],
+     "gain_vs_base": 4.999999523162842,
+     "gain_ci": [
+      0.0,
+      7.666666996479035
+     ]
+    },
+    "control_pick": {
+     "setting": 0.02,
+     "name": "ungated@0.02",
+     "objective": 9.333333015441895,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      -1.9047622680664062
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05
+     ],
+     "gain_vs_base": 0.0,
+     "gain_ci": [
+      0.0,
+      3.0
+     ]
+    },
+    "diff_vs_control": 4.999999523162842,
+    "ci95": [
+     -1.0083342313766475,
+     6.999999535083771
+    ],
+    "verdict": "not shown"
+   },
+   "5": {
+    "method": "fold_g4",
+    "control": "ungated",
+    "budget": 5,
+    "n_objective": 300,
+    "n_budget": [
+     210
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "fold_g4@1",
+     "objective": 4.333333492279053,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      0.9523811340332031
+     ],
+     "n_settings": 2,
+     "feasible_settings": [
+      1.0,
+      1.5
+     ],
+     "gain_vs_base": 4.999999523162842,
+     "gain_ci": [
+      2.3333334922790527,
+      8.0
+     ]
+    },
+    "control_pick": {
+     "setting": 0.08,
+     "name": "ungated@0.08",
+     "objective": 8.666666984558105,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      4.285713195800781
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08
+     ],
+     "gain_vs_base": 0.6666660308837891,
+     "gain_ci": [
+      0.0,
+      3.6666669845581055
+     ]
+    },
+    "diff_vs_control": 4.333333492279053,
+    "ci95": [
+     1.3333334922790527,
+     6.666666519641876
+    ],
+    "verdict": "method better"
+   },
+   "10": {
+    "method": "fold_g4",
+    "control": "ungated",
+    "budget": 10,
+    "n_objective": 300,
+    "n_budget": [
+     210
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "fold_g4@1",
+     "objective": 4.333333492279053,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      0.9523811340332031
+     ],
+     "n_settings": 2,
+     "feasible_settings": [
+      1.0,
+      1.5
+     ],
+     "gain_vs_base": 4.999999523162842,
+     "gain_ci": [
+      2.3333334922790527,
+      8.0
+     ]
+    },
+    "control_pick": {
+     "setting": 0.15,
+     "name": "ungated@0.15",
+     "objective": 7.0,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      10.0
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1,
+      0.15
+     ],
+     "gain_vs_base": 2.3333330154418945,
+     "gain_ci": [
+      0.0,
+      6.000000476837158
+     ]
+    },
+    "diff_vs_control": 2.6666665077209473,
+    "ci95": [
+     -0.6666665077209473,
+     5.6666669845581055
+    ],
+    "verdict": "not shown"
+   }
+  },
+  "foldcap": {
+   "2": {
+    "method": "foldcap",
+    "control": "ungated",
+    "budget": 2,
+    "n_objective": 300,
+    "n_budget": [
+     210
+    ],
+    "method_pick": {
+     "setting": 1.25,
+     "name": "foldcap@1.25",
+     "objective": 1.6666667461395264,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      1.4285697937011719
+     ],
+     "n_settings": 7,
+     "feasible_settings": [
+      -1.0,
+      0.0,
+      0.75,
+      1.0,
+      1.25
+     ],
+     "gain_vs_base": 7.666666030883789,
+     "gain_ci": [
+      2.999999523162842,
+      10.333333969116211
+     ]
+    },
+    "control_pick": {
+     "setting": 0.02,
+     "name": "ungated@0.02",
+     "objective": 9.333333015441895,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      -1.9047622680664062
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05
+     ],
+     "gain_vs_base": 0.0,
+     "gain_ci": [
+      0.0,
+      3.0
+     ]
+    },
+    "diff_vs_control": 7.666666030883789,
+    "ci95": [
+     2.3333334922790527,
+     9.67500028610225
+    ],
+    "verdict": "method better"
+   },
+   "5": {
+    "method": "foldcap",
+    "control": "ungated",
+    "budget": 5,
+    "n_objective": 300,
+    "n_budget": [
+     210
+    ],
+    "method_pick": {
+     "setting": 1.25,
+     "name": "foldcap@1.25",
+     "objective": 1.6666667461395264,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      1.4285697937011719
+     ],
+     "n_settings": 7,
+     "feasible_settings": [
+      -1.0,
+      0.0,
+      0.75,
+      1.0,
+      1.25,
+      1.5
+     ],
+     "gain_vs_base": 7.666666030883789,
+     "gain_ci": [
+      4.666666507720947,
+      11.000000023841858
+     ]
+    },
+    "control_pick": {
+     "setting": 0.08,
+     "name": "ungated@0.08",
+     "objective": 8.666666984558105,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      4.285713195800781
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08
+     ],
+     "gain_vs_base": 0.6666660308837891,
+     "gain_ci": [
+      0.0,
+      3.6666669845581055
+     ]
+    },
+    "diff_vs_control": 7.0,
+    "ci95": [
+     3.6666669845581055,
+     9.666666984558105
+    ],
+    "verdict": "method better"
+   },
+   "10": {
+    "method": "foldcap",
+    "control": "ungated",
+    "budget": 10,
+    "n_objective": 300,
+    "n_budget": [
+     210
+    ],
+    "method_pick": {
+     "setting": 2.0,
+     "name": "foldcap@2",
+     "objective": 1.3333333730697632,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      6.1904754638671875
+     ],
+     "n_settings": 7,
+     "feasible_settings": [
+      -1.0,
+      0.0,
+      0.75,
+      1.0,
+      1.25,
+      1.5,
+      2.0
+     ],
+     "gain_vs_base": 7.999999523162842,
+     "gain_ci": [
+      5.0,
+      11.333333039283753
+     ]
+    },
+    "control_pick": {
+     "setting": 0.15,
+     "name": "ungated@0.15",
+     "objective": 7.0,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      10.0
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1,
+      0.15
+     ],
+     "gain_vs_base": 2.3333330154418945,
+     "gain_ci": [
+      0.0,
+      6.000000476837158
+     ]
+    },
+    "diff_vs_control": 5.666666507720947,
+    "ci95": [
+     2.3333332538604736,
+     9.0
+    ],
+    "verdict": "method better"
+   }
+  },
+  "foldcaphook": {
+   "2": {
+    "method": "foldcaphook",
+    "control": "ungated",
+    "budget": 2,
+    "n_objective": 300,
+    "n_budget": [
+     210
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "foldcaphook@1",
+     "objective": 4.0,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      0.9523811340332031
+     ],
+     "n_settings": 1,
+     "feasible_settings": [
+      1.0
+     ],
+     "gain_vs_base": 5.3333330154418945,
+     "gain_ci": [
+      0.0,
+      8.0
+     ]
+    },
+    "control_pick": {
+     "setting": 0.02,
+     "name": "ungated@0.02",
+     "objective": 9.333333015441895,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      -1.9047622680664062
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05
+     ],
+     "gain_vs_base": 0.0,
+     "gain_ci": [
+      0.0,
+      3.0
+     ]
+    },
+    "diff_vs_control": 5.3333330154418945,
+    "ci95": [
+     -1.3333330154418945,
+     7.000000476837158
+    ],
+    "verdict": "not shown"
+   },
+   "5": {
+    "method": "foldcaphook",
+    "control": "ungated",
+    "budget": 5,
+    "n_objective": 300,
+    "n_budget": [
+     210
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "foldcaphook@1",
+     "objective": 4.0,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      0.9523811340332031
+     ],
+     "n_settings": 1,
+     "feasible_settings": [
+      1.0
+     ],
+     "gain_vs_base": 5.3333330154418945,
+     "gain_ci": [
+      2.6666669845581055,
+      8.0
+     ]
+    },
+    "control_pick": {
+     "setting": 0.08,
+     "name": "ungated@0.08",
+     "objective": 8.666666984558105,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      4.285713195800781
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08
+     ],
+     "gain_vs_base": 0.6666660308837891,
+     "gain_ci": [
+      0.0,
+      3.6666669845581055
+     ]
+    },
+    "diff_vs_control": 4.6666669845581055,
+    "ci95": [
+     1.6666665077209473,
+     7.0
+    ],
+    "verdict": "method better"
+   },
+   "10": {
+    "method": "foldcaphook",
+    "control": "ungated",
+    "budget": 10,
+    "n_objective": 300,
+    "n_budget": [
+     210
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "foldcaphook@1",
+     "objective": 4.0,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      0.9523811340332031
+     ],
+     "n_settings": 1,
+     "feasible_settings": [
+      1.0
+     ],
+     "gain_vs_base": 5.3333330154418945,
+     "gain_ci": [
+      2.6666669845581055,
+      8.0
+     ]
+    },
+    "control_pick": {
+     "setting": 0.15,
+     "name": "ungated@0.15",
+     "objective": 7.0,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      10.0
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1,
+      0.15
+     ],
+     "gain_vs_base": 2.3333330154418945,
+     "gain_ci": [
+      0.0,
+      6.000000476837158
+     ]
+    },
+    "diff_vs_control": 3.0,
+    "ci95": [
+     -0.333333021402359,
+     6.0
+    ],
+    "verdict": "not shown"
+   }
+  },
+  "gate98_last": {
+   "2": {
+    "method": "gate98_last",
+    "control": "ungated",
+    "budget": 2,
+    "n_objective": 300,
+    "n_budget": [
+     210
+    ],
+    "method_pick": {
+     "setting": null,
+     "name": "base",
+     "objective": 9.333333015441895,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      0.0
+     ],
+     "n_settings": 1,
+     "feasible_settings": [],
+     "gain_vs_base": 0.0,
+     "gain_ci": [
+      0.0,
+      9.341667270660356
+     ]
+    },
+    "control_pick": {
+     "setting": 0.02,
+     "name": "ungated@0.02",
+     "objective": 9.333333015441895,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      -1.9047622680664062
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05
+     ],
+     "gain_vs_base": 0.0,
+     "gain_ci": [
+      0.0,
+      3.0
+     ]
+    },
+    "diff_vs_control": 0.0,
+    "ci95": [
+     -2.3416672706604,
+     8.666666984558105
+    ],
+    "verdict": "not shown"
+   },
+   "5": {
+    "method": "gate98_last",
+    "control": "ungated",
+    "budget": 5,
+    "n_objective": 300,
+    "n_budget": [
+     210
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "gate98_last@1",
+     "objective": 2.3333332538604736,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      2.380950927734375
+     ],
+     "n_settings": 1,
+     "feasible_settings": [
+      1.0
+     ],
+     "gain_vs_base": 7.0,
+     "gain_ci": [
+      0.0,
+      10.0
+     ]
+    },
+    "control_pick": {
+     "setting": 0.08,
+     "name": "ungated@0.08",
+     "objective": 8.666666984558105,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      4.285713195800781
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08
+     ],
+     "gain_vs_base": 0.6666660308837891,
+     "gain_ci": [
+      0.0,
+      3.6666669845581055
+     ]
+    },
+    "diff_vs_control": 6.333333969116211,
+    "ci95": [
+     0.0,
+     9.0
+    ],
+    "verdict": "not shown"
+   },
+   "10": {
+    "method": "gate98_last",
+    "control": "ungated",
+    "budget": 10,
+    "n_objective": 300,
+    "n_budget": [
+     210
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "gate98_last@1",
+     "objective": 2.3333332538604736,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      2.380950927734375
+     ],
+     "n_settings": 1,
+     "feasible_settings": [
+      1.0
+     ],
+     "gain_vs_base": 7.0,
+     "gain_ci": [
+      3.9999999940395354,
+      10.000000023841858
+     ]
+    },
+    "control_pick": {
+     "setting": 0.15,
+     "name": "ungated@0.15",
+     "objective": 7.0,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      10.0
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1,
+      0.15
+     ],
+     "gain_vs_base": 2.3333330154418945,
+     "gain_ci": [
+      0.0,
+      6.000000476837158
+     ]
+    },
+    "diff_vs_control": 4.6666669845581055,
+    "ci95": [
+     1.3333332538604736,
+     8.0
+    ],
+    "verdict": "method better"
+   }
+  },
+  "lora_long": {
+   "2": {
+    "method": "lora_long",
+    "control": "ungated",
+    "budget": 2,
+    "n_objective": 300,
+    "n_budget": [
+     210
+    ],
+    "method_pick": {
+     "setting": 0.75,
+     "name": "lora_long@0.75",
+     "objective": 6.0,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      1.9047603607177734
+     ],
+     "n_settings": 3,
+     "feasible_settings": [
+      0.5,
+      0.75
+     ],
+     "gain_vs_base": 3.3333330154418945,
+     "gain_ci": [
+      0.0,
+      6.333333492279053
+     ]
+    },
+    "control_pick": {
+     "setting": 0.02,
+     "name": "ungated@0.02",
+     "objective": 9.333333015441895,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      -1.9047622680664062
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05
+     ],
+     "gain_vs_base": 0.0,
+     "gain_ci": [
+      0.0,
+      3.0
+     ]
+    },
+    "diff_vs_control": 3.3333330154418945,
+    "ci95": [
+     -2.0,
+     5.3333330154418945
+    ],
+    "verdict": "not shown"
+   },
+   "5": {
+    "method": "lora_long",
+    "control": "ungated",
+    "budget": 5,
+    "n_objective": 300,
+    "n_budget": [
+     210
+    ],
+    "method_pick": {
+     "setting": 0.75,
+     "name": "lora_long@0.75",
+     "objective": 6.0,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      1.9047603607177734
+     ],
+     "n_settings": 3,
+     "feasible_settings": [
+      0.5,
+      0.75
+     ],
+     "gain_vs_base": 3.3333330154418945,
+     "gain_ci": [
+      0.0,
+      7.3333330154418945
+     ]
+    },
+    "control_pick": {
+     "setting": 0.08,
+     "name": "ungated@0.08",
+     "objective": 8.666666984558105,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      4.285713195800781
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08
+     ],
+     "gain_vs_base": 0.6666660308837891,
+     "gain_ci": [
+      0.0,
+      3.6666669845581055
+     ]
+    },
+    "diff_vs_control": 2.6666669845581055,
+    "ci95": [
+     -0.6666669845581055,
+     5.666666507720947
+    ],
+    "verdict": "not shown"
+   },
+   "10": {
+    "method": "lora_long",
+    "control": "ungated",
+    "budget": 10,
+    "n_objective": 300,
+    "n_budget": [
+     210
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "lora_long@1",
+     "objective": 5.0,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      5.714284896850586
+     ],
+     "n_settings": 3,
+     "feasible_settings": [
+      0.5,
+      0.75,
+      1.0
+     ],
+     "gain_vs_base": 4.3333330154418945,
+     "gain_ci": [
+      1.3333330154418945,
+      7.6666669845581055
+     ]
+    },
+    "control_pick": {
+     "setting": 0.15,
+     "name": "ungated@0.15",
+     "objective": 7.0,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      10.0
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1,
+      0.15
+     ],
+     "gain_vs_base": 2.3333330154418945,
+     "gain_ci": [
+      0.0,
+      6.000000476837158
+     ]
+    },
+    "diff_vs_control": 2.0,
+    "ci95": [
+     -1.3333330154418945,
+     5.0
+    ],
+    "verdict": "not shown"
+   }
+  },
+  "lora_tight": {
+   "2": {
+    "method": "lora_tight",
+    "control": "ungated",
+    "budget": 2,
+    "n_objective": 300,
+    "n_budget": [
+     210
+    ],
+    "method_pick": {
+     "setting": 0.0,
+     "name": "lora_tight@0",
+     "objective": 9.333333015441895,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      0.0
+     ],
+     "n_settings": 5,
+     "feasible_settings": [
+      -0.5,
+      0.0,
+      0.5
+     ],
+     "gain_vs_base": 0.0,
+     "gain_ci": [
+      0.0,
+      2.6750012397765657
+     ]
+    },
+    "control_pick": {
+     "setting": 0.02,
+     "name": "ungated@0.02",
+     "objective": 9.333333015441895,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      -1.9047622680664062
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05
+     ],
+     "gain_vs_base": 0.0,
+     "gain_ci": [
+      0.0,
+      3.0
+     ]
+    },
+    "diff_vs_control": 0.0,
+    "ci95": [
+     -2.6666669845581055,
+     1.6750002861022495
+    ],
+    "verdict": "not shown"
+   },
+   "5": {
+    "method": "lora_tight",
+    "control": "ungated",
+    "budget": 5,
+    "n_objective": 300,
+    "n_budget": [
+     210
+    ],
+    "method_pick": {
+     "setting": 0.0,
+     "name": "lora_tight@0",
+     "objective": 9.333333015441895,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      0.0
+     ],
+     "n_settings": 5,
+     "feasible_settings": [
+      -0.5,
+      0.0,
+      0.5
+     ],
+     "gain_vs_base": 0.0,
+     "gain_ci": [
+      0.0,
+      6.000000476837158
+     ]
+    },
+    "control_pick": {
+     "setting": 0.08,
+     "name": "ungated@0.08",
+     "objective": 8.666666984558105,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      4.285713195800781
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08
+     ],
+     "gain_vs_base": 0.6666660308837891,
+     "gain_ci": [
+      0.0,
+      3.6666669845581055
+     ]
+    },
+    "diff_vs_control": -0.6666660308837891,
+    "ci95": [
+     -3.3333330154418945,
+     4.6666669845581055
+    ],
+    "verdict": "not shown"
+   },
+   "10": {
+    "method": "lora_tight",
+    "control": "ungated",
+    "budget": 10,
+    "n_objective": 300,
+    "n_budget": [
+     210
+    ],
+    "method_pick": {
+     "setting": 1.5,
+     "name": "lora_tight@1.5",
+     "objective": 5.333333492279053,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      7.142856597900391
+     ],
+     "n_settings": 5,
+     "feasible_settings": [
+      -0.5,
+      0.0,
+      0.5,
+      1.0,
+      1.5
+     ],
+     "gain_vs_base": 3.999999523162842,
+     "gain_ci": [
+      0.0,
+      7.333333027362824
+     ]
+    },
+    "control_pick": {
+     "setting": 0.15,
+     "name": "ungated@0.15",
+     "objective": 7.0,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      10.0
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1,
+      0.15
+     ],
+     "gain_vs_base": 2.3333330154418945,
+     "gain_ci": [
+      0.0,
+      6.000000476837158
+     ]
+    },
+    "diff_vs_control": 1.6666665077209473,
+    "ci95": [
+     -2.3333330154418945,
+     4.999999523162842
+    ],
+    "verdict": "not shown"
+   }
+  },
+  "relu98_last": {
+   "2": {
+    "method": "relu98_last",
+    "control": "ungated",
+    "budget": 2,
+    "n_objective": 300,
+    "n_budget": [
+     210
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "relu98_last@1",
+     "objective": 5.0,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      0.0
+     ],
+     "n_settings": 1,
+     "feasible_settings": [
+      1.0
+     ],
+     "gain_vs_base": 4.3333330154418945,
+     "gain_ci": [
+      1.3333330154418945,
+      7.333332538604736
+     ]
+    },
+    "control_pick": {
+     "setting": 0.02,
+     "name": "ungated@0.02",
+     "objective": 9.333333015441895,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      -1.9047622680664062
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05
+     ],
+     "gain_vs_base": 0.0,
+     "gain_ci": [
+      0.0,
+      3.0
+     ]
+    },
+    "diff_vs_control": 4.3333330154418945,
+    "ci95": [
+     1.0,
+     6.333333492279053
+    ],
+    "verdict": "method better"
+   },
+   "5": {
+    "method": "relu98_last",
+    "control": "ungated",
+    "budget": 5,
+    "n_objective": 300,
+    "n_budget": [
+     210
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "relu98_last@1",
+     "objective": 5.0,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      0.0
+     ],
+     "n_settings": 1,
+     "feasible_settings": [
+      1.0
+     ],
+     "gain_vs_base": 4.3333330154418945,
+     "gain_ci": [
+      1.6666664958000184,
+      7.333332538604736
+     ]
+    },
+    "control_pick": {
+     "setting": 0.08,
+     "name": "ungated@0.08",
+     "objective": 8.666666984558105,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      4.285713195800781
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08
+     ],
+     "gain_vs_base": 0.6666660308837891,
+     "gain_ci": [
+      0.0,
+      3.6666669845581055
+     ]
+    },
+    "diff_vs_control": 3.6666669845581055,
+    "ci95": [
+     0.6666669845581055,
+     5.999999523162842
+    ],
+    "verdict": "method better"
+   },
+   "10": {
+    "method": "relu98_last",
+    "control": "ungated",
+    "budget": 10,
+    "n_objective": 300,
+    "n_budget": [
+     210
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "relu98_last@1",
+     "objective": 5.0,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      0.0
+     ],
+     "n_settings": 1,
+     "feasible_settings": [
+      1.0
+     ],
+     "gain_vs_base": 4.3333330154418945,
+     "gain_ci": [
+      1.6666664958000184,
+      7.333332538604736
+     ]
+    },
+    "control_pick": {
+     "setting": 0.15,
+     "name": "ungated@0.15",
+     "objective": 7.0,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      10.0
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1,
+      0.15
+     ],
+     "gain_vs_base": 2.3333330154418945,
+     "gain_ci": [
+      0.0,
+      6.000000476837158
+     ]
+    },
+    "diff_vs_control": 2.0,
+    "ci95": [
+     -1.0,
+     4.999999523162842
+    ],
+    "verdict": "not shown"
+   }
+  },
+  "scans_Tplain": {
+   "2": {
+    "method": "scans_Tplain",
+    "control": "ungated",
+    "budget": 2,
+    "n_objective": 300,
+    "n_budget": [
+     210
+    ],
+    "method_pick": {
+     "setting": null,
+     "name": "base",
+     "objective": 9.333333015441895,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      0.0
+     ],
+     "n_settings": 3,
+     "feasible_settings": [
+      0.03,
+      0.06,
+      0.12
+     ],
+     "gain_vs_base": 0.0,
+     "gain_ci": [
+      0.0,
+      0.0
+     ]
+    },
+    "control_pick": {
+     "setting": 0.02,
+     "name": "ungated@0.02",
+     "objective": 9.333333015441895,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      -1.9047622680664062
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05
+     ],
+     "gain_vs_base": 0.0,
+     "gain_ci": [
+      0.0,
+      3.0
+     ]
+    },
+    "diff_vs_control": 0.0,
+    "ci95": [
+     -3.0,
+     0.0
+    ],
+    "verdict": "not shown"
+   },
+   "5": {
+    "method": "scans_Tplain",
+    "control": "ungated",
+    "budget": 5,
+    "n_objective": 300,
+    "n_budget": [
+     210
+    ],
+    "method_pick": {
+     "setting": null,
+     "name": "base",
+     "objective": 9.333333015441895,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      0.0
+     ],
+     "n_settings": 3,
+     "feasible_settings": [
+      0.03,
+      0.06,
+      0.12
+     ],
+     "gain_vs_base": 0.0,
+     "gain_ci": [
+      0.0,
+      0.0
+     ]
+    },
+    "control_pick": {
+     "setting": 0.08,
+     "name": "ungated@0.08",
+     "objective": 8.666666984558105,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      4.285713195800781
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08
+     ],
+     "gain_vs_base": 0.6666660308837891,
+     "gain_ci": [
+      0.0,
+      3.6666669845581055
+     ]
+    },
+    "diff_vs_control": -0.6666660308837891,
+    "ci95": [
+     -3.6666669845581055,
+     0.0
+    ],
+    "verdict": "not shown"
+   },
+   "10": {
+    "method": "scans_Tplain",
+    "control": "ungated",
+    "budget": 10,
+    "n_objective": 300,
+    "n_budget": [
+     210
+    ],
+    "method_pick": {
+     "setting": null,
+     "name": "base",
+     "objective": 9.333333015441895,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      0.0
+     ],
+     "n_settings": 3,
+     "feasible_settings": [
+      0.03,
+      0.06,
+      0.12
+     ],
+     "gain_vs_base": 0.0,
+     "gain_ci": [
+      0.0,
+      0.0
+     ]
+    },
+    "control_pick": {
+     "setting": 0.15,
+     "name": "ungated@0.15",
+     "objective": 7.0,
+     "base_objective": 9.333333015441895,
+     "budget_rise": [
+      10.0
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1,
+      0.15
+     ],
+     "gain_vs_base": 2.3333330154418945,
+     "gain_ci": [
+      0.0,
+      6.000000476837158
+     ]
+    },
+    "diff_vs_control": -2.3333330154418945,
+    "ci95": [
+     -6.000000476837158,
+     0.0
+    ],
+    "verdict": "not shown"
+   }
+  }
+ },
+ "boards_heldout_clusters_only": {
+  "fold_g4": {
+   "2": {
+    "method": "fold_g4",
+    "control": "ungated",
+    "budget": 2,
+    "n_objective": 400,
+    "n_budget": [
+     400
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "fold_g4@1",
+     "objective": 2.25,
+     "base_objective": 6.5,
+     "budget_rise": [
+      1.0
+     ],
+     "n_settings": 2,
+     "feasible_settings": [
+      1.0
+     ],
+     "gain_vs_base": 4.25,
+     "gain_ci": [
+      0.0,
+      6.75
+     ]
+    },
+    "control_pick": {
+     "setting": 0.08,
+     "name": "ungated@0.08",
+     "objective": 5.25,
+     "base_objective": 6.5,
+     "budget_rise": [
+      2.0
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08
+     ],
+     "gain_vs_base": 1.25,
+     "gain_ci": [
+      0.0,
+      3.5
+     ]
+    },
+    "diff_vs_control": 3.0,
+    "ci95": [
+     -0.75,
+     5.750000476837158
+    ],
+    "verdict": "not shown"
+   },
+   "5": {
+    "method": "fold_g4",
+    "control": "ungated",
+    "budget": 5,
+    "n_objective": 400,
+    "n_budget": [
+     400
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "fold_g4@1",
+     "objective": 2.25,
+     "base_objective": 6.5,
+     "budget_rise": [
+      1.0
+     ],
+     "n_settings": 2,
+     "feasible_settings": [
+      1.0,
+      1.5
+     ],
+     "gain_vs_base": 4.25,
+     "gain_ci": [
+      1.75,
+      6.756249999999966
+     ]
+    },
+    "control_pick": {
+     "setting": 0.1,
+     "name": "ungated@0.1",
+     "objective": 4.5,
+     "base_objective": 6.5,
+     "budget_rise": [
+      3.0
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1
+     ],
+     "gain_vs_base": 2.0,
+     "gain_ci": [
+      0.0,
+      4.25
+     ]
+    },
+    "diff_vs_control": 2.25,
+    "ci95": [
+     -0.24999976754188538,
+     4.75
+    ],
+    "verdict": "not shown"
+   },
+   "10": {
+    "method": "fold_g4",
+    "control": "ungated",
+    "budget": 10,
+    "n_objective": 400,
+    "n_budget": [
+     400
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "fold_g4@1",
+     "objective": 2.25,
+     "base_objective": 6.5,
+     "budget_rise": [
+      1.0
+     ],
+     "n_settings": 2,
+     "feasible_settings": [
+      1.0,
+      1.5
+     ],
+     "gain_vs_base": 4.25,
+     "gain_ci": [
+      1.75,
+      6.756249999999966
+     ]
+    },
+    "control_pick": {
+     "setting": 0.1,
+     "name": "ungated@0.1",
+     "objective": 4.5,
+     "base_objective": 6.5,
+     "budget_rise": [
+      3.0
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1,
+      0.15,
+      0.2
+     ],
+     "gain_vs_base": 2.0,
+     "gain_ci": [
+      0.25,
+      4.5
+     ]
+    },
+    "diff_vs_control": 2.25,
+    "ci95": [
+     -0.25,
+     4.5
+    ],
+    "verdict": "not shown"
+   }
+  },
+  "foldcap": {
+   "2": {
+    "method": "foldcap",
+    "control": "ungated",
+    "budget": 2,
+    "n_objective": 400,
+    "n_budget": [
+     400
+    ],
+    "method_pick": {
+     "setting": 1.25,
+     "name": "foldcap@1.25",
+     "objective": 0.75,
+     "base_objective": 6.5,
+     "budget_rise": [
+      2.0
+     ],
+     "n_settings": 7,
+     "feasible_settings": [
+      -1.0,
+      0.0,
+      0.75,
+      1.0,
+      1.25
+     ],
+     "gain_vs_base": 5.75,
+     "gain_ci": [
+      3.25,
+      8.006249999999966
+     ]
+    },
+    "control_pick": {
+     "setting": 0.08,
+     "name": "ungated@0.08",
+     "objective": 5.25,
+     "base_objective": 6.5,
+     "budget_rise": [
+      2.0
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08
+     ],
+     "gain_vs_base": 1.25,
+     "gain_ci": [
+      0.0,
+      3.5
+     ]
+    },
+    "diff_vs_control": 4.5,
+    "ci95": [
+     2.0,
+     7.000000011920929
+    ],
+    "verdict": "method better"
+   },
+   "5": {
+    "method": "foldcap",
+    "control": "ungated",
+    "budget": 5,
+    "n_objective": 400,
+    "n_budget": [
+     400
+    ],
+    "method_pick": {
+     "setting": 1.25,
+     "name": "foldcap@1.25",
+     "objective": 0.75,
+     "base_objective": 6.5,
+     "budget_rise": [
+      2.0
+     ],
+     "n_settings": 7,
+     "feasible_settings": [
+      -1.0,
+      0.0,
+      0.75,
+      1.0,
+      1.25,
+      1.5
+     ],
+     "gain_vs_base": 5.75,
+     "gain_ci": [
+      3.75,
+      8.5
+     ]
+    },
+    "control_pick": {
+     "setting": 0.1,
+     "name": "ungated@0.1",
+     "objective": 4.5,
+     "base_objective": 6.5,
+     "budget_rise": [
+      3.0
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1
+     ],
+     "gain_vs_base": 2.0,
+     "gain_ci": [
+      0.0,
+      4.25
+     ]
+    },
+    "diff_vs_control": 3.75,
+    "ci95": [
+     2.0,
+     6.0
+    ],
+    "verdict": "method better"
+   },
+   "10": {
+    "method": "foldcap",
+    "control": "ungated",
+    "budget": 10,
+    "n_objective": 400,
+    "n_budget": [
+     400
+    ],
+    "method_pick": {
+     "setting": 1.25,
+     "name": "foldcap@1.25",
+     "objective": 0.75,
+     "base_objective": 6.5,
+     "budget_rise": [
+      2.0
+     ],
+     "n_settings": 7,
+     "feasible_settings": [
+      -1.0,
+      0.0,
+      0.75,
+      1.0,
+      1.25,
+      1.5,
+      2.0
+     ],
+     "gain_vs_base": 5.75,
+     "gain_ci": [
+      3.75,
+      8.5
+     ]
+    },
+    "control_pick": {
+     "setting": 0.1,
+     "name": "ungated@0.1",
+     "objective": 4.5,
+     "base_objective": 6.5,
+     "budget_rise": [
+      3.0
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1,
+      0.15,
+      0.2
+     ],
+     "gain_vs_base": 2.0,
+     "gain_ci": [
+      0.25,
+      4.5
+     ]
+    },
+    "diff_vs_control": 3.75,
+    "ci95": [
+     1.75,
+     5.506249999999966
+    ],
+    "verdict": "method better"
+   }
+  },
+  "foldcaphook": {
+   "2": {
+    "method": "foldcaphook",
+    "control": "ungated",
+    "budget": 2,
+    "n_objective": 400,
+    "n_budget": [
+     400
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "foldcaphook@1",
+     "objective": 1.25,
+     "base_objective": 6.5,
+     "budget_rise": [
+      1.25
+     ],
+     "n_settings": 1,
+     "feasible_settings": [
+      1.0
+     ],
+     "gain_vs_base": 5.25,
+     "gain_ci": [
+      0.0,
+      7.75
+     ]
+    },
+    "control_pick": {
+     "setting": 0.08,
+     "name": "ungated@0.08",
+     "objective": 5.25,
+     "base_objective": 6.5,
+     "budget_rise": [
+      2.0
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08
+     ],
+     "gain_vs_base": 1.25,
+     "gain_ci": [
+      0.0,
+      3.5
+     ]
+    },
+    "diff_vs_control": 4.0,
+    "ci95": [
+     -2.0,
+     6.500000476837158
+    ],
+    "verdict": "not shown"
+   },
+   "5": {
+    "method": "foldcaphook",
+    "control": "ungated",
+    "budget": 5,
+    "n_objective": 400,
+    "n_budget": [
+     400
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "foldcaphook@1",
+     "objective": 1.25,
+     "base_objective": 6.5,
+     "budget_rise": [
+      1.25
+     ],
+     "n_settings": 1,
+     "feasible_settings": [
+      1.0
+     ],
+     "gain_vs_base": 5.25,
+     "gain_ci": [
+      3.0,
+      7.75
+     ]
+    },
+    "control_pick": {
+     "setting": 0.1,
+     "name": "ungated@0.1",
+     "objective": 4.5,
+     "base_objective": 6.5,
+     "budget_rise": [
+      3.0
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1
+     ],
+     "gain_vs_base": 2.0,
+     "gain_ci": [
+      0.0,
+      4.25
+     ]
+    },
+    "diff_vs_control": 3.25,
+    "ci95": [
+     1.25,
+     5.5
+    ],
+    "verdict": "method better"
+   },
+   "10": {
+    "method": "foldcaphook",
+    "control": "ungated",
+    "budget": 10,
+    "n_objective": 400,
+    "n_budget": [
+     400
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "foldcaphook@1",
+     "objective": 1.25,
+     "base_objective": 6.5,
+     "budget_rise": [
+      1.25
+     ],
+     "n_settings": 1,
+     "feasible_settings": [
+      1.0
+     ],
+     "gain_vs_base": 5.25,
+     "gain_ci": [
+      3.0,
+      7.75
+     ]
+    },
+    "control_pick": {
+     "setting": 0.1,
+     "name": "ungated@0.1",
+     "objective": 4.5,
+     "base_objective": 6.5,
+     "budget_rise": [
+      3.0
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1,
+      0.15,
+      0.2
+     ],
+     "gain_vs_base": 2.0,
+     "gain_ci": [
+      0.25,
+      4.5
+     ]
+    },
+    "diff_vs_control": 3.25,
+    "ci95": [
+     1.0,
+     5.25
+    ],
+    "verdict": "method better"
+   }
+  },
+  "gate98_last": {
+   "2": {
+    "method": "gate98_last",
+    "control": "ungated",
+    "budget": 2,
+    "n_objective": 400,
+    "n_budget": [
+     400
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "gate98_last@1",
+     "objective": 0.75,
+     "base_objective": 6.5,
+     "budget_rise": [
+      1.75
+     ],
+     "n_settings": 1,
+     "feasible_settings": [
+      1.0
+     ],
+     "gain_vs_base": 5.75,
+     "gain_ci": [
+      0.0,
+      8.25
+     ]
+    },
+    "control_pick": {
+     "setting": 0.08,
+     "name": "ungated@0.08",
+     "objective": 5.25,
+     "base_objective": 6.5,
+     "budget_rise": [
+      2.0
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08
+     ],
+     "gain_vs_base": 1.25,
+     "gain_ci": [
+      0.0,
+      3.5
+     ]
+    },
+    "diff_vs_control": 4.5,
+    "ci95": [
+     -2.5,
+     7.0
+    ],
+    "verdict": "not shown"
+   },
+   "5": {
+    "method": "gate98_last",
+    "control": "ungated",
+    "budget": 5,
+    "n_objective": 400,
+    "n_budget": [
+     400
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "gate98_last@1",
+     "objective": 0.75,
+     "base_objective": 6.5,
+     "budget_rise": [
+      1.75
+     ],
+     "n_settings": 1,
+     "feasible_settings": [
+      1.0
+     ],
+     "gain_vs_base": 5.75,
+     "gain_ci": [
+      3.5,
+      8.25
+     ]
+    },
+    "control_pick": {
+     "setting": 0.1,
+     "name": "ungated@0.1",
+     "objective": 4.5,
+     "base_objective": 6.5,
+     "budget_rise": [
+      3.0
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1
+     ],
+     "gain_vs_base": 2.0,
+     "gain_ci": [
+      0.0,
+      4.25
+     ]
+    },
+    "diff_vs_control": 3.75,
+    "ci95": [
+     1.75,
+     6.0
+    ],
+    "verdict": "method better"
+   },
+   "10": {
+    "method": "gate98_last",
+    "control": "ungated",
+    "budget": 10,
+    "n_objective": 400,
+    "n_budget": [
+     400
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "gate98_last@1",
+     "objective": 0.75,
+     "base_objective": 6.5,
+     "budget_rise": [
+      1.75
+     ],
+     "n_settings": 1,
+     "feasible_settings": [
+      1.0
+     ],
+     "gain_vs_base": 5.75,
+     "gain_ci": [
+      3.5,
+      8.25
+     ]
+    },
+    "control_pick": {
+     "setting": 0.1,
+     "name": "ungated@0.1",
+     "objective": 4.5,
+     "base_objective": 6.5,
+     "budget_rise": [
+      3.0
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1,
+      0.15,
+      0.2
+     ],
+     "gain_vs_base": 2.0,
+     "gain_ci": [
+      0.25,
+      4.5
+     ]
+    },
+    "diff_vs_control": 3.75,
+    "ci95": [
+     1.5,
+     5.5
+    ],
+    "verdict": "method better"
+   }
+  },
+  "lora_long": {
+   "2": {
+    "method": "lora_long",
+    "control": "ungated",
+    "budget": 2,
+    "n_objective": 400,
+    "n_budget": [
+     400
+    ],
+    "method_pick": {
+     "setting": 0.5,
+     "name": "lora_long@0.5",
+     "objective": 4.75,
+     "base_objective": 6.5,
+     "budget_rise": [
+      0.5
+     ],
+     "n_settings": 3,
+     "feasible_settings": [
+      0.5
+     ],
+     "gain_vs_base": 1.75,
+     "gain_ci": [
+      0.0,
+      7.0
+     ]
+    },
+    "control_pick": {
+     "setting": 0.08,
+     "name": "ungated@0.08",
+     "objective": 5.25,
+     "base_objective": 6.5,
+     "budget_rise": [
+      2.0
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08
+     ],
+     "gain_vs_base": 1.25,
+     "gain_ci": [
+      0.0,
+      3.5
+     ]
+    },
+    "diff_vs_control": 0.5,
+    "ci95": [
+     -1.4999995291233064,
+     5.500000476837158
+    ],
+    "verdict": "not shown"
+   },
+   "5": {
+    "method": "lora_long",
+    "control": "ungated",
+    "budget": 5,
+    "n_objective": 400,
+    "n_budget": [
+     400
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "lora_long@1",
+     "objective": 1.0,
+     "base_objective": 6.5,
+     "budget_rise": [
+      3.5
+     ],
+     "n_settings": 3,
+     "feasible_settings": [
+      0.5,
+      0.75,
+      1.0
+     ],
+     "gain_vs_base": 5.5,
+     "gain_ci": [
+      2.5,
+      8.0
+     ]
+    },
+    "control_pick": {
+     "setting": 0.1,
+     "name": "ungated@0.1",
+     "objective": 4.5,
+     "base_objective": 6.5,
+     "budget_rise": [
+      3.0
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1
+     ],
+     "gain_vs_base": 2.0,
+     "gain_ci": [
+      0.0,
+      4.25
+     ]
+    },
+    "diff_vs_control": 3.5,
+    "ci95": [
+     0.5,
+     5.500000476837158
+    ],
+    "verdict": "method better"
+   },
+   "10": {
+    "method": "lora_long",
+    "control": "ungated",
+    "budget": 10,
+    "n_objective": 400,
+    "n_budget": [
+     400
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "lora_long@1",
+     "objective": 1.0,
+     "base_objective": 6.5,
+     "budget_rise": [
+      3.5
+     ],
+     "n_settings": 3,
+     "feasible_settings": [
+      0.5,
+      0.75,
+      1.0
+     ],
+     "gain_vs_base": 5.5,
+     "gain_ci": [
+      3.25,
+      8.0
+     ]
+    },
+    "control_pick": {
+     "setting": 0.1,
+     "name": "ungated@0.1",
+     "objective": 4.5,
+     "base_objective": 6.5,
+     "budget_rise": [
+      3.0
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1,
+      0.15,
+      0.2
+     ],
+     "gain_vs_base": 2.0,
+     "gain_ci": [
+      0.25,
+      4.5
+     ]
+    },
+    "diff_vs_control": 3.5,
+    "ci95": [
+     1.5,
+     5.25
+    ],
+    "verdict": "method better"
+   }
+  },
+  "lora_tight": {
+   "2": {
+    "method": "lora_tight",
+    "control": "ungated",
+    "budget": 2,
+    "n_objective": 400,
+    "n_budget": [
+     400
+    ],
+    "method_pick": {
+     "setting": 0.0,
+     "name": "lora_tight@0",
+     "objective": 6.5,
+     "base_objective": 6.5,
+     "budget_rise": [
+      0.0
+     ],
+     "n_settings": 5,
+     "feasible_settings": [
+      -0.5,
+      0.0
+     ],
+     "gain_vs_base": 0.0,
+     "gain_ci": [
+      0.0,
+      6.0
+     ]
+    },
+    "control_pick": {
+     "setting": 0.08,
+     "name": "ungated@0.08",
+     "objective": 5.25,
+     "base_objective": 6.5,
+     "budget_rise": [
+      2.0
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08
+     ],
+     "gain_vs_base": 1.25,
+     "gain_ci": [
+      0.0,
+      3.5
+     ]
+    },
+    "diff_vs_control": -1.25,
+    "ci95": [
+     -2.750000476837158,
+     4.25
+    ],
+    "verdict": "not shown"
+   },
+   "5": {
+    "method": "lora_tight",
+    "control": "ungated",
+    "budget": 5,
+    "n_objective": 400,
+    "n_budget": [
+     400
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "lora_tight@1",
+     "objective": 1.75,
+     "base_objective": 6.5,
+     "budget_rise": [
+      3.75
+     ],
+     "n_settings": 5,
+     "feasible_settings": [
+      -0.5,
+      0.0,
+      0.5,
+      1.0
+     ],
+     "gain_vs_base": 4.75,
+     "gain_ci": [
+      0.0,
+      7.25
+     ]
+    },
+    "control_pick": {
+     "setting": 0.1,
+     "name": "ungated@0.1",
+     "objective": 4.5,
+     "base_objective": 6.5,
+     "budget_rise": [
+      3.0
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1
+     ],
+     "gain_vs_base": 2.0,
+     "gain_ci": [
+      0.0,
+      4.25
+     ]
+    },
+    "diff_vs_control": 2.75,
+    "ci95": [
+     -1.75,
+     5.0
+    ],
+    "verdict": "not shown"
+   },
+   "10": {
+    "method": "lora_tight",
+    "control": "ungated",
+    "budget": 10,
+    "n_objective": 400,
+    "n_budget": [
+     400
+    ],
+    "method_pick": {
+     "setting": 1.5,
+     "name": "lora_tight@1.5",
+     "objective": 1.0,
+     "base_objective": 6.5,
+     "budget_rise": [
+      8.75
+     ],
+     "n_settings": 5,
+     "feasible_settings": [
+      -0.5,
+      0.0,
+      0.5,
+      1.0,
+      1.5
+     ],
+     "gain_vs_base": 5.5,
+     "gain_ci": [
+      3.0,
+      8.0
+     ]
+    },
+    "control_pick": {
+     "setting": 0.1,
+     "name": "ungated@0.1",
+     "objective": 4.5,
+     "base_objective": 6.5,
+     "budget_rise": [
+      3.0
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1,
+      0.15,
+      0.2
+     ],
+     "gain_vs_base": 2.0,
+     "gain_ci": [
+      0.25,
+      4.5
+     ]
+    },
+    "diff_vs_control": 3.5,
+    "ci95": [
+     1.25,
+     5.0
+    ],
+    "verdict": "method better"
+   }
+  },
+  "relu98_last": {
+   "2": {
+    "method": "relu98_last",
+    "control": "ungated",
+    "budget": 2,
+    "n_objective": 400,
+    "n_budget": [
+     400
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "relu98_last@1",
+     "objective": 1.0,
+     "base_objective": 6.5,
+     "budget_rise": [
+      1.25
+     ],
+     "n_settings": 1,
+     "feasible_settings": [
+      1.0
+     ],
+     "gain_vs_base": 5.5,
+     "gain_ci": [
+      0.0,
+      8.0
+     ]
+    },
+    "control_pick": {
+     "setting": 0.08,
+     "name": "ungated@0.08",
+     "objective": 5.25,
+     "base_objective": 6.5,
+     "budget_rise": [
+      2.0
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08
+     ],
+     "gain_vs_base": 1.25,
+     "gain_ci": [
+      0.0,
+      3.5
+     ]
+    },
+    "diff_vs_control": 4.25,
+    "ci95": [
+     -1.0,
+     7.0
+    ],
+    "verdict": "not shown"
+   },
+   "5": {
+    "method": "relu98_last",
+    "control": "ungated",
+    "budget": 5,
+    "n_objective": 400,
+    "n_budget": [
+     400
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "relu98_last@1",
+     "objective": 1.0,
+     "base_objective": 6.5,
+     "budget_rise": [
+      1.25
+     ],
+     "n_settings": 1,
+     "feasible_settings": [
+      1.0
+     ],
+     "gain_vs_base": 5.5,
+     "gain_ci": [
+      3.5,
+      8.0
+     ]
+    },
+    "control_pick": {
+     "setting": 0.1,
+     "name": "ungated@0.1",
+     "objective": 4.5,
+     "base_objective": 6.5,
+     "budget_rise": [
+      3.0
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1
+     ],
+     "gain_vs_base": 2.0,
+     "gain_ci": [
+      0.0,
+      4.25
+     ]
+    },
+    "diff_vs_control": 3.5,
+    "ci95": [
+     1.5000002324581145,
+     5.75
+    ],
+    "verdict": "method better"
+   },
+   "10": {
+    "method": "relu98_last",
+    "control": "ungated",
+    "budget": 10,
+    "n_objective": 400,
+    "n_budget": [
+     400
+    ],
+    "method_pick": {
+     "setting": 1.0,
+     "name": "relu98_last@1",
+     "objective": 1.0,
+     "base_objective": 6.5,
+     "budget_rise": [
+      1.25
+     ],
+     "n_settings": 1,
+     "feasible_settings": [
+      1.0
+     ],
+     "gain_vs_base": 5.5,
+     "gain_ci": [
+      3.5,
+      8.0
+     ]
+    },
+    "control_pick": {
+     "setting": 0.1,
+     "name": "ungated@0.1",
+     "objective": 4.5,
+     "base_objective": 6.5,
+     "budget_rise": [
+      3.0
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1,
+      0.15,
+      0.2
+     ],
+     "gain_vs_base": 2.0,
+     "gain_ci": [
+      0.25,
+      4.5
+     ]
+    },
+    "diff_vs_control": 3.5,
+    "ci95": [
+     1.5,
+     5.25
+    ],
+    "verdict": "method better"
+   }
+  },
+  "scans_Tplain": {
+   "2": {
+    "method": "scans_Tplain",
+    "control": "ungated",
+    "budget": 2,
+    "n_objective": 400,
+    "n_budget": [
+     400
+    ],
+    "method_pick": {
+     "setting": null,
+     "name": "base",
+     "objective": 6.5,
+     "base_objective": 6.5,
+     "budget_rise": [
+      0.0
+     ],
+     "n_settings": 3,
+     "feasible_settings": [
+      0.03,
+      0.06,
+      0.12
+     ],
+     "gain_vs_base": 0.0,
+     "gain_ci": [
+      0.0,
+      0.0
+     ]
+    },
+    "control_pick": {
+     "setting": 0.08,
+     "name": "ungated@0.08",
+     "objective": 5.25,
+     "base_objective": 6.5,
+     "budget_rise": [
+      2.0
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08
+     ],
+     "gain_vs_base": 1.25,
+     "gain_ci": [
+      0.0,
+      3.5
+     ]
+    },
+    "diff_vs_control": -1.25,
+    "ci95": [
+     -3.5,
+     0.0
+    ],
+    "verdict": "not shown"
+   },
+   "5": {
+    "method": "scans_Tplain",
+    "control": "ungated",
+    "budget": 5,
+    "n_objective": 400,
+    "n_budget": [
+     400
+    ],
+    "method_pick": {
+     "setting": null,
+     "name": "base",
+     "objective": 6.5,
+     "base_objective": 6.5,
+     "budget_rise": [
+      0.0
+     ],
+     "n_settings": 3,
+     "feasible_settings": [
+      0.03,
+      0.06,
+      0.12
+     ],
+     "gain_vs_base": 0.0,
+     "gain_ci": [
+      0.0,
+      0.0
+     ]
+    },
+    "control_pick": {
+     "setting": 0.1,
+     "name": "ungated@0.1",
+     "objective": 4.5,
+     "base_objective": 6.5,
+     "budget_rise": [
+      3.0
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1
+     ],
+     "gain_vs_base": 2.0,
+     "gain_ci": [
+      0.0,
+      4.25
+     ]
+    },
+    "diff_vs_control": -2.0,
+    "ci95": [
+     -4.25,
+     0.0
+    ],
+    "verdict": "not shown"
+   },
+   "10": {
+    "method": "scans_Tplain",
+    "control": "ungated",
+    "budget": 10,
+    "n_objective": 400,
+    "n_budget": [
+     400
+    ],
+    "method_pick": {
+     "setting": null,
+     "name": "base",
+     "objective": 6.5,
+     "base_objective": 6.5,
+     "budget_rise": [
+      0.0
+     ],
+     "n_settings": 3,
+     "feasible_settings": [
+      0.03,
+      0.06,
+      0.12
+     ],
+     "gain_vs_base": 0.0,
+     "gain_ci": [
+      0.0,
+      0.0
+     ]
+    },
+    "control_pick": {
+     "setting": 0.1,
+     "name": "ungated@0.1",
+     "objective": 4.5,
+     "base_objective": 6.5,
+     "budget_rise": [
+      3.0
+     ],
+     "n_settings": 6,
+     "feasible_settings": [
+      0.02,
+      0.05,
+      0.08,
+      0.1,
+      0.15,
+      0.2
+     ],
+     "gain_vs_base": 2.0,
+     "gain_ci": [
+      0.25,
+      4.5
+     ]
+    },
+    "diff_vs_control": -2.0,
+    "ci95": [
+     -4.5,
+     -0.25
+    ],
+    "verdict": "control better"
+   }
+  }
+ }
+}

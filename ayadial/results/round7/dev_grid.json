@@ -1,0 +1,230 @@
+{
+ "n_harmful": 1000,
+ "n_harmless": 910,
+ "base": {
+  "harmful": {
+   "refused": 75.0,
+   "answered": 17.3,
+   "unsafe": 7.7
+  },
+  "harmless": {
+   "refusal": 11.428571428571429
+  },
+  "degenerate": 0.0
+ },
+ "methods": {
+  "RefusalDirection": {
+   "picked": 0.1,
+   "settings": {
+    "0.05": {
+     "harmful": {
+      "refused": 75.5,
+      "answered": 17.2,
+      "unsafe": 7.3
+     },
+     "harmless": {
+      "refusal": 11.31868131868132
+     },
+     "degenerate": 0.052356020942408384
+    },
+    "0.1": {
+     "harmful": {
+      "refused": 77.3,
+      "answered": 15.9,
+      "unsafe": 6.8
+     },
+     "harmless": {
+      "refusal": 13.736263736263735
+     },
+     "degenerate": 0.0
+    },
+    "0.2": {
+     "harmful": {
+      "refused": 82.2,
+      "answered": 13.3,
+      "unsafe": 4.5
+     },
+     "harmless": {
+      "refusal": 17.252747252747252
+     },
+     "degenerate": 0.0
+    },
+    "0.4": {
+     "harmful": {
+      "refused": 89.5,
+      "answered": 7.4,
+      "unsafe": 3.1
+     },
+     "harmless": {
+      "refusal": 24.725274725274726
+     },
+     "degenerate": 0.0
+    },
+    "0.8": {
+     "harmful": {
+      "refused": 96.2,
+      "answered": 3.3,
+      "unsafe": 0.5
+     },
+     "harmless": {
+      "refusal": 46.043956043956044
+     },
+     "degenerate": 0.0
+    },
+    "1.6": {
+     "harmful": {
+      "refused": 99.6,
+      "answered": 0.3,
+      "unsafe": 0.1
+     },
+     "harmless": {
+      "refusal": 90.76923076923077
+     },
+     "degenerate": 0.20942408376963353
+    },
+    "3.2": {
+     "harmful": {
+      "refused": 28.3,
+      "answered": 66.6,
+      "unsafe": 5.1
+     },
+     "harmless": {
+      "refusal": 28.35164835164835
+     },
+     "degenerate": 68.95287958115183
+    }
+   }
+  },
+  "AdaSteer": {
+   "picked": 0.2,
+   "settings": {
+    "0.1": {
+     "harmful": {
+      "refused": 77.4,
+      "answered": 15.4,
+      "unsafe": 7.2
+     },
+     "harmless": {
+      "refusal": 12.417582417582418
+     },
+     "degenerate": 0.0
+    },
+    "0.2": {
+     "harmful": {
+      "refused": 80.0,
+      "answered": 14.7,
+      "unsafe": 5.3
+     },
+     "harmless": {
+      "refusal": 15.934065934065934
+     },
+     "degenerate": 0.0
+    },
+    "0.3": {
+     "harmful": {
+      "refused": 84.9,
+      "answered": 11.4,
+      "unsafe": 3.7
+     },
+     "harmless": {
+      "refusal": 17.47252747252747
+     },
+     "degenerate": 0.0
+    },
+    "0.5": {
+     "harmful": {
+      "refused": 89.4,
+      "answered": 8.1,
+      "unsafe": 2.5
+     },
+     "harmless": {
+      "refusal": 22.307692307692307
+     },
+     "degenerate": 0.052356020942408384
+    },
+    "0.7": {
+     "harmful": {
+      "refused": 93.5,
+      "answered": 4.8,
+      "unsafe": 1.7
+     },
+     "harmless": {
+      "refusal": 27.36263736263736
+     },
+     "degenerate": 0.0
+    },
+    "1": {
+     "harmful": {
+      "refused": 95.8,
+      "answered": 3.3,
+      "unsafe": 0.9
+     },
+     "harmless": {
+      "refusal": 36.15384615384615
+     },
+     "degenerate": 0.0
+    }
+   }
+  },
+  "CAST": {
+   "picked": 0.03,
+   "settings": {
+    "0.01": {
+     "harmful": {
+      "refused": 76.4,
+      "answered": 16.4,
+      "unsafe": 7.2
+     },
+     "harmless": {
+      "refusal": 11.648351648351648
+     },
+     "degenerate": 0.0
+    },
+    "0.03": {
+     "harmful": {
+      "refused": 80.4,
+      "answered": 14.2,
+      "unsafe": 5.4
+     },
+     "harmless": {
+      "refusal": 12.637362637362637
+     },
+     "degenerate": 0.0
+    },
+    "0.1": {
+     "harmful": {
+      "refused": 88.1,
+      "answered": 9.4,
+      "unsafe": 2.5
+     },
+     "harmless": {
+      "refusal": 15.054945054945055
+     },
+     "degenerate": 0.0
+    },
+    "0.3": {
+     "harmful": {
+      "refused": 91.4,
+      "answered": 6.8,
+      "unsafe": 1.8
+     },
+     "harmless": {
+      "refusal": 16.923076923076923
+     },
+     "degenerate": 0.0
+    },
+    "1": {
+     "harmful": {
+      "refused": 80.1,
+      "answered": 18.1,
+      "unsafe": 1.8
+     },
+     "harmless": {
+      "refusal": 16.153846153846153
+     },
+     "degenerate": 6.387434554973822
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "token_ids": [
+  15817
+ ],
+ "refused_and_answered_counts": [
+  [
+   720,
+   14
+  ]
+ ],
+ "coverage_of_refused_replies": 0.5409,
+ "rule": "first token of a non-degenerate base reply; kept if it starts >= 5 refused replies and >= 90% of the replies it starts are refused",
+ "source": "scripts/r4_wang.py (refusal-opener set R), applied to runs_private/round4/gen/base_dev.jsonl with results/round4/labels/base_dev.json",
+ "tokenizer": "CohereLabs/tiny-aya-global",
+ "built": "2026-11-11 16:14:19"
+}

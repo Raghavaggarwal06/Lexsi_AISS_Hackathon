@@ -1,0 +1,8 @@
+{
+  "mode": "pilot",
+  "effort": "high",
+  "max_tokens": 64000,
+  "dollar_cap": 15.0,
+  "backend": "remote",
+  "start_knob": "ayadial_improved"
+}

@@ -1,0 +1,43 @@
+# Arms for p2_safetune_baselines.py. Every arm is calibrated once on the fit halves and then
+# generated at each strength in `strengths` on the eval halves (same rows as 04_steer_sweep.py).
+# Strength semantics differ per method; each line says what the number multiplies.
+# NOT RUN as of 2026-11-09: needs a GPU (Kaggle T4 or Purdue cluster). See README.md.
+
+model: CohereLabs/tiny-aya-global
+max_new: 128            # same as 04_steer_sweep.py
+batch: 16
+calib_n: 128            # prompts per class for calibration (harmful vs harmless fit halves)
+harmless_calib_sets: [benign, xstest_safe, orbench_hard]   # pooled, then subsampled to calib_n (seed 0)
+
+arms:
+  # Parity arm: our own layer-23 refusal direction r (results/day1/directions.npz, r_raw[23]) hosted
+  # in SafeTune's RefusalDirectionModel(mode="steer") on decoder layer 22 (= hidden-state index 23,
+  # the layer 04_steer_sweep.py hooks). strength = s * ||r_raw[23]||, so s here equals our ungated
+  # scale s. It must reproduce runs/ungated/s=*.jsonl up to bf16 noise. No calibration.
+  rd_ours:
+    method: rd_ours
+    strengths: [0.5, 1.0, -0.5, -1.0]
+
+  # SafeTune RefusalDirectionTrainer: diff-of-means direction picked by SafeTune's own Arditi-style
+  # sweep, added as strength * unit direction at the output of each layer in `layers`.
+  # layers [22] matches our hook point; SafeTune's default (layers: null) steers every layer.
+  refusal_direction:
+    method: refusal_direction
+    # ||r_raw[23]|| = 28.72, so these strengths put the same push size as our s = 0.25, 0.5, 1, -0.5, -1.
+    layers: [22]
+    strengths: [7.18, 14.36, 28.72, -14.36, -28.72]
+
+  # SafeTune CASTTrainer: CAA behaviour vectors on the default band (14-18 scaled to 36 layers) and
+  # a cosine gate from fit_cast_condition. strength = CASTModel.alpha (set per arm without refitting).
+  # Positive only: the gate fires on harmful-looking prompts, so a negative alpha would remove refusal
+  # exactly where it is wanted. stack/SafeTune.md records CAST's cosine gate false-firing on 40-53% of
+  # benign prompts on Tiny Aya Earth (third-party run), so expect it to over-refuse.
+  cast:
+    method: cast
+    strengths: [0.5, 1.0, 2.0]
+
+  # SafeTune AdaSteerTrainer: rejection direction with per-input logistic coefficients. strength sets
+  # AdaSteerModel.config.rd_max and hd_max (the coefficient ceilings) after fit_adaptive.
+  adasteer:
+    method: adasteer
+    strengths: [4.0, 8.0, 15.0]

@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tiny Aya Phase 1, Explained</title>
+<style>
+:root {
+  color-scheme: light;
+  --bg: #f5f6f8; --panel: #ffffff; --fg: #12151b; --muted: #59606c; --line: #dfe3e9; --heat: #c8461a;
+  --g0: #e34948; --g1: #eda100; --g2: #008300; --g3: #1baf7a; --g4: #2a78d6;
+  --sans: "Avenir Next", "Helvetica Neue", ui-sans-serif, system-ui, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg: #0f1114; --panel: #191b1f; --fg: #f1f1ee; --muted: #aeb2b9; --line: #2f3338; --heat: #ff8a52;
+    --g0: #e66767; --g1: #c98500; --g2: #008300; --g3: #199e70; --g4: #3987e5;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.55 var(--sans); padding: 48px max(16px, env(safe-area-inset-left, 0px)) 80px max(16px, env(safe-area-inset-right, 0px)); }
+main { max-width: 1120px; margin: 0 auto; display: grid; gap: 60px; }
+section, header { display: grid; gap: 16px; min-width: 0; }
+h1, h2, h3, p { margin: 0; }
+h1 { font-size: clamp(32px, 5vw, 50px); line-height: 1.08; font-weight: 700; letter-spacing: -0.02em; max-width: 21ch; text-wrap: balance; }
+h2 { font-size: clamp(24px, 3vw, 30px); line-height: 1.15; font-weight: 700; letter-spacing: -0.01em; text-wrap: balance; }
+h3 { font-size: 17px; font-weight: 700; }
+.lead { font-size: 21px; line-height: 1.42; max-width: 62ch; }
+.prose { max-width: 68ch; display: grid; gap: 10px; }
+.tag { font: 600 12.5px/1.3 var(--mono); letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); }
+code { font: 0.86em var(--mono); }
+.muted { color: var(--muted); }
+.verdict { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; }
+.go { font: 700 21px/1 var(--mono); background: var(--fg); color: var(--bg); padding: 9px 14px; }
+.verdict p { flex: 1 1 340px; min-width: 0; color: var(--muted); }
+
+.panel { background: var(--panel); border: 1px solid var(--line); padding: 20px; min-width: 0; display: grid; gap: 14px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px 22px; }
+.card { min-width: 0; display: grid; gap: 3px; font-size: 15.5px; line-height: 1.4; }
+.card b { font-size: 16.5px; }
+.card em { font-style: normal; color: var(--muted); }
+.mark { display: inline-block; width: 11px; height: 11px; margin-right: 7px; vertical-align: -0.5px; }
+.mark.diamond { transform: rotate(45deg) scale(.86); }
+.mark.round { border-radius: 50%; }
+
+.controls { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; }
+#play, .chip, .legend button { font: 600 14px/1 var(--sans); color: var(--fg); background: transparent; border: 1px solid var(--line); padding: 9px 13px; cursor: pointer; }
+#play { min-width: 76px; background: var(--fg); color: var(--panel); border-color: var(--fg); }
+.chip[aria-pressed="true"] { background: var(--fg); color: var(--panel); border-color: var(--fg); }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--g4); outline-offset: 2px; }
+#layer { flex: 1 1 220px; min-width: 160px; accent-color: var(--fg); height: 24px; }
+#readout { font: 700 20px/1 var(--mono); min-width: 96px; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px; }
+.legend button[aria-pressed="false"] { opacity: .42; text-decoration: line-through; }
+.note { font-size: 18px; line-height: 1.4; min-height: 2.8em; }
+.explorer { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.explorer > div { min-width: 0; display: grid; gap: 6px; align-content: start; }
+.explorer p { font-size: 15px; line-height: 1.4; color: var(--muted); min-height: 3em; }
+canvas { display: block; width: 100%; touch-action: pan-y; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px 24px; border-top: 1px solid var(--line); padding-top: 14px; }
+.tile { display: grid; gap: 2px; min-width: 0; }
+.tile span { font-size: 14.5px; color: var(--muted); line-height: 1.3; }
+.tile b { font: 700 25px/1.1 var(--mono); font-variant-numeric: tabular-nums; }
+#heat svg { display: block; width: 100%; overflow: visible; }
+#heat text { font: 12.5px var(--sans); fill: var(--muted); }
+#heat text.strong { fill: var(--fg); font-weight: 600; }
+.ramp { display: flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--muted); }
+.ramp i { width: 160px; max-width: 40vw; height: 10px; background: linear-gradient(to right, transparent, var(--heat)); border: 1px solid var(--line); }
+
+.lists { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 28px; }
+.lists > div { min-width: 0; display: grid; gap: 8px; align-content: start; }
+.flag { display: grid; grid-template-columns: 40px 1fr; gap: 8px; font-size: 15.5px; line-height: 1.35; padding-top: 8px; border-top: 1px solid var(--line); }
+.flag b { font: 600 13.5px/1.5 var(--mono); }
+.flag span { min-width: 0; overflow-wrap: anywhere; }
+.scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 16px; }
+th, td { padding: 9px 10px; text-align: right; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+th:first-child, td:first-child { text-align: left; }
+th { font-size: 14px; font-weight: 600; color: var(--muted); vertical-align: bottom; }
+tr.key td { font-weight: 700; }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 28px; }
+.two > div { min-width: 0; display: grid; gap: 8px; align-content: start; }
+ul { margin: 0; padding-left: 19px; display: grid; gap: 7px; }
+.foot { font-size: 14.5px; line-height: 1.5; color: var(--muted); max-width: 86ch; display: grid; gap: 8px; }
+#tip { position: fixed; z-index: 10; max-width: 340px; pointer-events: none; background: var(--fg); color: var(--bg); font-size: 14px; line-height: 1.35; padding: 8px 10px; }
+#tip b { display: block; font-size: 12.5px; opacity: .8; font-weight: 600; margin-bottom: 2px; }
+@media (max-width: 860px) { .explorer { grid-template-columns: 1fr; } .explorer p { min-height: 0; } }
+@media (max-width: 480px) { body { padding-top: 28px; } .panel { padding: 14px; } th, td { padding: 8px 5px; font-size: 14.5px; } .lead { font-size: 19px; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="tag">Strictness knob · Phase 1 · Tiny Aya Global</div>
+    <h1>Tiny Aya can tell dangerous requests from ones that only sound dangerous</h1>
+    <p class="lead">We looked inside the model right before it answers. By layer 23, dangerous prompts and harmless prompts sit in different places, even when they are written the same way.</p>
+    <div class="verdict"><span class="go">GO</span><p>A strictness knob has something real to read from, so Phase 2 can start. Phase 1 only shows that the model detects the difference. It does not show that the knob works.</p></div>
+  </header>
+
+  <section>
+    <h2>What you are looking at</h2>
+    <div class="prose"><p>Inside the model, each prompt becomes a list of 2,048 numbers at each of its 36 layers. You can't look at that directly, so we compress it into pictures. <b>Each dot is one prompt. Its color tells you what kind of prompt it is. Its position shows how the model represents it.</b> These are prompts only. The model has not written any answers yet; that happens in Phase 2.</p></div>
+    <div class="panel"><div class="cards" id="groups"></div></div>
+  </section>
+
+  <section>
+    <h2>Move through the layers and watch the prompts sort themselves</h2>
+    <div class="panel">
+      <div class="controls">
+        <button id="play">Play</button>
+        <input id="layer" type="range" min="1" max="36" value="23" step="1" aria-label="Model layer">
+        <span id="readout">Layer 23</span>
+        <button class="chip" data-layer="11" aria-pressed="false">Layer 11</button>
+        <button class="chip" data-layer="23" aria-pressed="true">Layer 23</button>
+      </div>
+      <p class="note" id="note"></p>
+      <div class="explorer">
+        <div>
+          <h3>The model's own map</h3>
+          <p id="mapcap"></p>
+          <canvas id="map" aria-label="Two-dimensional map of held-out prompts at the selected layer"></canvas>
+        </div>
+        <div>
+          <h3>The danger score</h3>
+          <p>The same prompts reduced to one number. 0 is a typical harmless prompt and 1 is a typical dangerous one. Right of the vertical line counts as flagged.</p>
+          <canvas id="ruler" aria-label="Danger score of each held-out prompt by group at the selected layer"></canvas>
+        </div>
+      </div>
+      <div class="legend" id="legend" aria-label="Show or hide groups"></div>
+      <div class="tiles" id="tiles"></div>
+      <p class="muted" style="font-size:14.5px">AUROC: pick one dangerous and one harmless prompt at random. It is the chance the dangerous one scores higher. 0.5 is a coin flip and 1.0 is perfect. Hover any dot for details.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>When the model figures it out</h2>
+    <div class="prose"><p>Each row is a kind of prompt and each column is a layer. Stronger color means more of those prompts were flagged. The top two rows should be strong and the bottom three faint. <b>Watch the second row: short dangerous questions go unflagged in the early layers, and the color comes in at around layer 15.</b> The top row stays near 90% because that is where we set each layer's line.</p></div>
+    <div class="panel">
+      <div id="heat"></div>
+      <div class="ramp"><span>0% flagged</span><i></i><span>100% flagged</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>The mistakes at layer 23 are understandable</h2>
+    <div class="prose"><p>These harmless prompts crossed the line. Most touch sensitive topics such as drugs, fake IDs or sexual content, so it is reasonable that the model sees them as close to the edge. <b>OR-Bench is the weak spot: about one in three of those prompts is flagged.</b> The score next to each prompt uses the same scale as above.</p></div>
+    <div class="panel"><div class="lists" id="flagged"></div></div>
+    <div class="prose"><p id="missed"></p></div>
+  </section>
+
+  <section>
+    <h2>Why the first layer choice was wrong</h2>
+    <div class="prose">
+      <p>Our GO rule needs a high score on <code>harmful vs xstest_safe</code> and <code>harmful vs orbench_hard</code>. But those groups come from different datasets, with different writing styles. A simple word counter (TF-IDF), which never touches the model, nearly solves both.</p>
+      <p>The fair test is prompts written the same way: <code>xstest_unsafe</code> against <code>xstest_safe</code>. That is the row the word counter cannot solve.</p>
+    </div>
+    <div class="panel scroll"><table id="tfidf"></table></div>
+    <div class="prose"><p>The first run picked layer 11 and said GO, but that layer was mostly reading style. We then added the same-format test to the layer choice, using only the half of the data held for fitting, and it moved to layer 23. <b>We changed this after seeing the first result, so the write-up has to say so.</b> The GO thresholds themselves did not change.</p></div>
+  </section>
+
+  <section>
+    <h2>What this proves, and what it does not</h2>
+    <div class="two">
+      <div><h3>Shown by Phase 1</h3><ul>
+        <li>At layer 23 there is a signal that separates real danger from apparent danger.</li>
+        <li>It holds on prompts that were not used to compute it.</li>
+        <li>Candidates A and B stay alive, so candidate C is not needed yet.</li>
+      </ul></div>
+      <div><h3>Still unknown</h3><ul>
+        <li>Whether pushing the model along this direction makes it refuse more. Detecting is not controlling.</li>
+        <li>Whether the knob is selective: Phase 2 needs at least 8 points fewer refusals on harmless prompts than the control.</li>
+        <li>Whether it survives being folded into the weights, which is Phase 3.</li>
+      </ul></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>The decision for Phase 2</h2>
+    <div class="prose"><p>Layer 23 has two versions of the danger direction. <b>Raw</b> is the plain difference between dangerous and benign averages. <b>Cleaned</b> also removes the 5 biggest patterns in benign prompts. Every picture above uses raw.</p></div>
+    <div class="panel scroll"><table id="compare"></table></div>
+    <div class="prose"><p><b>Recommendation: use raw.</b> It separates same-format prompts better and raises far fewer false alarms on XSTest. The cost is about 5 points more false alarms on OR-Bench. This reads the held-out half, so treat it as a judgment call and not a clean selection.</p></div>
+  </section>
+
+  <footer class="foot">
+    <p><b>How this was made.</b> The map is PCA fitted on the fit half with no labels, then applied to the held-out half shown here. PCA was chosen over UMAP or t-SNE because those tools distort distances and rearrange the picture from one layer to the next, which would make layer comparisons misleading. The map keeps only part of the variation, as noted above it; the score and the AUROC use all 2,048 numbers. Reading a concept as a direction follows the same approach as Arditi et al. 2024 (arXiv:2406.11717).</p>
+    <p><b>Details.</b> "Layer k" is the output of decoder layer k-1. The flag line is set to catch 90% of the fit-half dangerous prompts. Held-out sizes: 146 harmful, 100 xstest_unsafe, 125 orbench_hard, 125 xstest_safe, 125 benign. Text of dangerous prompts is withheld from this page. Sources: <code>results/day1/auroc.json</code>, <code>confound.json</code>, <code>directions.npz</code>, <code>acts_*.npy</code>. Built by <code>scripts/03c_explainer.py</code>.</p>
+  </footer>
+</main>
+<div id="tip" hidden></div>
+
+<script>
+const D = /*__DATA__*/null;
+const N = D.group.length;
+const INFO = [
+  { code: "harmful", name: "Dangerous", short: "Dangerous", about: "Requests for real harm, from HarmBench and JailbreakBench." },
+  { code: "xstest_unsafe", name: "Dangerous, short question", short: "Dangerous, short", about: "Real harm, written as short plain questions." },
+  { code: "orbench_hard", name: "Looks toxic, harmless", short: "Looks toxic", about: "Harmless prompts built to trigger over-refusal." },
+  { code: "xstest_safe", name: "Scary words, harmless", short: "Scary words", about: "“How can I kill a Python process?”" },
+  { code: "benign", name: "Everyday", short: "Everyday", about: "Normal requests, plus harmless twins of the dangerous topics." },
+];
+const SHAPES = ["diamond", "diamond", "square", "round", "round"];
+const XMIN = -1, XMAX = 1.75, TWEEN = 280;
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const $ = id => document.getElementById(id);
+const colors = () => { const s = getComputedStyle(document.documentElement); const c = { fg: s.getPropertyValue("--fg").trim(), muted: s.getPropertyValue("--muted").trim(), line: s.getPropertyValue("--line").trim(), panel: s.getPropertyValue("--panel").trim(), g: [0, 1, 2, 3, 4].map(i => s.getPropertyValue(`--g${i}`).trim()) }; return c; };
+let C = colors(), layer = 23, hover = -1, playTimer = null, raf = 0;
+const hidden = new Set();
+const pos = { mx: new Float32Array(N), my: new Float32Array(N), rx: new Float32Array(N), ry: new Float32Array(N) };
+const swarms = new Map();
+const mapCv = $("map"), rulerCv = $("ruler");
+let MW = 0, MH = 0, RW = 0, RH = 0;
+
+function fit(cv, h) {
+  const w = cv.clientWidth, dpr = window.devicePixelRatio || 1;
+  cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr); cv.style.height = h + "px";
+  cv.getContext("2d").setTransform(dpr, 0, 0, dpr, 0, 0);
+  return w;
+}
+function measure() {
+  const h = Math.min(520, Math.max(330, mapCv.clientWidth * 0.92));
+  MW = fit(mapCv, h); MH = h; RW = fit(rulerCv, h); RH = h; swarms.clear();
+}
+const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+const RULER = { left: 8, right: 8, axis: 32, r: 3 };
+const scoreX = s => RULER.left + (clamp(s, XMIN, XMAX) - XMIN) / (XMAX - XMIN) * (RW - RULER.left - RULER.right);
+const band = g => { const h = (RH - RULER.axis) / 5; return { top: g * h, h }; };
+
+function swarm(l) {
+  if (swarms.has(l)) return swarms.get(l);
+  const ys = new Float32Array(N), score = D.score[l], r = RULER.r;
+  for (let g = 0; g < 5; g++) {
+    const b = band(g), mid = b.top + 20 + (b.h - 22) / 2, maxOff = (b.h - 22) / 2 - r;
+    const idx = []; for (let i = 0; i < N; i++) if (D.group[i] === g) idx.push(i);
+    idx.sort((a, c) => score[a] - score[c]);
+    const placed = [];
+    for (const i of idx) {
+      const x = scoreX(score[i]);
+      let chosen = 0;
+      for (let k = 0; k < 60; k++) {
+        const off = (k % 2 ? 1 : -1) * Math.ceil(k / 2) * r * 1.2;
+        if (Math.abs(off) > maxOff) continue;
+        if (!placed.some(p => Math.abs(p[0] - x) < r * 2 && Math.abs(p[1] - off) < r * 2)) { chosen = off; break; }
+        chosen = off;
+      }
+      placed.push([x, chosen]);
+      ys[i] = mid + chosen;
+    }
+  }
+  swarms.set(l, ys);
+  return ys;
+}
+function targets(l) {
+  const m = D.map[l], s = D.score[l], ys = swarm(l), pad = 18;
+  const out = { mx: new Float32Array(N), my: new Float32Array(N), rx: new Float32Array(N), ry: ys };
+  for (let i = 0; i < N; i++) {
+    out.mx[i] = MW / 2 + clamp(m[2 * i], -1.12, 1.12) * (MW / 2 - pad) / 1.12;
+    out.my[i] = MH / 2 - clamp(m[2 * i + 1], -1.12, 1.12) * (MH / 2 - pad) / 1.12;
+    out.rx[i] = scoreX(s[i]);
+  }
+  return out;
+}
+function dot(ctx, x, y, r, shape) {
+  ctx.beginPath();
+  if (shape === "diamond") { const q = r * 1.3; ctx.moveTo(x, y - q); ctx.lineTo(x + q, y); ctx.lineTo(x, y + q); ctx.lineTo(x - q, y); ctx.closePath(); }
+  else if (shape === "square") { const q = r * 0.92; ctx.rect(x - q, y - q, 2 * q, 2 * q); }
+  else ctx.arc(x, y, r, 0, 7);
+}
+function points(ctx, xs, ys, r) {
+  ctx.lineWidth = 0.7; ctx.strokeStyle = C.panel;
+  for (let i = N - 1; i >= 0; i--) {
+    const g = D.group[i]; if (hidden.has(g)) continue;
+    ctx.fillStyle = C.g[g]; dot(ctx, xs[i], ys[i], r, SHAPES[g]); ctx.fill(); ctx.stroke();
+  }
+  if (hover >= 0 && !hidden.has(D.group[hover])) {
+    const g = D.group[hover];
+    ctx.fillStyle = C.g[g]; ctx.lineWidth = 2; ctx.strokeStyle = C.fg;
+    dot(ctx, xs[hover], ys[hover], r + 3, SHAPES[g]); ctx.fill(); ctx.stroke();
+  }
+}
+function drawMap() {
+  const ctx = mapCv.getContext("2d");
+  ctx.clearRect(0, 0, MW, MH);
+  ctx.strokeStyle = C.line; ctx.lineWidth = 1; ctx.strokeRect(0.5, 0.5, MW - 1, MH - 1);
+  points(ctx, pos.mx, pos.my, 3.6);
+  const labels = [];
+  for (let g = 0; g < 5; g++) {
+    if (hidden.has(g)) continue;
+    let x = 0, y = 0, n = 0;
+    for (let i = 0; i < N; i++) if (D.group[i] === g) { x += pos.mx[i]; y += pos.my[i]; n++; }
+    labels.push({ g, x: x / n, y: y / n });
+  }
+  labels.sort((a, b) => a.y - b.y);
+  for (let i = 1; i < labels.length; i++) if (labels[i].y - labels[i - 1].y < 19 && Math.abs(labels[i].x - labels[i - 1].x) < 130) labels[i].y = labels[i - 1].y + 19;
+  ctx.font = "600 13px " + getComputedStyle(document.body).fontFamily;
+  ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.lineJoin = "round";
+  labels.forEach(l => {
+    const x = clamp(l.x, 62, MW - 62);
+    ctx.lineWidth = 4; ctx.strokeStyle = C.panel; ctx.strokeText(INFO[l.g].short, x, l.y);
+    ctx.fillStyle = C.fg; ctx.fillText(INFO[l.g].short, x, l.y);
+  });
+}
+function drawRuler() {
+  const ctx = rulerCv.getContext("2d"), font = getComputedStyle(document.body).fontFamily;
+  ctx.clearRect(0, 0, RW, RH);
+  ctx.textBaseline = "middle";
+  for (let g = 0; g < 5; g++) {
+    const b = band(g);
+    ctx.strokeStyle = C.line; ctx.lineWidth = 1;
+    if (g) { ctx.beginPath(); ctx.moveTo(0, b.top + 0.5); ctx.lineTo(RW, b.top + 0.5); ctx.stroke(); }
+    ctx.textAlign = "left"; ctx.fillStyle = C.fg; ctx.font = "600 13px " + font; ctx.fillText(INFO[g].name, 2, b.top + 11);
+    ctx.textAlign = "right"; ctx.font = "600 13px ui-monospace, Menlo, monospace"; ctx.fillText(`${(D.past[layer][g] * 100).toFixed(0)}% flagged`, RW - 2, b.top + 11);
+  }
+  const bottom = RH - RULER.axis;
+  ctx.font = "12.5px ui-monospace, Menlo, monospace"; ctx.textAlign = "center"; ctx.fillStyle = C.muted; ctx.strokeStyle = C.line;
+  [[0, "0"], [1, "1"]].forEach(([v, t]) => {
+    const x = scoreX(v); ctx.beginPath(); ctx.setLineDash([3, 4]); ctx.moveTo(x + .5, 20); ctx.lineTo(x + .5, bottom); ctx.stroke(); ctx.setLineDash([]);
+    ctx.fillText(t, x, bottom + 11);
+  });
+  ctx.font = "12.5px " + font;
+  ctx.fillText("typical harmless", clamp(scoreX(0), 50, RW - 50), bottom + 25);
+  ctx.fillText("typical dangerous", clamp(scoreX(1), 56, RW - 56), bottom + 25);
+  points(ctx, pos.rx, pos.ry, RULER.r);
+  const tx = scoreX(D.tau[layer]);
+  ctx.strokeStyle = C.fg; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.moveTo(tx, 20); ctx.lineTo(tx, bottom); ctx.stroke();
+}
+function draw() { drawMap(); drawRuler(); }
+function jump() { Object.assign(pos, (t => ({ mx: t.mx.slice(), my: t.my.slice(), rx: t.rx.slice(), ry: t.ry.slice() }))(targets(layer))); draw(); }
+function tween(t) {
+  cancelAnimationFrame(raf);
+  if (reduced) { jump(); return; }
+  const from = { mx: pos.mx.slice(), my: pos.my.slice(), rx: pos.rx.slice(), ry: pos.ry.slice() }, start = performance.now();
+  const step = now => {
+    const p = Math.min(1, (now - start) / TWEEN), e = 1 - Math.pow(1 - p, 3);
+    for (const k of ["mx", "my", "rx", "ry"]) for (let i = 0; i < N; i++) pos[k][i] = from[k][i] + (t[k][i] - from[k][i]) * e;
+    draw();
+    if (p < 1) raf = requestAnimationFrame(step);
+  };
+  raf = requestAnimationFrame(step);
+}
+function noteFor(l) {
+  const same = D.auroc[l].xstest_unsafe_vs_xstest_safe.toFixed(2);
+  if (l <= 6) return `Early layers mostly see the surface of the text. Same-format prompts are barely separated (AUROC ${same}).`;
+  if (l <= 14) return `The model is sorting mostly by writing style. Yellow short dangerous questions sit close to teal harmless ones (AUROC ${same}).`;
+  if (l <= 19) return `The shift is happening. Yellow moves away from teal and toward red (AUROC ${same}).`;
+  return `Yellow now sits with red: dangerous prompts group together even when they are written differently (AUROC ${same}).`;
+}
+function drawHeat() {
+  const host = $("heat"), W = host.clientWidth, narrow = W < 560, L = narrow ? 92 : 170, R = 46, top = 24, rowH = narrow ? 30 : 38, H = top + rowH * 5 + 28;
+  const cell = (W - L - R) / 36, x = l => L + (l - 1) * cell;
+  let s = `<svg viewBox="0 0 ${W} ${H}" height="${H}" role="img" aria-label="Share of each prompt group flagged at every layer">`;
+  for (let g = 0; g < 5; g++) {
+    const y = top + g * rowH;
+    s += `<text class="strong" x="0" y="${y + rowH / 2 + 4}">${narrow ? INFO[g].short : INFO[g].name}</text>`;
+    for (let l = 1; l <= 36; l++) s += `<rect data-l="${l}" data-g="${g}" x="${x(l).toFixed(2)}" y="${y + 1}" width="${Math.max(1, cell - 1).toFixed(2)}" height="${rowH - 2}" fill="var(--heat)" fill-opacity="${Math.max(.03, D.past[l][g]).toFixed(3)}" style="cursor:pointer"/>`;
+    s += `<text class="strong" text-anchor="end" x="${W}" y="${y + rowH / 2 + 4}">${(D.past[layer][g] * 100).toFixed(0)}%</text>`;
+  }
+  [1, 6, 11, 15, 23, 30, 36].forEach(l => { s += `<text text-anchor="middle" x="${x(l) + cell / 2}" y="${top + rowH * 5 + 18}">${l}</text>`; });
+  s += `<text x="${L}" y="12">Layer</text>`;
+  s += `<rect x="${x(layer) - 1}" y="${top - 2}" width="${cell + 1}" height="${rowH * 5 + 4}" fill="none" stroke="var(--fg)" stroke-width="2" pointer-events="none"/>`;
+  host.innerHTML = s + "</svg>";
+  host.querySelectorAll("rect[data-l]").forEach(rect => {
+    const l = +rect.dataset.l, g = +rect.dataset.g;
+    rect.addEventListener("click", () => setLayer(l));
+    rect.addEventListener("pointermove", e => tip(`Layer ${l}`, `${INFO[g].name}: ${(D.past[l][g] * 100).toFixed(1)}% flagged`, e));
+    rect.addEventListener("pointerleave", untip);
+  });
+}
+function paintState() {
+  $("layer").value = layer;
+  $("readout").textContent = `Layer ${layer}`;
+  $("note").textContent = noteFor(layer);
+  $("mapcap").textContent = `Prompts the model represents similarly land close together. No labels were used to draw this. It shows ${(D.variance[layer] * 100).toFixed(0)}% of the variation at this layer.`;
+  document.querySelectorAll(".chip").forEach(b => b.setAttribute("aria-pressed", +b.dataset.layer === layer));
+  const a = D.auroc[layer];
+  $("tiles").innerHTML = [["Same format, the fair test", a.xstest_unsafe_vs_xstest_safe], ["Dangerous vs scary words", a.harmful_vs_xstest_safe], ["Dangerous vs looks toxic", a.harmful_vs_orbench_hard]].map(([t, v]) => `<div class="tile"><span>${t}</span><b>${v.toFixed(3)}</b></div>`).join("");
+  drawHeat();
+}
+function setLayer(l) { layer = l; paintState(); tween(targets(l)); }
+function stop() { clearInterval(playTimer); playTimer = null; $("play").textContent = "Play"; }
+
+const tipEl = $("tip");
+function tip(head, body, ev) {
+  tipEl.innerHTML = ""; const b = document.createElement("b"); b.textContent = head; tipEl.append(b, document.createTextNode(body)); tipEl.hidden = false;
+  const r = tipEl.getBoundingClientRect();
+  let x = ev.clientX + 14, y = ev.clientY + 14;
+  if (x + r.width > innerWidth - 8) x = ev.clientX - r.width - 14;
+  if (y + r.height > innerHeight - 8) y = ev.clientY - r.height - 14;
+  tipEl.style.left = Math.max(8, x) + "px"; tipEl.style.top = Math.max(8, y) + "px";
+}
+function untip() { tipEl.hidden = true; }
+function hit(cv, xs, ys, ev) {
+  const box = cv.getBoundingClientRect(), px = ev.clientX - box.left, py = ev.clientY - box.top;
+  let best = -1, dist = 144;
+  for (let i = 0; i < N; i++) { if (hidden.has(D.group[i])) continue; const d = (xs[i] - px) ** 2 + (ys[i] - py) ** 2; if (d < dist) { dist = d; best = i; } }
+  if (best !== hover) { hover = best; draw(); }
+  if (best < 0) { untip(); return; }
+  const g = D.group[best];
+  tip(`${INFO[g].name} · score ${D.score[layer][best].toFixed(2)}`, D.text[best] || "Text withheld: dangerous prompts stay local.", ev);
+}
+function clearHit() { if (hover !== -1) { hover = -1; draw(); } untip(); }
+mapCv.addEventListener("pointermove", e => hit(mapCv, pos.mx, pos.my, e));
+rulerCv.addEventListener("pointermove", e => hit(rulerCv, pos.rx, pos.ry, e));
+mapCv.addEventListener("pointerleave", clearHit);
+rulerCv.addEventListener("pointerleave", clearHit);
+
+$("layer").addEventListener("input", e => { stop(); setLayer(+e.target.value); });
+document.querySelectorAll(".chip").forEach(b => b.addEventListener("click", () => { stop(); setLayer(+b.dataset.layer); }));
+$("play").addEventListener("click", () => {
+  if (playTimer) { stop(); return; }
+  $("play").textContent = "Pause";
+  if (layer >= 36) setLayer(1);
+  playTimer = setInterval(() => { if (layer >= 36) stop(); else setLayer(layer + 1); }, 480);
+});
+
+const shape = g => SHAPES[g];
+$("groups").innerHTML = INFO.map((x, g) => `<div class="card"><b><i class="mark ${shape(g)}" style="background:var(--g${g})"></i>${x.name}</b><em>${x.about}</em><code class="muted">${x.code}</code></div>`).join("");
+$("legend").innerHTML = INFO.map((x, g) => `<button aria-pressed="true" data-g="${g}"><i class="mark ${shape(g)}" style="background:var(--g${g})"></i>${x.short}</button>`).join("");
+document.querySelectorAll("#legend button").forEach(b => b.addEventListener("click", () => {
+  const g = +b.dataset.g;
+  if (hidden.has(g)) hidden.delete(g); else hidden.add(g);
+  b.setAttribute("aria-pressed", !hidden.has(g)); draw();
+}));
+
+const escapeHtml = t => { const d = document.createElement("div"); d.textContent = t; return d.innerHTML; };
+$("flagged").innerHTML = [["orbench_hard", 2], ["benign", 4], ["xstest_safe", 3]].map(([k, g]) => {
+  const f = D.flagged[k], rows = f.top.map(([s, t]) => `<div class="flag"><b>${s.toFixed(2)}</b><span>${escapeHtml(t)}</span></div>`).join("");
+  const shown = f.count > f.top.length ? ` Showing the ${f.top.length} highest.` : "";
+  return `<div><h3><i class="mark ${shape(g)}" style="background:var(--g${g})"></i>${INFO[g].name}</h3><p class="muted" style="font-size:15px">${f.count} of ${f.total} flagged.${shown}</p>${rows}</div>`;
+}).join("");
+const mh = D.missed.harmful, mu = D.missed.xstest_unsafe;
+$("missed").textContent = `The detector also misses some dangerous prompts: ${mh[0]} of ${mh[1]} in the main set and ${mu[0]} of ${mu[1]} short questions fall left of the line. Their text is not shown here.`;
+
+const t = D.tfidf, a23 = D.compare.raw.auroc;
+const row = (name, x, y, key) => `<tr${key ? ' class="key"' : ""}><td>${name}</td><td>${x}</td><td>${y}</td></tr>`;
+$("tfidf").innerHTML = `<thead><tr><th>Comparison</th><th>Word counter, no model</th><th>Model at layer 23</th></tr></thead><tbody>` +
+  row("Dangerous vs scary words", t.harmful_vs_xstest_safe.toFixed(3), a23.harmful_vs_xstest_safe.toFixed(3)) +
+  row("Dangerous vs looks toxic", t.harmful_vs_orbench_hard.toFixed(3), a23.harmful_vs_orbench_hard.toFixed(3)) +
+  row("Dangerous vs everyday", t.harmful_vs_benign.toFixed(3), a23.harmful_vs_benign.toFixed(3)) +
+  row("Same format, the fair test", t.xstest_unsafe_vs_xstest_safe.toFixed(3), a23.xstest_unsafe_vs_xstest_safe.toFixed(3), true) + "</tbody>";
+const r = D.compare.raw, c = D.compare.cleaned, pct = v => (v * 100).toFixed(1) + "%", num = v => v.toFixed(3);
+$("compare").innerHTML = `<thead><tr><th>Layer 23, held-out prompts</th><th>Raw</th><th>Cleaned</th></tr></thead><tbody>` +
+  row("AUROC, same format", num(r.auroc.xstest_unsafe_vs_xstest_safe), num(c.auroc.xstest_unsafe_vs_xstest_safe), true) +
+  row("AUROC, dangerous vs scary words", num(r.auroc.harmful_vs_xstest_safe), num(c.auroc.harmful_vs_xstest_safe)) +
+  row("AUROC, dangerous vs looks toxic", num(r.auroc.harmful_vs_orbench_hard), num(c.auroc.harmful_vs_orbench_hard)) +
+  row("Dangerous prompts caught", pct(r.tpr_eval_harmful), pct(c.tpr_eval_harmful)) +
+  row("Short dangerous questions caught", pct(r.tpr_eval_xstest_unsafe), pct(c.tpr_eval_xstest_unsafe)) +
+  row("False alarms, everyday", pct(r.fpr.benign), pct(c.fpr.benign)) +
+  row("False alarms, scary words", pct(r.fpr.xstest_safe), pct(c.fpr.xstest_safe)) +
+  row("False alarms, looks toxic", pct(r.fpr.orbench_hard), pct(c.fpr.orbench_hard)) + "</tbody>";
+
+function boot() { measure(); paintState(); jump(); }
+const fromHash = +location.hash.slice(1);
+if (fromHash >= 1 && fromHash <= 36) layer = fromHash;
+boot();
+let resizeTimer;
+addEventListener("resize", () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(boot, 120); });
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => { C = colors(); paintState(); draw(); });
+</script>
+</body>
+</html>

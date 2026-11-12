@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+
+# raw generations and harmful prompt sets never leave the machine
+runs/
+runs_private/
+data/harmful.jsonl
+data/xstest_unsafe.jsonl

@@ -1,0 +1,29 @@
+{
+ "written_utc": "2026-11-10T17:27:29Z",
+ "meaning": "v1 = the foldcap adapter of round 4, exactly these files. Settings stay as declared in round 4: s = 1 and s = 1.25; ungated control at 0.02 and 0.1.",
+ "sha256": {
+  "runs_private/round4/adapters/fold_cap/install.gguf": "872c32ed0fb713e1e0f093aab86ae6364ae2b1945a721b083413573baf239bf6",
+  "runs_private/round4/adapters/fold_cap/install/adapter_config.json": "3348dc5dfa8ada04d788f9e041be0ce222080c0c6534561db71bc198333929d7",
+  "runs_private/round4/adapters/fold_cap/install/adapter_model.safetensors": "d6f3fadfa03d3f489a27111f0977dc4d29bafacc608696682d305b756f633442",
+  "runs_private/round4/adapters/fold_cap/knob.gguf": "0facc43c357bbfb2e98a42652f0d081745b513f3a199a975badbd2106b9ecc9a",
+  "runs_private/round4/adapters/fold_cap/knob/adapter_config.json": "84dd5ec806245ced2f210f6dd5c9a6a789a9eaf66152cb1f396e43454e4c1c41",
+  "runs_private/round4/adapters/fold_cap/knob/adapter_model.safetensors": "851dbe0987eed5960511bfe56e0b32a1e99c6d6fe8698ad8a4b6f235c4d60fdc",
+  "results/round4/fold/fit.json": "381dbf8d266602e4a4c91ba786310d7fb2af772669fd30d45ee870ad4f1c07e8",
+  "results/round4/fold/parity_logits_cap.json": "f2b04680adc3775518d1725d063002751c3e3cfee2d669db29fbe62f37d2366f",
+  "results/round4/frozen_declaration.json": "a7af9c8a0d49354fe9d3cbd62e7566301f9d495714bac50f7834e8ebb709c4bb",
+  "results/round4/sets_manifest.json": "0f7e016bf54794f7c3cfd0f0c5e24b41b73d8264fe86c0536a9546d8c59f2fa9"
+ },
+ "bytes": {
+  "runs_private/round4/adapters/fold_cap/install.gguf": 314048,
+  "runs_private/round4/adapters/fold_cap/install/adapter_config.json": 1184,
+  "runs_private/round4/adapters/fold_cap/install/adapter_model.safetensors": 314112,
+  "runs_private/round4/adapters/fold_cap/knob.gguf": 104864,
+  "runs_private/round4/adapters/fold_cap/knob/adapter_config.json": 1112,
+  "runs_private/round4/adapters/fold_cap/knob/adapter_model.safetensors": 104712,
+  "results/round4/fold/fit.json": 14210,
+  "results/round4/fold/parity_logits_cap.json": 1962,
+  "results/round4/frozen_declaration.json": 822,
+  "results/round4/sets_manifest.json": 180992
+ },
+ "pending_on_runtime": "cache_r4/fold.npz and cache_r4/reads.npz (the float vectors m, q, w and the lda_mix read) were not in the Mac copy; their hashes are added from the runtime or Drive copy once it is mounted, and checked against the adapter weights."
+}
