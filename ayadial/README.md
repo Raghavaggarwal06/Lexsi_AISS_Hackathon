@@ -53,12 +53,16 @@ the dial goes both ways. `adapter/README.md` has the mapping from one user-facin
 
 ```
 report/     the paper and the extended tables, with LaTeX sources
-adapter/    the four LoRA files: how to rebuild and how to serve them
+adapter/    the fitted vectors, how to rebuild the four LoRA files and how to serve them
 results/    the 73 JSON files every number in the report is read from
 scripts/    the code that produced them, in run order
 wsp/        the edit loop used for AyaDial-WSP (runs and caches stripped)
+docs/       the runbook for the round that produced the SafeTune rows
 data/       the prompt sets that can be redistributed
 ```
+
+`requirements.txt` is the loose floor; `requirements-frozen.txt` is the exact environment behind the
+numbers, and `docs/RUNBOOK-round7.md` has the Colab pins, which differ.
 
 ## Reproducing
 
