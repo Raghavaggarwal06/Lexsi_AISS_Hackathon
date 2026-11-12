@@ -1,0 +1,15 @@
+{
+ "suite": "dev5",
+ "cells": [
+  {
+   "name": "foldcap@1",
+   "f": "v1",
+   "s": 1
+  },
+  {
+   "name": "ungated@0.1",
+   "f": "ungated",
+   "scale": 0.1
+  }
+ ]
+}

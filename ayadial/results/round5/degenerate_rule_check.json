@@ -1,0 +1,80 @@
+{
+ "text": "CohereLabs/aya_dataset human-written answers, 20 to 700 characters, first 600 per language; 'short' = their first 40 characters",
+ "languages": {
+  "en": {
+   "n": 600,
+   "old_rule_flags_pct": 2.0,
+   "new_rule_flags_pct": 1.8,
+   "old_rule_flags_short_pct": 2.8,
+   "new_rule_flags_short_pct": 2.3
+  },
+  "zh": {
+   "n": 600,
+   "old_rule_flags_pct": 7.2,
+   "new_rule_flags_pct": 0.3,
+   "old_rule_flags_short_pct": 8.8,
+   "new_rule_flags_short_pct": 0.2
+  },
+  "it": {
+   "n": 600,
+   "old_rule_flags_pct": 1.7,
+   "new_rule_flags_pct": 1.7,
+   "old_rule_flags_short_pct": 1.8,
+   "new_rule_flags_short_pct": 1.8
+  },
+  "vi": {
+   "n": 600,
+   "old_rule_flags_pct": 1.8,
+   "new_rule_flags_pct": 1.8,
+   "old_rule_flags_short_pct": 1.3,
+   "new_rule_flags_short_pct": 1.3
+  },
+  "ar": {
+   "n": 600,
+   "old_rule_flags_pct": 1.8,
+   "new_rule_flags_pct": 1.8,
+   "old_rule_flags_short_pct": 1.7,
+   "new_rule_flags_short_pct": 1.7
+  },
+  "ko": {
+   "n": 300,
+   "old_rule_flags_pct": 0.7,
+   "new_rule_flags_pct": 0.7,
+   "old_rule_flags_short_pct": 0.7,
+   "new_rule_flags_short_pct": 0.7
+  },
+  "th": {
+   "n": 538,
+   "old_rule_flags_pct": 1.9,
+   "new_rule_flags_pct": 1.1,
+   "old_rule_flags_short_pct": 2.0,
+   "new_rule_flags_short_pct": 0.0
+  },
+  "bn": {
+   "n": 600,
+   "old_rule_flags_pct": 4.3,
+   "new_rule_flags_pct": 0.3,
+   "old_rule_flags_short_pct": 5.7,
+   "new_rule_flags_short_pct": 0.2
+  },
+  "sw": {
+   "n": 337,
+   "old_rule_flags_pct": 0.9,
+   "new_rule_flags_pct": 0.9,
+   "old_rule_flags_short_pct": 0.9,
+   "new_rule_flags_short_pct": 0.9
+  },
+  "jv": {
+   "n": 185,
+   "old_rule_flags_pct": 0.0,
+   "new_rule_flags_pct": 0.0,
+   "old_rule_flags_short_pct": 0.0,
+   "new_rule_flags_short_pct": 0.0
+  }
+ },
+ "round4_english_replies": {
+  "n": 12139,
+  "old_and_new_rule_differ_on": 0,
+  "flagged_by_old_rule": 7
+ }
+}

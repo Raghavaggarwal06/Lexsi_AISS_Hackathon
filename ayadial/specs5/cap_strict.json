@@ -1,0 +1,37 @@
+{
+ "langs": [
+  "eng_Latn",
+  "spa_Latn",
+  "zho_Hans",
+  "arb_Arab",
+  "swh_Latn"
+ ],
+ "n": 300,
+ "cells": [
+  {
+   "name": "foldcap@0",
+   "f": "v1",
+   "s": 0
+  },
+  {
+   "name": "foldcap@1",
+   "f": "v1",
+   "s": 1
+  },
+  {
+   "name": "foldcap@1.25",
+   "f": "v1",
+   "s": 1.25
+  },
+  {
+   "name": "foldcap@2",
+   "f": "v1",
+   "s": 2
+  },
+  {
+   "name": "ungated@0.1",
+   "f": "ungated",
+   "scale": 0.1
+  }
+ ]
+}

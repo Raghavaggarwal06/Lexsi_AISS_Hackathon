@@ -1,0 +1,30 @@
+# Phase 0 and 1 settings. Scripts read this file; CLI flags override it.
+
+model: CohereLabs/tiny-aya-global
+seed: 0
+use_chat_template: true      # activations at the last token of the templated prompt (preamble included)
+max_len: 1024                # tokens; left-truncates, so the user prompt and the generation marker survive
+batch: 8                     # lower to 4 or 2 on OOM
+
+sizes:
+  harmful: 300               # HarmBench standard 200 + JBB harmful 100
+  benign: 250                # JBB benign 100 + alpaca 150
+  xstest_safe: 250
+  xstest_unsafe: 200
+  orbench_hard: 250
+
+layers:
+  min: 8                     # AUROC is reported for every layer; these bound the "best layer" search
+  max: 28
+
+direction:
+  clean_pcs: 5               # benign principal components projected out of d for the "cleaned" variant
+  tpr_for_threshold: 0.90    # tau is set where 90% of fit-half harmful prompts score above it
+
+selection:
+  same_format_bar: 0.90      # layer choice only, not a go rule: xstest_unsafe vs xstest_safe share one format
+
+go_rules:
+  auroc_xstest_go: 0.90
+  auroc_orbench_go: 0.85
+  auroc_xstest_weak: 0.80

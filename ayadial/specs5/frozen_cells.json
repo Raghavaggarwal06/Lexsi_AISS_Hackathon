@@ -1,0 +1,70 @@
+{
+ "rule": "settings fixed on development data by the rules of journal J12 (tightening) and the charter's mirror budget rule (loosening), computed by scripts/r5_picks.py; base is generated with the same batching; every cell is compared with base and with the control of its side",
+ "cells": [
+  {
+   "name": "v3gcap@1",
+   "f": "strict",
+   "vec": "v3g",
+   "s": 1.0
+  },
+  {
+   "name": "ungated@0.1",
+   "f": "ungated",
+   "scale": 0.1
+  },
+  {
+   "name": "foldcap@1",
+   "f": "v1",
+   "s": 1
+  },
+  {
+   "name": "lax3@2",
+   "f": "lax",
+   "vec": "v3g",
+   "t": 2.0,
+   "theta": "v3g:h01"
+  },
+  {
+   "name": "both3@1",
+   "f": "both",
+   "svec": "v3g",
+   "s": 1.0,
+   "lvec": "v3g",
+   "t": 2.0,
+   "theta": "v3g:h01"
+  },
+  {
+   "name": "v2cap@1",
+   "f": "strict",
+   "vec": "v2",
+   "s": 1.0
+  },
+  {
+   "name": "ctrlneg@-0.02",
+   "f": "ungated",
+   "scale": -0.02
+  },
+  {
+   "name": "foldcap@1.25",
+   "f": "v1",
+   "s": 1.25
+  },
+  {
+   "name": "ungated@0.02",
+   "f": "ungated",
+   "scale": 0.02
+  }
+ ],
+ "roles": {
+  "ungated@0.02": "control, strict side: its round 4 pick at the 2-point budget",
+  "ungated@0.1": "control, strict side: its round 4 pick at the 5-point budget",
+  "foldcap@1": "v1 (round 4 adapter files, unchanged), declared setting 1",
+  "foldcap@1.25": "v1 (round 4 adapter files, unchanged), declared setting 2",
+  "v2cap@1": "new tightening candidate: v2 = v1's recipe with GCG and PAIR pool artifacts and suffix transplants added to the read; v1's guard; setting 1 from the development rule (picks.json)",
+  "v3gcap@1": "new tightening candidate: v3g = v2's additions plus the 'a' half of the in-the-wild, MultiJail and Aya development slices in the read; guard refit on the same additions; setting 1 from the development rule (picks.json)",
+  "lax3@2": "loosening: lax units on the v3g read (fires below the 1st percentile of harmful fit prompts), scale 2 from the mirror budget rule",
+  "both3@1": "combined: v3g strict at 1 and the lax units at 2, installed together",
+  "ctrlneg@-0.02": "control, lax side: the ungated push at negative scale, its pick under the mirror budget rule"
+ },
+ "notes": []
+}

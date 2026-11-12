@@ -1,0 +1,36 @@
+{
+ "suite": "own",
+ "cells": [
+  {
+   "name": "lax3@1",
+   "f": "lax",
+   "vec": "v3g",
+   "t": 1,
+   "theta": "v3g:h01",
+   "mode": "weights"
+  },
+  {
+   "name": "ctrlneg@-0.05",
+   "f": "ungated",
+   "scale": -0.05
+  },
+  {
+   "name": "lax3@2",
+   "f": "lax",
+   "vec": "v3g",
+   "t": 2,
+   "theta": "v3g:h01",
+   "mode": "weights"
+  },
+  {
+   "name": "ctrlneg@-0.02",
+   "f": "ungated",
+   "scale": -0.02
+  },
+  {
+   "name": "ctrlneg@-0.1",
+   "f": "ungated",
+   "scale": -0.1
+  }
+ ]
+}

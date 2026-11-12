@@ -1,0 +1,17 @@
+{
+ "suite": "dev5",
+ "cells": [
+  {
+   "name": "v2cap@1",
+   "f": "strict",
+   "vec": "v2",
+   "s": 1
+  },
+  {
+   "name": "v2cap@1.25",
+   "f": "strict",
+   "vec": "v2",
+   "s": 1.25
+  }
+ ]
+}

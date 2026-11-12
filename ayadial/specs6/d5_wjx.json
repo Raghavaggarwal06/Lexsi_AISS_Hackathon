@@ -1,0 +1,27 @@
+{
+ "suite": "wjx",
+ "cells": [
+  {
+   "name": "v5cap@1",
+   "f": "strict",
+   "vec": "v5g",
+   "s": 1
+  },
+  {
+   "name": "both5@1",
+   "f": "both",
+   "svec": "v5g",
+   "s": 1,
+   "lvec": "v5g",
+   "t": 2,
+   "theta": "v5g:h01"
+  },
+  {
+   "name": "lax5@2",
+   "f": "lax",
+   "vec": "v5g",
+   "t": 2,
+   "theta": "v5g:h01"
+  }
+ ]
+}

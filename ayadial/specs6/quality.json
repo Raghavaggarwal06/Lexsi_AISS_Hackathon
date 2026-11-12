@@ -1,0 +1,47 @@
+{
+ "n": 150,
+ "cells": [
+  {
+   "name": "installed@0",
+   "f": "both",
+   "svec": "v4",
+   "s": 0,
+   "lvec": "v4",
+   "t": 0,
+   "theta": 0.3747
+  },
+  {
+   "name": "v3gcap@1",
+   "f": "strict",
+   "vec": "v3g",
+   "s": 1
+  },
+  {
+   "name": "v4cap@1",
+   "f": "strict",
+   "vec": "v4",
+   "s": 1
+  },
+  {
+   "name": "lax4@2",
+   "f": "lax",
+   "vec": "v4",
+   "t": 2,
+   "theta": 0.3747
+  },
+  {
+   "name": "both4@1",
+   "f": "both",
+   "svec": "v4",
+   "s": 1,
+   "lvec": "v4",
+   "t": 2,
+   "theta": 0.3747
+  },
+  {
+   "name": "ungated@0.1",
+   "f": "ungated",
+   "scale": 0.1
+  }
+ ]
+}

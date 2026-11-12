@@ -1,0 +1,27 @@
+{
+ "suite": "own",
+ "cells": [
+  {
+   "name": "v4cap@1",
+   "f": "strict",
+   "vec": "v4",
+   "s": 1
+  },
+  {
+   "name": "both4@1",
+   "f": "both",
+   "svec": "v4",
+   "s": 1,
+   "lvec": "v4",
+   "t": 2,
+   "theta": 0.3747
+  },
+  {
+   "name": "lax4@2",
+   "f": "lax",
+   "vec": "v4",
+   "t": 2,
+   "theta": 0.3747
+  }
+ ]
+}

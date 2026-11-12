@@ -1,0 +1,17 @@
+{
+ "suite": "dev5",
+ "cells": [
+  {
+   "name": "v3gcap@1",
+   "f": "strict",
+   "vec": "v3g",
+   "s": 1
+  },
+  {
+   "name": "v3gcap@1.25",
+   "f": "strict",
+   "vec": "v3g",
+   "s": 1.25
+  }
+ ]
+}

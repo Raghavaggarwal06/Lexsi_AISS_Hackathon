@@ -1,0 +1,61 @@
+{
+ "name": "units",
+ "n_per_set": 12,
+ "cells": [
+  {
+   "name": "v1@1",
+   "f": "v1",
+   "s": 1
+  },
+  {
+   "name": "v2cap@1",
+   "f": "strict",
+   "vec": "v2",
+   "s": 1
+  },
+  {
+   "name": "v3gcap@1",
+   "f": "strict",
+   "vec": "v3g",
+   "s": 1
+  },
+  {
+   "name": "v3gcap@2",
+   "f": "strict",
+   "vec": "v3g",
+   "s": 2
+  },
+  {
+   "name": "lax3@1",
+   "f": "lax",
+   "vec": "v3g",
+   "t": 1,
+   "theta": "v3g:h01"
+  },
+  {
+   "name": "lax3@2",
+   "f": "lax",
+   "vec": "v3g",
+   "t": 2,
+   "theta": "v3g:h01"
+  },
+  {
+   "name": "both_v3g@1_lax3@1",
+   "f": "both",
+   "svec": "v3g",
+   "s": 1,
+   "lvec": "v3g",
+   "t": 1,
+   "theta": "v3g:h01"
+  },
+  {
+   "name": "v1@1_with_lax_installed_at_0",
+   "f": "both",
+   "svec": "v1x",
+   "s": 1,
+   "lvec": "v3g",
+   "t": 0,
+   "theta": "v3g:h01"
+  }
+ ]
+}

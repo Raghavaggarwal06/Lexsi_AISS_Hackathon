@@ -66,17 +66,46 @@ numbers, and `docs/RUNBOOK-round7.md` has the Colab pins, which differ.
 
 ## Reproducing
 
+### What runs from this repo alone
+
 ```bash
-pip install -r requirements.txt
-hf auth login                      # tiny-aya-global, XSTest and HarmBench are gated
+pip install -r requirements.txt     # requirements-frozen.txt has the exact versions
+hf auth login                       # tiny-aya-global, XSTest and HarmBench are gated
 python scripts/00_env_check.py
-python scripts/01_fetch_data.py    # rebuilds data/, including the sets not shipped here
+python scripts/01_fetch_data.py     # rebuilds data/, including the sets not shipped here
 python scripts/02_extract.py
-python scripts/03_direction.py     # the separation test
+python scripts/03_direction.py      # the separation test; about 1 h on a Mac
 ```
 
-Phase 1 runs on a Mac in about an hour. The scoring batteries and the GGUF export need a CUDA GPU; those are the
-`r4_*` through `r7_*` scripts and were run on Colab and Kaggle T4s.
+That reproduces phase 1 end to end and should land on the AUROC in `results/day1/`.
+
+**Rebuild the four adapters** (needs a CUDA GPU for `prep`, which downloads the base model and builds
+llama.cpp; the adapters themselves are written in seconds):
+
+```bash
+python scripts/r5_gguf.py prep
+python scripts/r5_gguf.py test 0.3747 2.0
+```
+
+Check the output against the hashes in [`adapter/README.md`](adapter/README.md). The export is
+deterministic, so matching hashes mean you have the artifacts the report measured.
+
+**Recompute the report's tables without a GPU.** `results/round5|6|7/labels/` hold the per-row
+judgements as ids and 0/1 only, so the scoreboards and paired differences can be recomputed from
+them with `scripts/r5_report.py` and `r6_report.py`, and the report itself rebuilt with
+`scripts/report/build_report_tex.py`.
+
+### What needs more than this repo
+
+Rerunning the **generation** half of rounds 4 to 7 needs the prompt suites, and those hold request
+text: `runs_private/*/sets.jsonl`, the in-the-wild system templates, the format requests, and the
+harmful sets. They are deliberately not published here. `scripts/r7_bundle.py` packs them into the
+private bundle the runbook expects, shared over Drive rather than through this repo. With the bundle,
+[`docs/RUNBOOK-round7.md`](docs/RUNBOOK-round7.md) has the literal Colab cells and the expected
+output of every stage.
+
+So: the fits, the adapters and every table recompute from what is here; regenerating replies from
+scratch needs the bundle and a GPU.
 
 ## Relation to the other folders here
 

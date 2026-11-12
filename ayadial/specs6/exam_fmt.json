@@ -1,0 +1,75 @@
+{
+ "cells": [
+  {
+   "name": "ungated@0.1",
+   "f": "ungated",
+   "scale": 0.1
+  },
+  {
+   "name": "v3gcap@1",
+   "f": "strict",
+   "vec": "v3g",
+   "s": 1
+  },
+  {
+   "name": "v4cap@1",
+   "f": "strict",
+   "vec": "v4",
+   "s": 1
+  },
+  {
+   "name": "lax4@2",
+   "f": "lax",
+   "vec": "v4",
+   "t": 2,
+   "theta": 0.3747
+  },
+  {
+   "name": "both4@1",
+   "f": "both",
+   "svec": "v4",
+   "s": 1,
+   "lvec": "v4",
+   "t": 2,
+   "theta": 0.3747
+  },
+  {
+   "name": "ctrlneg@-0.02",
+   "f": "ungated",
+   "scale": -0.02
+  },
+  {
+   "name": "v4cal",
+   "f": "strict",
+   "vec": "v4",
+   "s_by_format": {
+    "xa_sysA": 1.0,
+    "xa_sysB": 1.25,
+    "xa_sysC": 1.25,
+    "xa_sysD": 1.0,
+    "xa_mt2": 1.0,
+    "xa_mtref": 1.0,
+    "xa_mtsys": 1.0,
+    "xa_itwsys": 1.0
+   }
+  },
+  {
+   "name": "both4cal",
+   "f": "both",
+   "svec": "v4",
+   "s_by_format": {
+    "xa_sysA": 1.0,
+    "xa_sysB": 1.25,
+    "xa_sysC": 1.25,
+    "xa_sysD": 1.0,
+    "xa_mt2": 1.0,
+    "xa_mtref": 1.0,
+    "xa_mtsys": 1.0,
+    "xa_itwsys": 1.0
+   },
+   "lvec": "v4",
+   "t": 2,
+   "theta": 0.3747
+  }
+ ]
+}

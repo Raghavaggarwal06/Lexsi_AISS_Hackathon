@@ -1,0 +1,18 @@
+{
+ "suite": "dev5",
+ "cells": [
+  {
+   "name": "laxh@1",
+   "f": "lax",
+   "vec": "v1",
+   "t": 1,
+   "theta": "v1:h01",
+   "mode": "hook"
+  },
+  {
+   "name": "ctrlneg@-0.05",
+   "f": "ungated",
+   "scale": -0.05
+  }
+ ]
+}

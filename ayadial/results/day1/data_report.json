@@ -1,0 +1,39 @@
+{
+  "sizes": {
+    "harmful": 291,
+    "benign": 250,
+    "xstest_safe": 250,
+    "xstest_unsafe": 200,
+    "orbench_hard": 250
+  },
+  "expected": {
+    "harmful": 300,
+    "benign": 250,
+    "xstest_safe": 250,
+    "xstest_unsafe": 200,
+    "orbench_hard": 250
+  },
+  "harmful_duplicates_dropped": 9,
+  "fit_eval": {
+    "harmful": [
+      145,
+      146
+    ],
+    "benign": [
+      125,
+      125
+    ],
+    "xstest_safe": [
+      125,
+      125
+    ],
+    "xstest_unsafe": [
+      100,
+      100
+    ],
+    "orbench_hard": [
+      125,
+      125
+    ]
+  }
+}

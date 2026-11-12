@@ -20,8 +20,9 @@ to rebuild them byte-for-byte is here:
 
 | | |
 | --- | --- |
-| `vec_v3g.npz` | the fitted vectors: `w`, `d`, `m`, `q`, all 2048-dim, plus `theta0`, `b`, `U`. **This is the one piece that cannot be recovered from the JSON** — `../results/round5/lab/v3g.json` holds only the scalars |
+| `../cache_r5/vec_v3g.npz` | the fitted vectors: `w`, `d`, `m`, `q`, all 2048-dim, plus `theta0`, `b`, `U`. **the one piece that cannot be recovered from the JSON** — `../results/round5/lab/v3g.json` holds only the scalars |
 | `../results/round5/gguf/export_both_sides.json` | thresholds, unit indices, pinned llama.cpp commit, expected sizes and hashes |
+| `../results/day1/directions.npz` | the raw refusal direction per layer; `r5lib.rvec()` reads layer 23 |
 | `../scripts/r5_gguf.py` | the export itself |
 
 Rebuild them with

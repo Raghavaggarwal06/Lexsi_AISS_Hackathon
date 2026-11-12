@@ -1,0 +1,42 @@
+{
+ "cells": [
+  {
+   "name": "v5cap@1",
+   "f": "strict",
+   "vec": "v5g",
+   "s": 1
+  },
+  {
+   "name": "lax5@2",
+   "f": "lax",
+   "vec": "v5g",
+   "t": 2,
+   "theta": "v5g:h01"
+  },
+  {
+   "name": "both5@1",
+   "f": "both",
+   "svec": "v5g",
+   "s": 1,
+   "lvec": "v5g",
+   "t": 2,
+   "theta": "v5g:h01"
+  }
+ ],
+ "formats": [
+  "default",
+  "sys_bank",
+  "sys_long",
+  "sys_persona",
+  "nosys",
+  "mt_benign",
+  "mt_refused",
+  "inj_tail",
+  "inj_head",
+  "sys_car",
+  "sys_law",
+  "sys_de",
+  "mt3",
+  "mt_sys"
+ ]
+}

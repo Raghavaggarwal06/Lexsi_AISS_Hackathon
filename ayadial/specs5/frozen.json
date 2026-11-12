@@ -1,0 +1,58 @@
+{
+ "suite": "frz5",
+ "cells": [
+  {
+   "name": "v3gcap@1",
+   "f": "strict",
+   "vec": "v3g",
+   "s": 1.0
+  },
+  {
+   "name": "ungated@0.1",
+   "f": "ungated",
+   "scale": 0.1
+  },
+  {
+   "name": "foldcap@1",
+   "f": "v1",
+   "s": 1
+  },
+  {
+   "name": "lax3@2",
+   "f": "lax",
+   "vec": "v3g",
+   "t": 2.0,
+   "theta": "v3g:h01"
+  },
+  {
+   "name": "both3@1",
+   "f": "both",
+   "svec": "v3g",
+   "s": 1.0,
+   "lvec": "v3g",
+   "t": 2.0,
+   "theta": "v3g:h01"
+  },
+  {
+   "name": "v2cap@1",
+   "f": "strict",
+   "vec": "v2",
+   "s": 1.0
+  },
+  {
+   "name": "ctrlneg@-0.02",
+   "f": "ungated",
+   "scale": -0.02
+  },
+  {
+   "name": "foldcap@1.25",
+   "f": "v1",
+   "s": 1.25
+  },
+  {
+   "name": "ungated@0.02",
+   "f": "ungated",
+   "scale": 0.02
+  }
+ ]
+}

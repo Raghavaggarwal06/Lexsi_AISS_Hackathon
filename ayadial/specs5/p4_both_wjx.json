@@ -1,0 +1,23 @@
+{
+ "suite": "wjx",
+ "cells": [
+  {
+   "name": "both3@1",
+   "f": "both",
+   "svec": "v3g",
+   "s": 1.0,
+   "lvec": "v3g",
+   "t": 2.0,
+   "theta": "v3g:h01"
+  },
+  {
+   "name": "lax3v1s0@2",
+   "f": "both",
+   "svec": "v1x",
+   "s": 0,
+   "lvec": "v3g",
+   "t": 2.0,
+   "theta": "v3g:h01"
+  }
+ ]
+}

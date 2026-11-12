@@ -1,0 +1,310 @@
+{
+ "name": "g2",
+ "marker_weight": 30.0,
+ "lambda": 0.01,
+ "n_fit_positions": 79238,
+ "n_extra_marker_rows": 3343,
+ "n_eval_positions": 91634,
+ "n_eval_prompts": 1244,
+ "cos_m_with_v1": 0.7708834816138153,
+ "cos_q_with_v1": 0.9093576474001098,
+ "new_guard_on_held_out_positions": {
+  "q_at_marker_mean_sd": [
+   0.0043,
+   0.039
+  ],
+  "m_at_marker_min_p1_p50": [
+   0.692,
+   0.887,
+   0.996
+  ],
+  "m_elsewhere_max": 0.593,
+  "q_elsewhere_min": 0.412,
+  "margin_m": 0.099,
+  "margin_q": 0.126,
+  "by_family_at_marker": {
+   "9 other languages (MultiJail, Aya)": {
+    "n": 263,
+    "m_mean": 0.984,
+    "m_min": 0.692,
+    "q_mean": 0.013,
+    "q_sd": 0.051,
+    "threshold_shift_in_z": 0.032
+   },
+   "English (MultiJail, Aya)": {
+    "n": 31,
+    "m_mean": 0.984,
+    "m_min": 0.858,
+    "q_mean": 0.012,
+    "q_sd": 0.045,
+    "threshold_shift_in_z": 0.027
+   },
+   "JailbreakBench JBC, random search": {
+    "n": 50,
+    "m_mean": 0.993,
+    "m_min": 0.948,
+    "q_mean": -0.002,
+    "q_sd": 0.023,
+    "threshold_shift_in_z": -0.008
+   },
+   "in-the-wild templates": {
+    "n": 165,
+    "m_mean": 0.987,
+    "m_min": 0.879,
+    "q_mean": 0.012,
+    "q_sd": 0.043,
+    "threshold_shift_in_z": 0.03
+   },
+   "round 4 kind (WildJailbreak, own sets, PHTest)": {
+    "n": 600,
+    "m_mean": 1.001,
+    "m_min": 0.853,
+    "q_mean": -0.002,
+    "q_sd": 0.033,
+    "threshold_shift_in_z": -0.004
+   },
+   "suffix attacks and transplants, PAIR": {
+    "n": 135,
+    "m_mean": 0.994,
+    "m_min": 0.906,
+    "q_mean": 0.004,
+    "q_sd": 0.028,
+    "threshold_shift_in_z": 0.01
+   }
+  },
+  "m_by_kind_p0_p50_p100": {
+   "preamble": [
+    -0.065,
+    -0.001,
+    0.068
+   ],
+   "user": [
+    -0.205,
+    0.002,
+    0.355
+   ],
+   "last_instruction": [
+    -0.185,
+    0.002,
+    0.357
+   ],
+   "END_OF_TURN": [
+    -0.226,
+    0.022,
+    0.387
+   ],
+   "START_OF_TURN": [
+    -0.136,
+    -0.002,
+    0.098
+   ],
+   "CHATBOT": [
+    -0.106,
+    0.011,
+    0.137
+   ],
+   "START_RESPONSE(marker)": [
+    0.692,
+    0.996,
+    1.103
+   ],
+   "generated": [
+    -0.275,
+    0.002,
+    0.593
+   ]
+  },
+  "q_by_kind_p0_p50_p100": {
+   "preamble": [
+    0.752,
+    0.999,
+    1.061
+   ],
+   "user": [
+    0.64,
+    0.999,
+    1.257
+   ],
+   "last_instruction": [
+    0.604,
+    0.997,
+    1.227
+   ],
+   "END_OF_TURN": [
+    0.537,
+    0.979,
+    1.205
+   ],
+   "START_OF_TURN": [
+    0.868,
+    1.003,
+    1.163
+   ],
+   "CHATBOT": [
+    0.857,
+    0.988,
+    1.098
+   ],
+   "START_RESPONSE(marker)": [
+    -0.13,
+    0.002,
+    0.286
+   ],
+   "generated": [
+    0.412,
+    0.997,
+    1.267
+   ]
+  }
+ },
+ "v1_guard_on_the_same_positions": {
+  "q_at_marker_mean_sd": [
+   0.0476,
+   0.0916
+  ],
+  "m_at_marker_min_p1_p50": [
+   0.325,
+   0.494,
+   0.974
+  ],
+  "m_elsewhere_max": 0.614,
+  "q_elsewhere_min": 0.351,
+  "margin_m": -0.289,
+  "margin_q": -0.251,
+  "by_family_at_marker": {
+   "9 other languages (MultiJail, Aya)": {
+    "n": 263,
+    "m_mean": 0.796,
+    "m_min": 0.325,
+    "q_mean": 0.15,
+    "q_sd": 0.124,
+    "threshold_shift_in_z": 0.351
+   },
+   "English (MultiJail, Aya)": {
+    "n": 31,
+    "m_mean": 0.947,
+    "m_min": 0.556,
+    "q_mean": 0.037,
+    "q_sd": 0.078,
+    "threshold_shift_in_z": 0.086
+   },
+   "JailbreakBench JBC, random search": {
+    "n": 50,
+    "m_mean": 0.933,
+    "m_min": 0.86,
+    "q_mean": 0.054,
+    "q_sd": 0.039,
+    "threshold_shift_in_z": 0.129
+   },
+   "in-the-wild templates": {
+    "n": 165,
+    "m_mean": 0.932,
+    "m_min": 0.788,
+    "q_mean": 0.07,
+    "q_sd": 0.072,
+    "threshold_shift_in_z": 0.178
+   },
+   "round 4 kind (WildJailbreak, own sets, PHTest)": {
+    "n": 600,
+    "m_mean": 0.999,
+    "m_min": 0.852,
+    "q_mean": 0.001,
+    "q_sd": 0.035,
+    "threshold_shift_in_z": 0.003
+   },
+   "suffix attacks and transplants, PAIR": {
+    "n": 135,
+    "m_mean": 0.975,
+    "m_min": 0.843,
+    "q_mean": 0.027,
+    "q_sd": 0.049,
+    "threshold_shift_in_z": 0.071
+   }
+  },
+  "m_by_kind_p0_p50_p100": {
+   "preamble": [
+    -0.047,
+    -0.0,
+    0.043
+   ],
+   "user": [
+    -0.211,
+    0.006,
+    0.352
+   ],
+   "last_instruction": [
+    -0.153,
+    0.015,
+    0.272
+   ],
+   "END_OF_TURN": [
+    -0.194,
+    0.044,
+    0.282
+   ],
+   "START_OF_TURN": [
+    -0.115,
+    0.002,
+    0.114
+   ],
+   "CHATBOT": [
+    -0.179,
+    0.01,
+    0.151
+   ],
+   "START_RESPONSE(marker)": [
+    0.325,
+    0.974,
+    1.099
+   ],
+   "generated": [
+    -0.263,
+    -0.001,
+    0.614
+   ]
+  },
+  "q_by_kind_p0_p50_p100": {
+   "preamble": [
+    0.846,
+    0.999,
+    1.051
+   ],
+   "user": [
+    0.648,
+    0.989,
+    1.222
+   ],
+   "last_instruction": [
+    0.656,
+    0.979,
+    1.147
+   ],
+   "END_OF_TURN": [
+    0.683,
+    0.945,
+    1.168
+   ],
+   "START_OF_TURN": [
+    0.85,
+    0.992,
+    1.131
+   ],
+   "CHATBOT": [
+    0.825,
+    0.98,
+    1.149
+   ],
+   "START_RESPONSE(marker)": [
+    -0.098,
+    0.021,
+    0.601
+   ],
+   "generated": [
+    0.351,
+    0.994,
+    1.292
+   ]
+  }
+ },
+ "note": "threshold_shift_in_z = theta0*(m-1) + (kappa/alpha)*q at the reply-start token: how far the unit's effective threshold sits from theta0 (0 is ideal)"
+}

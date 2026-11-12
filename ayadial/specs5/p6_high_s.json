@@ -1,0 +1,15 @@
+{
+ "suite": "wjx",
+ "cells": [
+  {
+   "name": "foldcap@2.5",
+   "f": "v1",
+   "s": 2.5
+  },
+  {
+   "name": "foldcap@3",
+   "f": "v1",
+   "s": 3
+  }
+ ]
+}
